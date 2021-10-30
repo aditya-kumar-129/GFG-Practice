@@ -4,53 +4,129 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *left, *right;
+  struct Node *left;
+  struct Node *right;
 };
 
-void printLevelOrder(Node *root)
-{
-  // Base Case
-  if (root == NULL)
-    return;
-  queue<Node *> q;
-  // Enqueue Root and initialize height
-  q.push(root);
-  while (q.empty())
-  {
-    // Print front of queue and remove it from queue
-    Node *node = q.front();
-    cout << node->data << " ";
-    q.pop();
-    // Enqueue left child
-    if (node->left)
-      q.push(node->left);
-    //Enqueue right child
-    if (node->right)
-      q.push(node->right);
-  }
-}
-
-Node *newNode(int data)
+Node *newNode(int val)
 {
   Node *temp = new Node;
-  temp->data = data;
-  temp->left = temp->right = NULL;
+  temp->data = val;
+  temp->left = NULL;
+  temp->right = NULL;
   return temp;
+}
+
+class Solution
+{
+public:
+  //Function to return the level order traversal of a tree.
+  vector<int> levelOrder(Node *node)
+  {
+    //Your code here
+    queue<Node *> Q;
+    vector<int> V;
+    if (!node)
+      return V;
+    Q.push(node);
+    while (!Q.empty())
+    {
+      Node *root = Q.front();
+      if (root->left)
+        Q.push(root->left);
+      if (root->right)
+        Q.push(root->right);
+      V.push_back(root->data);
+      Q.pop();
+    }
+    return V;
+  }
+};
+
+void inOrder(struct Node *node)
+{
+  if (node == NULL)
+    return;
+  inOrder(node->left);
+  printf("%d ", node->data);
+  inOrder(node->right);
+}
+
+Node *buildTree(string str)
+{
+  // Corner Case
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
+
+  // Creating vector of strings from input string after spliting by space
+  vector<string> ip;
+
+  istringstream iss(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
+
+  // Create the root of the tree
+  Node *root = newNode(stoi(ip[0]));
+
+  // Push the root to the queue
+  queue<Node *> queue;
+  queue.push(root);
+
+  // Starting from the second element
+  int i = 1;
+  while (!queue.empty() && i < ip.size())
+  {
+    // Get and remove the front of the queue
+    Node *currNode = queue.front();
+    queue.pop();
+    // Get the current node's value from the string
+    string currVal = ip[i];
+
+    // If the left child is not null
+    if (currVal != "N")
+    {
+      // Create the left child for the current node
+      currNode->left = newNode(stoi(currVal));
+      // Push it to the queue
+      queue.push(currNode->left);
+    }
+
+    // For the right child
+    i++;
+    if (i >= ip.size())
+      break;
+    currVal = ip[i];
+
+    // If the right child is not null
+    if (currVal != "N")
+    {
+      // Create the right child for the current node
+      currNode->right = newNode(stoi(currVal));
+      // Push it to the queue
+      queue.push(currNode->right);
+    }
+    i++;
+  }
+  return root;
 }
 
 int main()
 {
-  Node *root = newNode(1);
-  root->left = newNode(2);
-  root->right = newNode(3);
-  root->left->left = newNode(4);
-  root->left->right = newNode(5);
-
-  cout << "Level Order traversal of binary tree is \n";
-  printLevelOrder(root);
+  int t;
+  scanf("%d ", &t);
+  while (t--)
+  {
+    string s;
+    getline(cin, s);
+    Node *root = buildTree(s);
+    Solution ob;
+    vector<int> res = ob.levelOrder(root);
+    for (int i : res)
+      cout << i << " ";
+    cout << endl;
+  }
   return 0;
 }
-
 
 /*
 Below is the code to print the level by level (we can get to know in which level how many elements are present)
