@@ -1,5 +1,3 @@
-// This is iterative approach
-
 #include <iostream>
 using namespace std;
 
@@ -17,21 +15,14 @@ struct Node
 class Solution
 {
 public:
-  //Function to reverse a linked list.
   struct Node *reverseList(struct Node *head)
   {
     Node *current = head;
     Node *prev = NULL, *next = NULL;
-
     while (current != NULL)
     {
-      // Store next
       next = current->next;
-
-      // Reverse current node's pointer
       current->next = prev;
-
-      // Move pointers one position ahead.
       prev = current;
       current = next;
     }
