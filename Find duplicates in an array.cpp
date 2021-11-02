@@ -6,19 +6,17 @@ class Solution
 public:
   vector<int> duplicates(int arr[], int n)
   {
-    vector<int> v(n);
+    vector<int> v;
+    unordered_map<int, int> freq;
     for (int i = 0; i < n; i++)
-      v[arr[i]]++; //for frequency
-
-    vector<int> ans;
-    for (int i = 0; i < v.size(); i++)
-      if (v[i] > 1)
-        ans.push_back(i);
-
-    if (ans.size() == 0)
-      ans.push_back(-1);
-
-    return ans;
+      freq[arr[i]]++;
+    for (auto &value : freq)
+      if (value.second > 1)
+        v.push_back(value.first);
+    if (v.size() == 0)
+      v.push_back(-1);
+    sort(v.begin(), v.end());
+    return v;
   }
 };
 

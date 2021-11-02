@@ -22,7 +22,8 @@ int maxDepth(node* node)
 		/* use the larger one */
 		if (lDepth > rDepth)
 			return(lDepth + 1);
-		else return(rDepth + 1);
+		else 
+			return(rDepth + 1);
 	}
 }
 

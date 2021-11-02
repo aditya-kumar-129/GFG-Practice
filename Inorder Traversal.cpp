@@ -34,17 +34,13 @@ public:
   }
 };
 
-// { Driver Code Starts.
-
-// Function to Build Tree
 Node *buildTree(string str)
 {
   // Corner Case
   if (str.length() == 0 || str[0] == 'N')
     return NULL;
 
-  // Creating vector of strings from input
-  // string after spliting by space
+  // Creating vector of strings from input string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
@@ -73,10 +69,8 @@ Node *buildTree(string str)
     // If the left child is not null
     if (currVal != "N")
     {
-
       // Create the left child for the current node
       currNode->left = new Node(stoi(currVal));
-
       // Push it to the queue
       queue.push(currNode->left);
     }
@@ -90,16 +84,13 @@ Node *buildTree(string str)
     // If the right child is not null
     if (currVal != "N")
     {
-
       // Create the right child for the current node
       currNode->right = new Node(stoi(currVal));
-
       // Push it to the queue
       queue.push(currNode->right);
     }
     i++;
   }
-
   return root;
 }
 
@@ -123,4 +114,3 @@ int main()
   }
   return 0;
 }
-// } Driver Code Ends
