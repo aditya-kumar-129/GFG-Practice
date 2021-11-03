@@ -1,5 +1,7 @@
 Add 1 to a no represented as LL.cpp
 Add two numbers represented by LL.cpp
+Container With Most Water.cpp
+Count Inversions in an array.cpp
 Counting elements in two arrays.cpp
 Delete N nodes after M nodes of a LL.cpp
 Detect loop in a LL.cpp
@@ -8,6 +10,7 @@ Get minimum element from stack.cpp
 Heap Sort.cpp
 Kadanes Algorithm.cpp
 Level Order BT Traversal.cpp
+Max sum in the configuration.cpp
 Merge Sort.cpp
 Merge two sorted LL.cpp
 Next Greater Element.cpp
