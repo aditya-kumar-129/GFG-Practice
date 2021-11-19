@@ -2,8 +2,11 @@ https://practice.geeksforgeeks.org/explore/?company%5B%5D=Amazon&problemStatus=u
 
 Absolute List Sorting.cpp
 bfs of a graph.cpp
+Coin Change.cpp
+Count number of words.cpp
 DFS of a graph.cpp
 Diameter of a Bianry Tree.cpp
+Equal point in a string of brackets.cpp
 Find triplets with zero sum.cpp
 First Repeating Element.cpp
 Flattening a Linked List.cpp
@@ -15,4 +18,4 @@ Pairwise swap elements of a LL.cpp
 Remove duplicates from an unsorted LL.cpp
 Remove loop in LL.cpp
 Reverse a LL in groups of given size.cpp
-Coin Change.cpp
+Star elements.cpp

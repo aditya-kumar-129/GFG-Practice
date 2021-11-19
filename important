@@ -6,13 +6,18 @@ Counting elements in two arrays.cpp
 Delete N nodes after M nodes of a LL.cpp
 Detect loop in a LL.cpp
 Equilibrium Point.cpp
+Even and Odd.cpp
 Get minimum element from stack.cpp
 Heap Sort.cpp
 Kadanes Algorithm.cpp
+Largest subarray with 0 sum.cpp
 Level Order BT Traversal.cpp
+Majority Element.cpp
+Minimum steps to make product equal to one.cpp
 Max sum in the configuration.cpp
 Merge Sort.cpp
 Merge two sorted LL.cpp
+Minimum Energy.cpp
 Next Greater Element.cpp
 Pairwise swap elements of a LL.cpp
 Queue using two Stacks.cpp
@@ -24,5 +29,6 @@ Subarray with given sum(+ve no only).cpp
 Subarrays with given sum(-ve no also present).cpp
 Special Stack.cpp
 Sum of all Subarrays.cpp
+Trapping Rain Water.cpp === Water Collection.cpp
 Validate an IP Address.cpp
-Largest subarray with 0 sum.cpp
+Word with maximum frequency.cpp
