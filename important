@@ -32,3 +32,6 @@ Sum of all Subarrays.cpp
 Trapping Rain Water.cpp === Water Collection.cpp
 Validate an IP Address.cpp
 Word with maximum frequency.cpp
+Rearrange characters.cpp
+Rearrange an array with O(1) extra space.cpp   (VVI)
+Floor in a Sorted Array.cpp
