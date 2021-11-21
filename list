@@ -21,3 +21,8 @@ Reverse a LL in groups of given size.cpp
 Star elements.cpp
 Overlapping Intervals.cpp
 Number following a pattern.cpp
+Longest Palindrome in a String.cpp
+Complement.cpp
+Look and Say Pattern.cpp
+Longest Distinct characters in string.cpp (How to solve the above problem in O(n) time complexity)
+Top k numbers in a stream.cpp
