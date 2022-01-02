@@ -1,5 +1,3 @@
-https://practice.geeksforgeeks.org/explore/?company%5B%5D=Amazon&problemStatus=unsolved&problemType=functional&difficulty%5B%5D=0&difficulty%5B%5D=1&page=1&sortBy=submissions&company%5B%5D=Amazon&category%5B%5D=Arrays&category%5B%5D=Strings&category%5B%5D=Stack&category%5B%5D=Sorting&category%5B%5D=Binary%20Search&category%5B%5D=CPP&category%5B%5D=Searching&category%5B%5D=STL&category%5B%5D=Linked%20List&category%5B%5D=Queue&category%5B%5D=sieve&category%5B%5D=Map&category%5B%5D=Algorithms&category%5B%5D=Fibonacci&category%5B%5D=palindrome&category%5B%5D=Data%20Structures&category%5B%5D=factorial&category%5B%5D=set&category%5B%5D=Kadane&category%5B%5D=Merge%20Sort&category%5B%5D=Functions&category%5B%5D=cpp-strings&category%5B%5D=%20CPP-Control-Flow&category%5B%5D=Java-Control-Flow&category%5B%5D=c-lang&category%5B%5D=CPP-Control-Flow
-
 Absolute List Sorting.cpp
 bfs of a graph.cpp
 Coin Change.cpp
@@ -32,3 +30,11 @@ First non-repeating character in a stream.cpp
 Huffman Encoding.cpp
 Integer to Words.cpp
 Longest Sub-Array with Sum K.cpp
+Generate IP Addresses.cpp
+Lucky Numbers.cpp
+Merge k Sorted Arrays.cpp
+Merge K sorted linked lists.cpp RECURSIVE APPROACH
+Merge Sort on Doubly Linked List.cpp
+Non Repeating Numbers.cpp
+Possible Words From Phone Digits.cpp
+Subtraction in Linked List.cpp

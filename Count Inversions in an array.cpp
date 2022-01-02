@@ -1,4 +1,5 @@
 /*
+In merge process, let i is used for indexing left sub-array and j for right sub-array. At any step in merge(), if a[i] is greater than a[j], then there are (mid – i) inversions. because left and right subarrays are sorted, so all the remaining elements in left-subarray (a[i+1], a[i+2] … a[mid]) will be greater than a[j]
 For detail explaination like how merge sort algorithm help in solving this problem see the below youtube video:-
 https://youtu.be/uojx--MK_n0
 */
@@ -24,7 +25,8 @@ public:
     {
       if (left[i] > right[j])
       {
-        count += (n1 - i);      // the only extra line in the code and the other whole codes are of merge sort
+        // the only extra line in the code and the other whole codes are of merge sort
+        count += (n1 - i);
         arr[k++] = right[j++];
       }
       else

@@ -1,0 +1,214 @@
+Bottom View of Binary Tree
+Serialize and Deserialize a Binary Tree
+Wildcard Pattern Matching
+Box Stacking DP
+Multiply two strings
+Max sum subarray by removing at most one element
+Pots of Gold Game DP
+k-th smallest element in BST
+Complete Binary Tree
+Duplicate Subtrees
+Swap Kth nodes from ends
+Word Boggle
+Consecutive 1's not allowed DP
+Longest Palindromic Subsequence
+Perfect Sum Problem
+Covid Spread
+Partition a Linked List around a given value
+Insertion Sort for Singly Linked List
+Maximum Value
+Find a pair with given target in BST
+Rotate a Linked List
+Count BST nodes that lie in a given range
+Add all greater values to every node in a BST
+Construct Binary Tree from Parent Array
+Connect Nodes at Same Level
+Maximum difference between node and its ancestor
+Make Binary Tree From Linked List
+Kth element in Matrix
+Distinct occurrences
+Implement Atoi
+Bridge edge in a graph
+Maximum Bipartite Matching
+Euler Circuit in an Undirected Graph
+Euler circuit and Path
+Binary Tree to CDLL
+Leftmost and rightmost nodes of binary tree
+Node at distance
+Leaves to DLL
+Construct Tree from Preorder Traversal
+Count Number of SubTrees having given Sum
+Count total set bits
+Smallest Positive missing number
+Rearrange an array with O(1) extra space
+Count the number of possible triangles
+Possible paths between 2 vertices
+Boolean Matrix
+Distance of nearest cell having 1
+Subarrays with equal 1s and 0s
+Sorting Elements of an Array by Frequency
+Minimum Platforms
+Largest number in K swaps
+Black and White
+Unique Subsets
+M-Coloring Problem
+X Total Shapes
+Find whether path exist
+Rotten Oranges
+Container With Most Water
+Stock buy and sell
+Word Search
+Prerequisite Tasks
+Maximum Index
+Number of subarrays with maximum values in given range
+Sum of Subarrays
+Large Factorial
+Maximize Number of 1's
+Equivalent Sub-Arrays
+Sum of two elements with sum nearest to zero
+Sum of bit differences
+Maximize The Array
+Longest subarray with sum divisible by K
+Nuts and Bolts Problem
+Maximum length Bitonic Subarray
+Maximum Sum Path in Two Arrays
+Magnet Array Problem
+Integer to Words
+Number of pairs
+Smallest Non-Zero Number
+Find the number of subarrays having even sum
+Not a subset sum
+Large Factorials
+Is Binary Number Multiple of 3
+Sum-string
+Bleak Numbers
+Count ways to N'th Stair(Order does not matter)
+Min Coin
+Page Faults in LRU
+Knight Walk
+Coins and Game
+Number of paths in a matrix with k coins
+Possible paths
+Rat Maze With Multiple Jumps
+Kth largest element in a stream
+Snake and Ladder Problem
+Negative weight cycle
+Flood fill Algorithm
+Shortest Path between Cities
+Police and Thieves
+Hamiltonian Path
+Number of minimum picks to get 'k' pairs of socks from a drawer
+Water the plants
+Jump Game
+Maximum value of difference of a pair of elements and their Index
+Distance from the Source (Bellman-Ford Algorithm)
+Rearrange characters
+Binary Searchable elements
+Maximum XOR of two numbers in an array
+BST to max heap
+Division without using multiplication, division and mod operator
+Subsets
+All Unique Permutations of an array
+Reverse a Linked List in groups of given size.
+Delete nodes having greater value on right
+Tree from Postorder and Inorder
+Intersection Point in Y Shapped Linked Lists
+Height of Binary Tree
+Heap Sort
+Merge two sorted linked lists
+Flattening a Linked List
+Diagonal Traversal of Binary Tree
+Boundary Traversal of binary tree
+Delete a node from BST
+Detect cycle in a directed graph
+Detect cycle in an undirected graph
+Lowest Common Ancestor in a Binary Tree
+Min distance between two given nodes of a Binary Tree
+The Celebrity Problem
+Topological sort
+Vertical Traversal of Binary Tree
+Find the number of islands
+Max sum in the configuration
+Max rectangle
+Implementing Dijkstra Algorithm
+Max length chain
+Minimum Spanning Tree
+Largest BST
+Interleaved Strings
+Minimum Swaps to Sort
+Strongly Connected Components (Kosaraju's Algo)
+Rat in a Maze Problem - I
+Bipartite Graph
+Find the Closest Element in BST
+Duplicate subtree in Binary Tree
+Top View of Binary Tree
+Merge Sort for Linked List
+Count More than n/k Occurences
+Populate Inorder Successor for all nodes
+Construct Tree from Inorder & Preorder
+Construct tree from Inorder and LevelOrder
+Possible Words From Phone Digits
+Majority Element
+Count Inversions
+Spirally traversing a matrix
+Unit Area of largest region of 1's
+Longest consecutive subsequence
+Smallest window in a string containing all the characters of another string
+Maximum Rectangular Area in a Histogram
+Stock span problem
+Next Greater Element
+Maximum of all subarrays of size k
+Fractional Knapsack
+Job Sequencing Problem
+Combination Sum
+Minimum number of jumps
+Count ways to reach the n'th stair
+Egg Dropping Puzzle
+Optimal Strategy For A Game
+Longest Increasing Subsequence
+Longest Common Subsequence
+0 - 1 Knapsack Problem
+Zero Sum Subarrays
+Kth smallest element
+Trie | (Insert and Search)
+Shortest Common Supersequence
+Steps by Knight
+Maximize The Cut Segments
+Print Anagrams Together
+Word Break
+Generate Parentheses
+Find Missing And Repeating
+Count Occurences of Anagrams
+Painting the Fence
+Largest Number formed from an Array
+Maximum Product Subarray
+Form a palindrome
+Rotate a 2D array without using extra space
+Longest Sub-Array with Sum K
+Factorials of large numbers
+Find length of longest subsequence
+Length of the longest substring
+k largest elements
+Longest Common Substring
+Smallest distinct window
+Count triplets with sum smaller than X
+Minimum swaps and K together
+LCS of three strings
+Minimum sum
+Minimize the Heights II
+Print N-bit binary numbers having more 1s than 0s
+Edit Distance
+Maximum sum increasing subsequence
+Minimum cost to fill given weight in a bag
+Coin Change
+Number of Coins
+nCr  DP
+Maximum path sum in matrix
+Partition Equal Subset Sum
+Median in a row-wise sorted Matrix
+First non-repeating character in a stream
+Largest square formed in a matrix
+Floyd Warshall
+Huffman Encoding
+Subset Sum Problem
+Minimize the Heights I
