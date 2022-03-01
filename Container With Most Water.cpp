@@ -1,10 +1,10 @@
 /*
-FOr explanation of the logic see the below video:-
+For explanation of the logic see the below video:-
 https://youtu.be/qUDp8IUbZto
+https://youtu.be/ZHQg07n_tbg
 */
 #include <iostream>
 using namespace std;
-int maxArea(int A[], int len);
 
 long long maxArea(long long A[], int len)
 {

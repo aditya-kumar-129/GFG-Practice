@@ -39,7 +39,7 @@ bool isLoop(Node *head)
   return true;
 }
 
-// I don't know why we have used this function
+// This function is used to calculate the length of the linked list so as to compare whether loop is removed or not
 int length(Node *head)
 {
   int ret = 0;
@@ -50,57 +50,45 @@ int length(Node *head)
   }
   return ret;
 }
-
+  /*
+    See the below youtube video to understand the logic behind the solution of the problem
+    https://www.youtube.com/watch?v=jcZtMh_jov0
+  */
 class Solution
 {
 public:
-  //Function to remove a loop in the linked list.
-  /*
-    So basically we run the code to detect if their is any loop present in the linked list or not (first 2 lines)
-    and if exist (remaing lines) then procedure to remove it.
-
-    See the below article to understand the procedure 
-    https://www.codesdope.com/blog/article/detect-and-remove-loop-in-a-linked-list/
-    
-    Only thing that i can't undestand is the secode if statement like why it is necessory to write that condition
-    if (fast == head)
-    {
-      while (fast->next != head)
-        fast = fast->next;
-      fast->next = NULL;
-    }
-  */
-  void removeLoop(Node *head)
+  Node* detectLoopNode(Node* head)
   {
-    if (head == NULL or head->next == nullptr)
-      return;
-    auto slow = head;
-    auto fast = head;
-    while (fast and fast->next)
+    Node* slow = head, * fast = head;
+    while (fast != NULL && fast->next != NULL)
     {
       slow = slow->next;
       fast = fast->next->next;
-      if (fast == slow)
+      if (slow == fast)   // Loop detected
       {
-        if (fast == head)
+        slow = head;
+        // In this case even if the slow and fast pointer points to the head of the LL then also the while used in the removeloop() will handle this case also
+        while (slow != fast)
         {
-          while (fast->next != head)
-            fast = fast->next;
-          fast->next = NULL;
+          slow = slow->next;
+          fast = fast->next;
         }
-        else
-        {
-          fast = head;
-          while (fast->next != slow->next)
-          {
-            fast = fast->next;
-            slow = slow->next;
-          }
-          slow->next = NULL;
-          break;
-        }
+        return fast;  // first looping Node;
       }
     }
+    return NULL;
+  }
+
+  void removeLoop(Node* head)
+  {
+    Node* loopNode = detectLoopNode(head);
+    if (loopNode == NULL)       // There is no loop
+      return;
+    Node* temp = loopNode->next;
+    while (temp->next != loopNode)
+      temp = temp->next;
+    temp->next = NULL; 
+    return;
   }
 };
 
@@ -110,6 +98,7 @@ int main()
   cin >> t;
   while (t--)
   {
+    // n represents the total number of nodes present in the linked list where as num represents the value to be stored in the node
     int n, num;
     cin >> n;
     Node *head, *tail;

@@ -6,7 +6,7 @@ class Solution
 public:
   int countBuildings(int h[], int n)
   {
-    int left_max[n], count = 1;
+    int count = 1;
     int max = h[0];
     for (int i = 1; i < n; i++)
       if (h[i] > max)

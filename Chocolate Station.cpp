@@ -5,7 +5,7 @@ int getChocolateCost(vector<int> v, int chocolateMRP)
 {
   int chocolate_bought = v[0];
   int chocolate_balance = 0;
-  for (int i = 0; i < v.size()-1; i++)
+  for (int i = 0; i < v.size() - 1; i++)
   {
     int diff = v[i] - v[i + 1];
     if (diff > 0)
@@ -21,26 +21,25 @@ int getChocolateCost(vector<int> v, int chocolateMRP)
       }
     }
   }
-  return chocolate_bought*chocolateMRP;
+  return chocolate_bought * chocolateMRP;
 }
 
-int main() {
-	int t;
-	cin>>t;
-	while(t--)
-	{
-	    int n, tmp;
-	    cin>>n;
-	    vector<int> arr;
-	    while(n--)
-	    {
-	        cin>>tmp;
-	        arr.push_back(tmp);
-	    }
-	    cin>>tmp;
-	    cout<<getChocolateCost(arr, tmp)<<"\n";
-	}
-	return 0;
+int main()
+{
+  int t;
+  cin >> t;
+  while (t--)
+  {
+    int n, tmp;
+    cin >> n;
+    vector<int> arr;
+    while (n--)
+    {
+      cin >> tmp;
+      arr.push_back(tmp);
+    }
+    cin >> tmp;
+    cout << getChocolateCost(arr, tmp) << "\n";
+  }
+  return 0;
 }
-
-

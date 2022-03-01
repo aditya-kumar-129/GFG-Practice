@@ -1,13 +1,10 @@
-Add 1 to a no represented as LL.cpp
-Add two numbers represented by LL.cpp
-Container With Most Water.cpp
-Count Inversions in an array.cpp
+Container With Most Water.cpp     NICE LOGIC TWO POINTER ALGORITHM APPROACH    VVI
+Count Inversions in an array.cpp  VVI MODIFICATION IN MERGE SORT
 Counting elements in two arrays.cpp
-Delete N nodes after M nodes of a LL.cpp
 Detect loop in a LL.cpp
 Equilibrium Point.cpp
-Even and Odd.cpp
-Get minimum element from stack.cpp
+Even and Odd.cpp      // NICE LOGIC
+Get minimum element from stack.cpp      // OPTIMISATION PART IS IMPORTANT
 Heap Sort.cpp
 Kadanes Algorithm.cpp
 Largest subarray with 0 sum.cpp
@@ -34,13 +31,13 @@ Validate an IP Address.cpp
 Word with maximum frequency.cpp
 Rearrange characters.cpp
 Rearrange an array with O(1) extra space.cpp   (VVI)
-Floor in a Sorted Array.cpp
+Floor in a Sorted Array.cpp   // OPTIMISATION PART IS IMPORTANT
 Maximum Intervals Overlap.cpp
 Number of 1 Bits.cpp
 Closest Strings.cpp
 Element with left side smaller and right side greater (SOME METHODS ARE USED WHICH I DON'T GET)
 Pairs with Positive Negative values.cpp
-Count Substrings.cpp
+Count Substrings.cpp   GOOD QUESTION
 Count the elements.cpp
 Kth distance.cpp
 Maximum average subarray.cpp
@@ -49,15 +46,15 @@ Search in a Rotated Array.cpp
 Add Binary Strings.cpp
 Angle between hour and minute hand.cpp
 Array Pair Sum Divisibility Problem
-Circular tour.cpp  USING QUEUE METHOD I don't Get
+aaaaaaaaaaaaacular tour.cpp  
 Count pairs with given sum.cpp
 Count the Reversals.cpp
-Count the triplets.cpp   FIRST METHOD IS GOOD
+Count the triplets.cpp   // WHEN THE ARRAY CONTAINS DULICATE ELEMENTS(THIS ONE IS AWESOME)
 Count triplets with sum smaller than X.cpp
 Equal Sum.cpp
 Find All Four Sum Numbers.cpp
 Find the element that appears once in sorted array.cpp
-Generate Grey Code Sequences.cpp
+Generate Grey Code Sequences.cpp    // NICE LOGIC
 Is Binary Number Multiple of 3.cpp
 Josephus problem.cpp
 Merge Sort on Doubly Linked List.cpp
@@ -70,4 +67,22 @@ Rotation.cpp
 Sort an array according to the other.cpp
 Subtraction in Linked List.cpp
 Sum Tree.cpp
-Frequencies of Limited Range Array Elements.cpp
+Frequencies of Limited Range Array Elements.cpp   // OPTIMISATION PART IS IMPORTANT
+Rearrange array in alternating positive & negative items.cpp
+Bellman-Ford Algorithm.cpp
+Bit Difference HARD.cpp
+Arrange Consonants and Vowels.cpp   Have a look on the optimum solution.
+Minimum distance between duplicates in a String.cpp
+Count substrings that starts with character X and ends with character Y.cpp   NICE APPROACH
+Circular tour.cpp
+Does robot moves circular.cpp
+Element with left side smaller and right side greater.cpp   // OPTIMISATION PART IS IMPORTANT
+Non Repeating Numbers.cpp   // OPTIMISATION PART IS IMPORTANT
+Find Missing And Repeating.cpp  // OPTIMISATION PART IS IMPORTANT
+Find element occuring once when all other are present thrice.cpp // OPTIMISATION PART IS IMPORTANT
+Find the Highest number.cpp  // OPTIMISATION PART IS IMPORTANT
+Non Repeating Character.cpp   // OPTIMISATION PART IS IMPORTANT
+Game with String.cpp // NICE LOGIC
+Sort an array of 0s, 1s and 2s.cpp // OPTIMISATION PART IS IMPORTANT
+Given a LL of 0s, 1s and 2s, sort it // SOLVE IT IN SINGLE TRAVERSAL (HINT:- LINK CHANGE)
+Given only a pointer to a node to be deleted.cpp // NICE LOGIC

@@ -15,12 +15,11 @@ public:
 
   int find(int n)
   {
-    int temp = n;
-    while (n--)
+    while (n)
     {
-      if (chk(temp))
-        return temp;
-      temp--;
+      if (chk(n))
+        return n;
+      n--;
     }
   }
 };

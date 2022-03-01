@@ -4,6 +4,10 @@ using namespace std;
 class Solution
 {
 public:
+  /*
+  accumulate(): This function returns the sum of all the values lying in a range between [first, last) with the variable sum.
+  accumulate(first, last, sum);
+  */
   string equilibrium(int *arr, int n)
   {
     int sum = accumulate(arr, arr + n, 0);

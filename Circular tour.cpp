@@ -25,7 +25,7 @@ public:
         capacity = 0;
       }
     }
-    return (capacity + deficit > 0) ? start : -1;
+    return (capacity + deficit > 0) ? start : -1; 
   }
 };
 

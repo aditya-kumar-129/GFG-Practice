@@ -16,6 +16,7 @@ public:
     }
     return h;
   }
+
   vector<int> countEleLessThanOrEqual(int arr1[], int arr2[], int m, int n)
   {
     vector<int> v;
@@ -49,4 +50,18 @@ int main()
     cout << endl;
   }
   return 0;
+}
+
+// Method 2:- Using upper_bound() function
+
+vector<int> countEleLessThanOrEqual(int arr1[], int arr2[], int m, int n)
+{
+  sort(arr2, arr2 + n);
+  vector<int> ans;
+  for (int i = 0;i < m;i++) 
+  {
+    int x = upper_bound(arr2, arr2 + n, arr1[i]) - arr2;
+    ans.push_back(x);
+  } 
+  return ans;
 }

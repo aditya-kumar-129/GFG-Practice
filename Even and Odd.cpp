@@ -72,3 +72,26 @@ int main()
   }
   return 0;
 }
+
+// Method :- 2
+// Space Com[lexity :- O(n)
+void reArrange(int arr[], int N) 
+{
+  int even = 0, odd = 1;
+  int ans[N];
+  for (int i = 0;i < N;i++) 
+  {
+    if (arr[i] % 2 == 0) 
+    {
+      ans[even] = arr[i];
+      even += 2;
+    }
+    else if (arr[i] % 2 == 1) 
+    {
+      ans[odd] = arr[i];
+      odd += 2;
+    }
+  }
+  for (int i = 0;i < N;i++)
+    arr[i] = ans[i];
+}

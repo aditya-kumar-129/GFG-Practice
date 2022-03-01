@@ -1,49 +1,99 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class node
+struct Node
 {
-	public:
 	int data;
-	node* left;
-	node* right;
+	struct Node* left;
+	struct Node* right;
+	Node(int val) 
+	{
+		data = val;
+		left = right = NULL;
+	}
 };
 
-int maxDepth(node* node)
+Node* buildTree(string str)
 {
-	if (node == NULL)
-		return 0;
-	else
-	{
-		/* compute the depth of each subtree */
-		int lDepth = maxDepth(node->left);
-		int rDepth = maxDepth(node->right);
-	
-		/* use the larger one */
-		if (lDepth > rDepth)
-			return(lDepth + 1);
-		else 
-			return(rDepth + 1);
+	if (str.length() == 0 || str[0] == 'N')
+		return NULL;
+	vector<string> ip;
+	istringstream iss(str);
+	for (string str; iss >> str; )
+		ip.push_back(str);
+	Node* root = new Node(stoi(ip[0]));
+	queue<Node*> queue;
+	queue.push(root);
+	int i = 1;
+	while (!queue.empty() && i < ip.size()) {
+		Node* currNode = queue.front();
+		queue.pop();
+		string currVal = ip[i];
+		if (currVal != "N") {
+			currNode->left = new Node(stoi(currVal));
+			queue.push(currNode->left);
+		}
+		i++;
+		if (i >= ip.size())
+			break;
+		currVal = ip[i];
+		if (currVal != "N") {
+			currNode->right = new Node(stoi(currVal));
+			queue.push(currNode->right);
+		}
+		i++;
 	}
+	return root;
 }
 
-node* newNode(int data)
-{
-	node* Node = new node();
-	Node->data = data;
-	Node->left = NULL;
-	Node->right = NULL;
-	return(Node);
-}
+class Solution {
+public:
+	// Using level order traversal
+	int height(struct Node* node) 
+	{
+		queue<Node*>q;
+		int count = 0;
+		q.push(node);
+		while (q.empty() == false)
+		{
+			int size = q.size();
+			count++;
+			for (int i = 0;i < size;i++)
+			{
+				Node* curr = q.front();
+				q.pop();
+				if (curr->left != NULL)
+					q.push(curr->left);
+				if (curr->right != NULL)
+					q.push(curr->right);
+			}
+		}
+		return count;
+	}
+};
 
 int main()
 {
-	node *root = newNode(1);
-	root->left = newNode(2);
-	root->right = newNode(3);
-	root->left->left = newNode(4);
-	root->left->right = newNode(5);
-	
-	cout << "Height of tree is " << maxDepth(root);
+	int t;
+	scanf("%d ", &t);
+	while (t--)
+	{
+		string treeString;
+		getline(cin, treeString);
+		Node* root = buildTree(treeString);
+		Solution ob;
+		cout << ob.height(root) << endl;
+	}
 	return 0;
+}  
+
+// Method 2:- Uisng recursive solution:-
+
+int height(struct Node* node) 
+{
+	if (node == NULL) 
+		return 0;
+	int x = height(node->left);
+	int y = height(node->right);
+	return max(x, y) + 1;
 }

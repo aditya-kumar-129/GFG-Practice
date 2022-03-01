@@ -7,13 +7,8 @@ public:
   int findIndex(string str)
   {
     int len = str.length();
-    int open[len + 1], close[len + 1];
+    int open[len + 1] = {0}, close[len + 1] = {0};
     int index = -1;
-    memset(open, 0, sizeof(open));
-    memset(close, 0, sizeof(close));
-
-    open[0] = 0;
-    close[len] = 0;
     if (str[0] == '(')
       open[1] = 1;
     if (str[len - 1] == ')')
@@ -57,4 +52,24 @@ int main()
     Solution ob;
     cout << ob.findIndex(s) << endl;
   }
+}
+
+// Method 2:- 
+int findIndex(string str) 
+{ 
+  int closbrac = 0, openbrac, n;
+  n = str.length();
+  for (int i = 0;i < n;i++)
+    if (str[i] == ')')
+      closbrac++;
+  for (int i = 0;i < n;i++)
+  {
+    if (str[i] == ')')
+      closbrac--;
+    else
+      openbrac++;
+    if (openbrac == closbrac)
+      return i + 1;
+  }
+  return 0;
 }

@@ -4,7 +4,7 @@ using namespace std;
 class Solution
 {
 public:
-  // Method 1 :-  In this case we have padded the input before the calculation so that the length of both the string are now equal and their should be no overhead to do calculation after calculating till eqaul length .
+  // Method 1 :-  In this case we have padded the input before the calculation so that the length of both the string are now equal and their should be no overhead to do calculation after calculating till equal length .
 
   string addBinary(string A, string B)
   {

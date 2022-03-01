@@ -1,6 +1,4 @@
-#include <iostream>
 #include <stdio.h>
-#include <stdlib.h>
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -18,78 +16,64 @@ struct Node
 class Solution
 {
 public:
-  Node *merge(Node *firstNode, Node *secondNode)
+  Node *merge(Node *first, Node *second)
   {
-    Node *merged = (struct Node *)malloc(sizeof(struct Node));
-    Node *temp = (struct Node *)malloc(sizeof(struct Node));
-
-    //merged is equal to temp so in the end we have the top Node.
-    merged = temp;
-
-    //while either firstNode or secondNode becomes NULL
-    while (firstNode != NULL && secondNode != NULL)
+    Node *node, *temp;
+    if (first->data > second->data)
+      node = second, second = second->next;
+    else
+      node = first, first = first->next;
+    temp = node;
+    while (first != NULL && second != NULL)
     {
-
-      if (firstNode->data <= secondNode->data)
-      {
-        temp->next = firstNode;
-        firstNode = firstNode->next;
-      }
-
+      if (first->data > second->data)
+        node->next = second, second = second->next;
       else
-      {
-        temp->next = secondNode;
-        secondNode = secondNode->next;
-      }
-      temp = temp->next;
+        node->next = first, first = first->next;
+      node = node->next;
     }
-
-    //any remaining Node in firstNode or secondNode gets inserted in the temp List
-    while (firstNode != NULL)
+    while (second != NULL)
     {
-      temp->next = firstNode;
-      firstNode = firstNode->next;
-      temp = temp->next;
+      node->next = second;
+      node = node->next;
+      second = second->next;
     }
-
-    while (secondNode != NULL)
+    while (first != NULL)
     {
-      temp->next = secondNode;
-      secondNode = secondNode->next;
-      temp = temp->next;
+      node->next = first;
+      node = node->next;
+      first = first->next;
     }
-    //return the head of the sorted list
-    return merged->next;
+    return temp;
   }
+
   Node *middle(Node *head)
   {
-    Node *slow = head;
-    Node *fast = head->next;
-
-    while (slow->next != NULL && (fast != NULL && fast->next != NULL))
+    Node *slow = head, *fast = head;
+    while (fast != NULL && fast->next != NULL)
     {
       slow = slow->next;
       fast = fast->next->next;
     }
-    return slow;
+    fast = slow->next;
+    slow->next = NULL;
+    return fast;
   }
+
   Node *mergeSort(Node *head)
   {
-    if (head->next == NULL)
-    {
+    // if there is no element or only one element then in that case just return the head
+    if (head == NULL || head->next == NULL)
       return head;
+    // In case when there are only two elements present in the LL
+    if (head->next->next == NULL)
+    {
+      Node *fast = head->next;
+      head->next = NULL;
+      return merge(head, fast);
     }
-
-    Node *mid = (struct Node *)malloc(sizeof(struct Node));
-    ;
-    Node *head2 = (struct Node *)malloc(sizeof(struct Node));
-    ;
-    mid = middle(head);
-    head2 = mid->next;
-    mid->next = NULL;
-    //recursive call to sort() hence diving our problem, and then merging the solution
-    Node *finalhead = merge(mergeSort(head), mergeSort(head2));
-    return finalhead;
+    Node * head2 = middle(head);
+    return merge(mergeSort(head), mergeSort(head2));
   }
 };
 
@@ -129,4 +113,4 @@ int main()
     printList(a);
   }
   return 0;
-} // } Driver Code Ends
+}

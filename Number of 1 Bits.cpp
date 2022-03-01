@@ -11,6 +11,8 @@ class Solution
 public:
   // Below method uses Brian Kernighan’s Algorithm 
   // Have a look on the the second article link of gfg that has been shared above
+  // Have a look at the working of the Brian Kernighan’s Algorithm using the foolowing YouTube Video:- 
+  // https://www.youtube.com/watch?v=e0sVe4-JJJI
   int setBits(int n)
   {
     if (n == 0)

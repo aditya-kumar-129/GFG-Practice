@@ -4,6 +4,7 @@ using namespace std;
 class Solution
 {
 public:
+// Time Complexity :- O(nlogn)
   bool check_elements(int arr[], int n, int A, int B)
   {
     sort(arr, arr + n);
@@ -36,7 +37,8 @@ int main()
 }
 
 // Method 2:-
-
+// Space Complexity :- O(n)
+// Time Complexity :- O(n)
 bool check_elements(int arr[], int n, int A, int B)
 {
   map<int, int> mp;
@@ -50,29 +52,15 @@ bool check_elements(int arr[], int n, int A, int B)
 }
 
 // method 3 :- 
-// OPTIMUM SOLUTION Time Complexity :- O(n)
 bool check_elements(int arr[], int n, int A, int B)
 {
-  for (int i = 0; i < n; i++)
-  {
-    if ((abs(arr[i])) >= A && (abs(arr[i])) <= B)
-    {
-      int z = abs(arr[i]) - A;
-      if (z < n && arr[z] > 0)
-        arr[z] = arr[z] * -1;
-    }
-  }
-  int range = B - A;
-  int count = 0;
-  for (int i = 0; i <= range; i++)
-  {
-    if (arr[i] > 0)
-      return false;
-    else
-      count++;
-  }
-  if (count != range + 1)
-    return false;
-  else
+  sort(arr, arr + n);
+  int k = 0;
+  for (int i = 0;i < n;i++)
+    if (arr[i] == A + k && arr[i] <= B)
+      k++;
+  if (k - 1 == B - A)
     return true;
+  else
+    return false;
 }

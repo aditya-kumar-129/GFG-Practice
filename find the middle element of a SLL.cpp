@@ -1,9 +1,3 @@
-// Question:- How will you find the middle element of a singly linked list without iterating the list more than once?
-
-/*
-  Logic:- Traverse linked list using two pointers. Move one pointer by one and the other pointers by two. When the fast pointer reaches the end slow pointer will reach the middle of the linked list.
-*/
-
 #include <iostream>
 using namespace std;
 class Node{

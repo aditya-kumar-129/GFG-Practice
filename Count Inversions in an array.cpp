@@ -9,7 +9,7 @@ using namespace std;
 class Solution
 {
 public:
-  void merge(int start, int mid, int end, long long arr[], long long int &count)
+  void merge(int start, int mid, int end, long long arr[], long long int& count)
   {
     int n1 = mid - start + 1;
     int n2 = end - mid;
@@ -38,7 +38,7 @@ public:
       arr[k++] = right[j++];
   }
 
-  void mergesort(int start, int end, long long arr[], long long int &count)
+  void mergesort(int start, int end, long long arr[], long long int& count)
   {
     if (start < end)
     {

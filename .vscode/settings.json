@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "*.ejs": "html",
+    "string_view": "cpp",
+    "regex": "cpp",
+    "iostream": "cpp",
+    "vector": "cpp",
+    "ratio": "cpp"
+  }
+}

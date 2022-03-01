@@ -66,12 +66,6 @@ public:
       free(node_ptr);
       return;
     }
-    /* Below method use the following concept :-
-        transfer the data present on the right side of the node to be deleted 
-        and then transfer the next pointer also to the node to be deleted 
-        then just remove the right side of the node to be deleted 
-        because link has alredy been formed !!!
-    */
     Node *temp = node_ptr->next;
     node_ptr->data = temp->data;
     node_ptr->next = temp->next;
@@ -96,4 +90,12 @@ int main(void)
     printList(head);
   }
   return (0);
+}
+
+// Same method:- 
+
+void deleteNode(Node* del)
+{
+  del->data = del->next->data;
+  del->next = (del->next)->next;
 }

@@ -5,28 +5,29 @@ class Solution
 {
 public:
   // Recursive Approach 
-  vector<string> generateCode(int n)
+  vector <string> generateCode(int n)
   {
-    if (n <= 0)
-      return {"0"};
-
+    vector<string> v;
     if (n == 1)
-      return {"0", "1"};
-
-    vector<string> prev_res = generateCode(n - 1);
-    vector<string> res;
-    for (int i = 0; i < prev_res.size(); i++)
     {
-      string s = prev_res[i];
-      res.push_back("0" + s);
+      v.push_back("0");
+      v.push_back("1");
+      return v;
     }
-
-    for (int i = prev_res.size() - 1; i >= 0; i--)
+    vector<string> res = generateCode(n - 1);
+    for (int i = 0;i < res.size();i++)
     {
-      string s = prev_res[i];
-      res.push_back("1" + s);
+      string str = "0";
+      str += res[i];
+      v.push_back(str);
     }
-    return res;
+    for (int i = res.size() - 1;i >= 0;i--)
+    {
+      string str = "1";
+      str += res[i];
+      v.push_back(str);
+    }
+    return v;
   }
 };
 
@@ -49,28 +50,44 @@ int main()
 
 // Method 2 :-  Iterative Approach
 
-vector<string> generateCode(int N)
+vector <string> generateCode(int N)
 {
-  vector<string> res = {"0", "1"};
-  if (N == 1)
-    return res;
-  for (int i = 1; i < N; i++)
+  vector<string> ans{ "0", "1" };
+  for (int i = 2; i <= N; i++) 
   {
-    vector<string> temp;
-    for (int i = 0; i < res.size(); i++)
-    {
-      if (i % 2 == 0)
-      {
-        temp.push_back(res[i] + "0");
-        temp.push_back(res[i] + "1");
-      }
-      else
-      {
-        temp.push_back(res[i] + "1");
-        temp.push_back(res[i] + "0");
-      }
-    }
-    res = temp;
+    int len = ans.size();
+    for (int i = 0; i < len; i++) 
+      ans[i] = "0" + ans[i];
+    for (int i = len-1; i >=0; i--) 
+      ans.push_back("1" + ans[i]);
+  }
+  return ans;
+}
+
+// Method 3 :- Using bitset Don't know the logic
+
+vector <string> generateCode(int N)
+{
+  vector<string> ans;
+  for (int i = 0; i < (1 << N); i++)
+  {
+    bitset<16> curr((i ^ (i >> 1)));
+    string s = curr.to_string();
+    ans.emplace_back(s.substr(16 - N));
+  }
+  return ans;
+}
+
+vector <string> generateCode(int N)
+{
+  vector <string> res;
+  int num = pow(2, N);
+  for (int i = 0; i < num; i++) {
+    string str = "";
+    int gray = i ^ (i >> 1);
+    str = bitset<16>(gray).to_string();
+    str = str.substr(16 - N, N);
+    res.push_back(str);
   }
   return res;
 }

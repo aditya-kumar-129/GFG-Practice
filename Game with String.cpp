@@ -45,3 +45,28 @@ int main()
   }
   return 0;
 }
+
+// Method 2 :- Without using inbuilt priority queue
+
+int minValue(string s, int k) 
+{
+  int c = 0;
+  unordered_map<char, int>m;
+  for (int i = 0;i < s.length();i++) 
+    m[s[i]]++;
+  while (k--)
+  {
+    int maxcount = 0;
+    char ch;
+    for (auto x : m)
+      if (x.second > maxcount)
+        maxcount = x.second,ch = x.first;
+    m[ch]--;
+  }
+  for (auto x : m) 
+  {
+    int p = x.second;
+    c = c + (p * p);
+  }
+  return c;
+}

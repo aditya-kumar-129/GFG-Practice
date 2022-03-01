@@ -1,11 +1,10 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include<iostream>
+using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
-  struct Node *prev;
-
+  struct Node* next;
+  struct Node* prev;
   Node(int x)
   {
     data = x;
@@ -17,7 +16,7 @@ struct Node
 class Solution
 {
 public:
-  Node *deleteNode(Node *head, int x)
+  Node* deleteNode(Node* head, int x)
   {
     if (head == NULL)
       return NULL;
@@ -26,22 +25,20 @@ public:
       delete head;
       return NULL;
     }
-    Node *curr = head;
+    Node* curr = head;
     if (x == 1)
     {
-      curr = head;
       curr->next->prev = NULL;
-      head = head->next;
+      head = curr->next;
+      curr->next = NULL;
       delete curr;
       return head;
     }
-
     while (x != 1)
     {
       curr = curr->next;
       x--;
     }
-
     curr->prev->next = curr->next;
     if (curr->next != NULL)
       curr->next->prev = curr->prev;
@@ -51,38 +48,28 @@ public:
   }
 };
 
-// { Driver Code Starts.
-
-/* Function to print Nodes in a given doubly linked list
-   This function is same as printList() of singly linked lsit */
-void printList(struct Node *node)
+void printList(struct Node* node)
 {
   while (node != NULL)
   {
-    printf("%d ", node->data);
+    cout << node->data;
     node = node->next;
   }
   printf("\n");
 }
 
-/* Drier program to test above functions*/
 int main()
 {
   int t, x, n, i;
-  scanf("%d", &t);
-
+  cin>>t;
   while (t--)
   {
-    /* Start with the empty list */
-    struct Node *temp, *head = NULL;
-    scanf("%d", &n);
-
+    struct Node* temp, * head = NULL;
+    cin>>n;
     temp = NULL;
-
     for (i = 0; i < n; i++)
     {
-      scanf("%d", &x);
-
+      cin>>x;
       if (head == NULL)
       {
         head = new Node(x);
@@ -90,18 +77,15 @@ int main()
       }
       else
       {
-        Node *temp1 = new Node(x);
+        Node* temp1 = new Node(x);
         temp->next = temp1;
         temp1->prev = temp;
         temp = temp->next;
       }
     }
-
-    scanf("%d", &x);
-
+    cin>>x;
     Solution ob;
     head = ob.deleteNode(head, x);
-
     printList(head);
     while (head->next != NULL)
     {
@@ -109,7 +93,6 @@ int main()
       head = head->next;
       free(temp);
     }
-
     free(head);
   }
   return 0;

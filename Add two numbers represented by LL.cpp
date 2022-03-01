@@ -1,7 +1,6 @@
 /*
   You can refer the below article for more explanation:-
   https://www.geeksforgeeks.org/add-two-numbers-represented-by-linked-lists/
-  
 */
 #include <bits/stdc++.h>
 using namespace std;
@@ -63,7 +62,7 @@ public:
   {
     first = reverse(first);
     second = reverse(second);
-    Node *sum = NULL;
+    Node *res = NULL, *temp;
     int carry = 0, newval;
     while (first != NULL || second != NULL || carry != 0)
     {
@@ -72,21 +71,20 @@ public:
         newval += first->data;
       if (second)
         newval += second->data;
-
       carry = newval / 10;
       newval = newval % 10;
-
-      // Here we are adding the new number generated from the front that's why we don't have to reverse the result
-      Node *newnode = new Node(newval);
-      newnode->next = sum;
-      sum = newnode;
-
+      Node *newNode = new Node(newval);
+      if (!res)
+        res = newNode, temp = newNode;
+      else
+        temp->next = newNode, temp = temp->next;
       if (first)
         first = first->next;
       if (second)
         second = second->next;
     }
-    return sum;
+    res = reverse(res);
+    return res;
   }
 };
 

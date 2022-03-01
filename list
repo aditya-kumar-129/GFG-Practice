@@ -5,16 +5,12 @@ Count number of words.cpp
 DFS of a graph.cpp
 Diameter of a Bianry Tree.cpp
 Equal point in a string of brackets.cpp
-Find triplets with zero sum.cpp
-First Repeating Element.cpp
 Flattening a Linked List.cpp
 LRU Cache.cpp
-Merge Sort for LL.cpp
 Merge Without Extra Space.cpp
 Multiply two strings.cpp
 Pairwise swap elements of a LL.cpp
 Remove duplicates from an unsorted LL.cpp
-Remove loop in LL.cpp
 Reverse a LL in groups of given size.cpp
 Star elements.cpp
 Overlapping Intervals.cpp
@@ -35,6 +31,6 @@ Lucky Numbers.cpp
 Merge k Sorted Arrays.cpp
 Merge K sorted linked lists.cpp RECURSIVE APPROACH
 Merge Sort on Doubly Linked List.cpp
-Non Repeating Numbers.cpp
 Possible Words From Phone Digits.cpp
 Subtraction in Linked List.cpp
+Distance of nearest cell having 1.cpp

@@ -48,7 +48,7 @@ public:
     while (head != NULL)
     {
       sum = carry + head->data;
-      carry = (sum >= 10) ? 1 : 0;
+      carry = (sum == 10) ? 1 : 0;
       sum = sum % 10;
       head->data = sum;
       temp = head;

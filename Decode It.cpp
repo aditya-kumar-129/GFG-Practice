@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// I don't know why isdigit() function does not work here :(
+// I don't know why isdigit() function does not work here :( because may be that the input given is character may be this is the reason
 
 class Solution
 {

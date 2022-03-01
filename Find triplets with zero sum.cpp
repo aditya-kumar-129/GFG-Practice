@@ -1,11 +1,11 @@
 #include <bits/stdc++.h>
-#include <stdlib.h>
-#include <iostream>
 using namespace std;
 
 class Solution
 {
 public:
+  // Two Pointers Algorithm
+  // OPTIMUM SOLUTION
   bool findTriplets(int arr[], int n)
   {
     sort(arr, arr + n);
@@ -13,12 +13,11 @@ public:
     {
       int l = i + 1;
       int r = n - 1;
-      int x = arr[i];
       while (l < r)
       {
-        if (arr[l] + arr[r] + x == 0)
+        if (arr[l] + arr[r] + arr[i] == 0)
           return true;
-        else if (arr[l] + arr[r] + x < 0)
+        else if (arr[l] + arr[r] + arr[i] < 0)
           l++;
         else
           r--;

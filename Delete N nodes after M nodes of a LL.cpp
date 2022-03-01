@@ -6,7 +6,7 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
@@ -14,8 +14,8 @@ struct Node
   }
 };
 
-struct Node *start = NULL;
-void printList(struct Node *node)
+struct Node* start = NULL;
+void printList(struct Node* node)
 {
   while (node != NULL)
   {
@@ -29,7 +29,7 @@ void insert(int n1)
 {
   int n, value;
   n = n1;
-  struct Node *temp;
+  struct Node* temp;
   for (int i = 0; i < n; i++)
   {
     cin >> value;
@@ -50,9 +50,9 @@ void insert(int n1)
 class Solution
 {
 public:
-  void linkdelete(struct Node *head, int M, int N)
+  void linkdelete(struct Node* head, int M, int N)
   {
-    Node *curr = head, *t;
+    Node* curr = head, * t;
     int count;
     while (curr)
     {
@@ -63,7 +63,7 @@ public:
       t = curr->next;
       for (count = 1; count <= N && t != NULL; count++)
       {
-        Node *temp = t;
+        Node* temp = t;
         t = t->next;
         free(temp);
       }
@@ -81,13 +81,11 @@ int main()
   {
     cin >> n1;
     int m, n;
-    cin >> m;
-    cin >> n;
+    cin >> m >> n;
     insert(n1);
     Solution ob;
     ob.linkdelete(start, m, n);
     printList(start);
   }
-
   return 0;
 }

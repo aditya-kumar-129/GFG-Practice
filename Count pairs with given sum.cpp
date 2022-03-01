@@ -36,3 +36,31 @@ int main()
   }
   return 0;
 }
+
+// Using two pointer Algorithm
+int getPairsCount(int arr[], int n, int k) {
+  sort(arr, arr + n);
+  int end = n - 1;
+  int start = 0;
+  int ans = 0;
+  while (start < end) 
+  {
+    if (arr[start] + arr[end] == k) 
+    {
+      ans++;
+      int i = start + 1;
+      //this loop to  include the case when their are identical numbers whose sum equal to k
+      while (i < end && arr[i] + arr[end] == k) 
+      {
+        ans++;
+        i++;
+      }
+      end--;
+    }
+    else if (arr[start] + arr[end] > k) 
+      end--;
+    else 
+      start++;
+  }
+  return ans;
+}

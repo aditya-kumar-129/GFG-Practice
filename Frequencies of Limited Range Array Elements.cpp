@@ -14,7 +14,7 @@ public:
     {
       if (input[i] / n)
         cout << "Element " << (i + 1) << " occurs " << input[i] / n << " times" << endl;
-      // Change the element back to original value
+      // Changing the element back to original value
       input[i] = input[i] % n + 1;
     }
   }

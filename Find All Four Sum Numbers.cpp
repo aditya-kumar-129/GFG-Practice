@@ -6,7 +6,7 @@ class Solution
 public:
   vector<vector<int>> fourSum(vector<int> &nums, int target)
   {
-    set<vector<int>> ans;
+    set<vector<int>> ans;     // Set is used to sort the tuples and to identify the unique tuples only
     int n = nums.size();
     sort(nums.begin(), nums.end());
     int sum;

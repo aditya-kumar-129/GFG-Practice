@@ -64,31 +64,33 @@ Node *sortedMerge(Node *head1, Node *head2)
     return head1;
 
   Node *mergedHead = NULL;
-  if (head1->data <= head2->data){
+  if (head1->data <= head2->data)
+  {
     mergedHead = head1;
     head1 = head1->next;
   }
-  else{
+  else
+  {
     mergedHead = head2;
     head2 = head2->next;
   }
-
   Node *mergedTail = mergedHead;
   while (head1 != nullptr && head2 != nullptr)
   {
     Node *temp = NULL;
-    if (head1->data <= head2->data){
+    if (head1->data <= head2->data)
+    {
       temp = head1;
       head1 = head1->next;
     }
-    else{
+    else
+    {
       temp = head2;
       head2 = head2->next;
     }
     mergedTail->next = temp;
     mergedTail = temp;
   }
-
   if (head1 != nullptr)
     mergedTail->next = head1;
   else if (head2 != nullptr)

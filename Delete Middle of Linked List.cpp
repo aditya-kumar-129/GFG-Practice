@@ -21,6 +21,7 @@ void printList(Node *node)
   }
   cout << "\n";
 }
+
 int main()
 {
   int t;
