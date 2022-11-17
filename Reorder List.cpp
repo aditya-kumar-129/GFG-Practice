@@ -4,27 +4,27 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-void reorderList(struct Node *head);
+void reorderList(struct Node* head);
 
-struct Node *newNode(int data)
+struct Node* newNode(int data)
 {
-  struct Node *new_Node = new Node(data);
+  struct Node* new_Node = new Node(data);
   new_Node->data = data;
-  new_Node->next = NULL;
+  new_Node->next = nullptr;
   return new_Node;
 }
 
-void printList(struct Node *Node)
+void printList(struct Node* Node)
 {
-  while (Node != NULL)
+  while (Node != nullptr)
   {
     printf("%d ", Node->data);
     Node = Node->next;
@@ -32,10 +32,10 @@ void printList(struct Node *Node)
   printf("\n");
 }
 
-void freeList(struct Node *head)
+void freeList(struct Node* head)
 {
-  struct Node *temp;
-  while (head != NULL)
+  struct Node* temp;
+  while (head != nullptr)
   {
 
     temp = head;
@@ -50,7 +50,7 @@ int main(void)
   cin >> t;
   while (t--)
   {
-    struct Node *temp, *head;
+    struct Node* temp, * head;
     cin >> n >> x;
     head = new Node(x);
     temp = head;
@@ -67,11 +67,11 @@ int main(void)
   return 0;
 }
 
-Node *reverse(Node *head)
+Node* reverse(Node* head)
 {
-  Node *curr = head;
-  Node *prev = NULL, *next;
-  while (curr != NULL)
+  Node* curr = head;
+  Node* prev = nullptr, * next;
+  while (curr != nullptr)
   {
     next = curr->next;
     curr->next = prev;
@@ -81,22 +81,22 @@ Node *reverse(Node *head)
   return prev;
 }
 
-void reorderList(Node *root)
+void reorderList(Node* root)
 {
-  Node *slow = root, *fast = root, *head1 = root;
-  Node *head2;
-  while ((fast != NULL) && (fast->next != NULL))
+  Node* slow = root, * fast = root, * head1 = root;
+  Node* head2;
+  while ((fast != nullptr) && (fast->next != nullptr))
   {
     slow = slow->next;
     fast = fast->next->next;
   }
   head2 = slow->next;
-  slow->next = NULL;
+  slow->next = nullptr;
   head2 = reverse(head2);
 
-  Node *tmp = head1;
+  Node* tmp = head1;
   head1 = head1->next;
-  while (head2 != NULL)
+  while (head2 != nullptr)
   {
     tmp->next = head2;
     head2 = head2->next;

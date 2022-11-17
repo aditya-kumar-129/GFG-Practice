@@ -4,17 +4,17 @@ using namespace std;
 struct Node
 {
   int data;
-  Node *next;
+  Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-void printList(Node *node)
+void printList(Node* node)
 {
-  while (node != NULL)
+  while (node != nullptr)
   {
     printf("%d ", node->data);
     node = node->next;
@@ -31,10 +31,10 @@ public:
   // SPACE COMPLEXITY :- O(N) or O(n*k);
   // TIME COMPLEXITY :- O(nk Logk)
   // This method gives optimum solution 
-  Node *merge(Node *first, Node *second)
+  Node* merge(Node* first, Node* second)
   {
-    Node *head = new Node(-1);
-    Node *start = head;
+    Node* head = new Node(-1);
+    Node* start = head;
     while (first && second)
     {
       if (first->data <= second->data)
@@ -55,54 +55,23 @@ public:
       start->next = second;
     return head->next;
   }
-  Node *mergeKLists(Node *arr[], int K)
+  Node* mergeKLists(Node* arr[], int K)
   {
-    Node *temp = NULL;
+    Node* temp = nullptr;
     for (int i = 0; i < K; i++)
       temp = merge(temp, arr[i]);
     return temp;
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int N;
-    cin >> N;
-    struct Node *arr[N];
-    for (int j = 0; j < N; j++)
-    {
-      int n, x;
-      cin >> n >> x;
-      arr[j] = new Node(x);
-      Node *curr = arr[j];
-      n--;
-      for (int i = 0; i < n; i++)
-      {
-        cin >> x;
-        Node *temp = new Node(x);
-        curr->next = temp;
-        curr = temp;
-      }
-    }
-    Solution obj;
-    Node *res = obj.mergeKLists(arr, N);
-    printList(res);
-  }
-  return 0;
-}
-
 // BRUTE FORCE APPROACH
-Node *mergeKLists(Node *arr[], int k)
+Node* mergeKLists(Node* arr[], int k)
 {
   vector<int> v;
   for (int i = 0; i < k; i++)
   {
-    Node *temp = arr[i];
-    while (temp != NULL)
+    Node* temp = arr[i];
+    while (temp != nullptr)
     {
       v.push_back(temp->data);
       temp = temp->next;
@@ -110,11 +79,11 @@ Node *mergeKLists(Node *arr[], int k)
   }
   sort(v.begin(), v.end());
   int len = v.size();
-  Node *newNode = new Node(-1);
-  Node *head = newNode;
+  Node* newNode = new Node(-1);
+  Node* head = newNode;
   for (int i = 0; i < len; i++)
   {
-    Node *temp = new Node(v[i]);
+    Node* temp = new Node(v[i]);
     newNode->next = temp;
     newNode = newNode->next;
   }
@@ -122,12 +91,12 @@ Node *mergeKLists(Node *arr[], int k)
 }
 
 // Recursive approach
-Node *merge(Node *a, Node *b)
+Node* merge(Node* a, Node* b)
 {
-  Node *ans = NULL;
-  if (a == NULL)
+  Node* ans = nullptr;
+  if (a == nullptr)
     return b;
-  else if (b == NULL)
+  else if (b == nullptr)
     return a;
   if (a->data <= b->data)
   {
@@ -141,7 +110,7 @@ Node *merge(Node *a, Node *b)
   }
   return ans;
 }
-Node *mergeKLists(Node *arr[], int K)
+Node* mergeKLists(Node* arr[], int K)
 {
   for (int i = 1; i < K; i++)
     arr[0] = merge(arr[0], arr[i]);

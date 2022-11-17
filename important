@@ -86,3 +86,4 @@ Game with String.cpp // NICE LOGIC
 Sort an array of 0s, 1s and 2s.cpp // OPTIMISATION PART IS IMPORTANT
 Given a LL of 0s, 1s and 2s, sort it // SOLVE IT IN SINGLE TRAVERSAL (HINT:- LINK CHANGE)
 Given only a pointer to a node to be deleted.cpp // NICE LOGIC
+Swap all odd and even bits.cpp // HAVE TO LEARN THE NUMBER THAT GIVES ALL THE BITS AT EVEN PLACE AND ODD PLACES

@@ -4,16 +4,16 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *left;
-  struct Node *right;
+  struct Node* left;
+  struct Node* right;
 };
 
-Node *newNode(int val)
+Node* newNode(int val)
 {
-  Node *temp = new Node;
+  Node* temp = new Node;
   temp->data = val;
-  temp->left = NULL;
-  temp->right = NULL;
+  temp->left = nullptr;
+  temp->right = nullptr;
   return temp;
 }
 
@@ -21,17 +21,17 @@ class Solution
 {
 public:
   //Function to return the level order traversal of a tree.
-  vector<int> levelOrder(Node *node)
+  vector<int> levelOrder(Node* node)
   {
     //Your code here
-    queue<Node *> Q;
+    queue<Node*> Q;
     vector<int> V;
     if (!node)
       return V;
     Q.push(node);
     while (!Q.empty())
     {
-      Node *root = Q.front();
+      Node* root = Q.front();
       if (root->left)
         Q.push(root->left);
       if (root->right)
@@ -43,20 +43,20 @@ public:
   }
 };
 
-void inOrder(struct Node *node)
+void inOrder(struct Node* node)
 {
-  if (node == NULL)
+  if (node == nullptr)
     return;
   inOrder(node->left);
   printf("%d ", node->data);
   inOrder(node->right);
 }
 
-Node *buildTree(string str)
+Node* buildTree(string str)
 {
   // Corner Case
   if (str.length() == 0 || str[0] == 'N')
-    return NULL;
+    return nullptr;
 
   // Creating vector of strings from input string after spliting by space
   vector<string> ip;
@@ -66,10 +66,10 @@ Node *buildTree(string str)
     ip.push_back(str);
 
   // Create the root of the tree
-  Node *root = newNode(stoi(ip[0]));
+  Node* root = newNode(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node *> queue;
+  queue<Node*> queue;
   queue.push(root);
 
   // Starting from the second element
@@ -77,7 +77,7 @@ Node *buildTree(string str)
   while (!queue.empty() && i < ip.size())
   {
     // Get and remove the front of the queue
-    Node *currNode = queue.front();
+    Node* currNode = queue.front();
     queue.pop();
     // Get the current node's value from the string
     string currVal = ip[i];
@@ -118,7 +118,7 @@ int main()
   {
     string s;
     getline(cin, s);
-    Node *root = buildTree(s);
+    Node* root = buildTree(s);
     Solution ob;
     vector<int> res = ob.levelOrder(root);
     for (int i : res)
@@ -140,20 +140,20 @@ third method of the above article
 #include <vector>
 #include <unordered_map>
 using namespace std;
- 
+
 // Data structure to store a binary tree node
 struct Node
 {
     int key;
     Node *left, *right;
- 
+
     Node(int key)
     {
         this->key = key;
         this->left = this->right = nullptr;
     }
 };
- 
+
 // Traverse the tree in a preorder fashion and store nodes in a map
 // corresponding to their level
 void preorder(Node* root, int level, auto &map)
@@ -162,25 +162,25 @@ void preorder(Node* root, int level, auto &map)
     if (root == nullptr) {
         return;
     }
- 
+
     // insert the current node and its level into the map
     map[level].push_back(root->key);
- 
+
     // recur for the left and right subtree by increasing the level by 1
     preorder(root->left, level + 1, map);
     preorder(root->right, level + 1, map);
 }
- 
+
 // Recursive function to print level order traversal of a given binary tree
 void levelOrderTraversal(Node* root)
 {
     // create an empty map to store nodes between given levels
     unordered_map<int, vector<int>> map;
- 
+
     // traverse the tree and insert its nodes into the map
     // corresponding to their level
     preorder(root, 1, map);
- 
+
     // iterate through the map and print all nodes between given levels
     for (int i = 1; map[i].size() > 0; i++)
     {
@@ -191,7 +191,7 @@ void levelOrderTraversal(Node* root)
         cout << endl;
     }
 }
- 
+
 int main()
 {
     Node* root = new Node(15);
@@ -202,8 +202,8 @@ int main()
     root->right->left = new Node(16);
     root->right->right = new Node(25);
     root->right->right->right = new Node(30);
- 
+
     levelOrderTraversal(root);
- 
+
     return 0;
 }*/

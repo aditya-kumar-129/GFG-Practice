@@ -4,7 +4,7 @@ using namespace std;
 class Solution
 {
 public:
-  int shortestDistance(vector<string> &s, string word1, string word2)
+  int shortestDistance(vector<string>& s, string word1, string word2)
   {
     int index1 = -1, index2 = -1;
     int min_dist = INT_MAX;
@@ -25,8 +25,8 @@ public:
 int main()
 {
   ios_base::sync_with_stdio(0);
-  cin.tie(NULL);
-  cout.tie(NULL);
+  cin.tie(nullptr);
+  cout.tie(nullptr);
   int t;
   cin >> t;
   while (t--)

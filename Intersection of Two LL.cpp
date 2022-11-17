@@ -4,17 +4,17 @@ using namespace std;
 struct Node
 {
   int data;
-  Node *next;
+  Node* next;
   Node(int val)
   {
     data = val;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-Node *inputList(int size)
+Node* inputList(int size)
 {
-  Node *head, *tail;
+  Node* head, * tail;
   int val;
   cin >> val;
   head = tail = new Node(val);
@@ -27,7 +27,7 @@ Node *inputList(int size)
   return head;
 }
 
-void printList(Node *n)
+void printList(Node* n)
 {
   while (n)
   {
@@ -39,23 +39,23 @@ void printList(Node *n)
 class Solution
 {
 public:
-  Node *findIntersection(Node *head1, Node *head2)
+  Node* findIntersection(Node* head1, Node* head2)
   {
-    Node *head = NULL, *tail = NULL;
-    Node *temp = head2;
+    Node* head = nullptr, * tail = nullptr;
+    Node* temp = head2;
     unordered_map<int, int> mp;
-    while (temp != NULL)
+    while (temp != nullptr)
     {
       mp[temp->data]++;
       temp = temp->next;
     }
     temp = head1;
-    while (temp != NULL)
+    while (temp != nullptr)
     {
       if (mp.find(temp->data) != mp.end())
       {
-        Node *n = new Node(temp->data);
-        if (head == NULL)
+        Node* n = new Node(temp->data);
+        if (head == nullptr)
         {
           head = n;
           tail = n;
@@ -80,11 +80,11 @@ int main()
   {
     int n, m;
     cin >> n;
-    Node *head1 = inputList(n);
+    Node* head1 = inputList(n);
     cin >> m;
-    Node *head2 = inputList(m);
+    Node* head2 = inputList(m);
     Solution obj;
-    Node *result = obj.findIntersection(head1, head2);
+    Node* result = obj.findIntersection(head1, head2);
     printList(result);
     cout << endl;
   }

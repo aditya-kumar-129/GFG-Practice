@@ -9,21 +9,21 @@ public:
   {
     data = d;
   }
-  Node *ptr;
+  Node* ptr;
 };
 
 // Function to check if the linked list is palindrome or not
-bool isPalin(Node *head)
+bool isPalin(Node* head)
 {
-  Node *slow = head;
+  Node* slow = head;
   stack<int> s;
-  while (slow != NULL)
+  while (slow != nullptr)
   {
     s.push(slow->data);
     slow = slow->ptr;
   }
   // Iterate in the list again and check by popping from the stack
-  while (head != NULL)
+  while (head != nullptr)
   {
     int i = s.top();
     s.pop();
@@ -41,13 +41,13 @@ int main()
   Node three = Node(3);
   Node four = Node(2);
   Node five = Node(1);
-  
-  five.ptr = NULL;
+
+  five.ptr = nullptr;
   one.ptr = &two;
   two.ptr = &three;
   three.ptr = &four;
   four.ptr = &five;
-  Node *temp = &one;
+  Node* temp = &one;
 
   // Call function to check palindrome or not
   int result = isPalin(&one);

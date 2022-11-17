@@ -4,26 +4,26 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
-  struct Node *bottom;
+  struct Node* next;
+  struct Node* bottom;
   Node(int x)
   {
     data = x;
-    next = NULL;
-    bottom = NULL;
+    next = nullptr;
+    bottom = nullptr;
   }
 };
 
-void printList(Node *Node)
+void printList(Node* Node)
 {
-  while (Node != NULL)
+  while (Node != nullptr)
   {
     printf("%d ", Node->data);
     Node = Node->bottom;
   }
 }
 
-Node *flatten(Node *root);
+Node* flatten(Node* root);
 int main(void)
 {
   int t;
@@ -31,11 +31,11 @@ int main(void)
   while (t--)
   {
     int n, m, flag = 1, flag1 = 1;
-    struct Node *temp = NULL;
-    struct Node *head = NULL;
-    struct Node *pre = NULL;
-    struct Node *tempB = NULL;
-    struct Node *preB = NULL;
+    struct Node* temp = nullptr;
+    struct Node* head = nullptr;
+    struct Node* pre = nullptr;
+    struct Node* tempB = nullptr;
+    struct Node* preB = nullptr;
     cin >> n;
     int work[n];
     for (int i = 0; i < n; i++)
@@ -47,8 +47,8 @@ int main(void)
       int data;
       scanf("%d", &data);
       temp = new Node(data);
-      temp->next = NULL;
-      temp->bottom = NULL;
+      temp->next = nullptr;
+      temp->bottom = nullptr;
       if (flag)
       {
         head = temp;
@@ -80,22 +80,22 @@ int main(void)
         }
       }
     }
-    Node *fun = head;
-    Node *fun2 = head;
-    Node *root = flatten(head);
+    Node* fun = head;
+    Node* fun2 = head;
+    Node* root = flatten(head);
     printList(root);
     cout << endl;
   }
   return 0;
 }
 
-Node *merge(Node *a, Node *b)
+Node* merge(Node* a, Node* b)
 {
-  if (a == NULL)
+  if (a == nullptr)
     return b;
-  if (b == NULL)
+  if (b == nullptr)
     return a;
-  Node *result;
+  Node* result;
   if (a->data < b->data)
   {
     result = a;
@@ -106,12 +106,12 @@ Node *merge(Node *a, Node *b)
     result = b;
     result->bottom = merge(a, b->bottom);
   }
-  result->next = NULL;
+  result->next = nullptr;
   return result;
 }
-Node *flatten(Node *root)
+Node* flatten(Node* root)
 {
-  if (root == NULL || root->next == NULL)
+  if (root == nullptr || root->next == nullptr)
     return root;
   root->next = flatten(root->next);
   root = merge(root, root->next);

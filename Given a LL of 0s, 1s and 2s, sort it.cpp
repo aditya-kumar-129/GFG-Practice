@@ -8,11 +8,11 @@ struct Node
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-struct Node* start = NULL;
+struct Node* start = nullptr;
 
 class Solution
 {
@@ -28,14 +28,14 @@ public:
   {
     int count[3] = { 0, 0, 0 };
     Node* temp = head;
-    while (temp != NULL)
+    while (temp != nullptr)
     {
       count[temp->data] += 1;
       temp = temp->next;
     }
     int i = 0;
     temp = head;
-    while (temp != NULL)
+    while (temp != nullptr)
     {
       if (count[i] == 0)
         ++i;
@@ -52,7 +52,7 @@ public:
 
 void printList(struct Node* Node)
 {
-  while (Node != NULL)
+  while (Node != nullptr)
   {
     printf("%d ", Node->data);
     Node = Node->next;
@@ -78,7 +78,7 @@ void insert(int n1)
     {
       temp->next = new Node(value);
       temp = temp->next;
-      temp->next = NULL;
+      temp->next = nullptr;
     }
   }
 }
@@ -123,21 +123,21 @@ public:
 
     // Traverse list
     Node* curr = head;
-    while (curr) 
+    while (curr)
     {
-      if (curr->data == 0) 
+      if (curr->data == 0)
       {
         zero->next = curr;
         zero = zero->next;
         curr = curr->next;
       }
-      else if (curr->data == 1) 
+      else if (curr->data == 1)
       {
         one->next = curr;
         one = one->next;
         curr = curr->next;
       }
-      else 
+      else
       {
         two->next = curr;
         two = two->next;
@@ -148,7 +148,7 @@ public:
     // Attach three lists
     zero->next = (oneD->next) ? (oneD->next) : (twoD->next);
     one->next = twoD->next;
-    two->next = NULL;
+    two->next = nullptr;
     // Updated head
     head = zeroD->next;
     // Delete dummy nodes

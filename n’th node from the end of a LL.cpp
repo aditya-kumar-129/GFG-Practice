@@ -3,14 +3,14 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
-int getNthFromLast(struct Node *head, int n);
+int getNthFromLast(struct Node* head, int n);
 
 int main()
 {
@@ -18,7 +18,7 @@ int main()
   cin >> T;
   while (T--)
   {
-    struct Node *head = NULL, *tail = NULL;
+    struct Node* head = nullptr, * tail = nullptr;
     cin >> n >> k;
     int firstdata;
     cin >> firstdata;
@@ -35,11 +35,11 @@ int main()
   return 0;
 }
 
-int getNthFromLast(Node *head, int n)
+int getNthFromLast(Node* head, int n)
 {
   int len = 0, i;
-  struct Node *temp = head;
-  while (temp != NULL)
+  struct Node* temp = head;
+  while (temp != nullptr)
   {
     temp = temp->next;
     len++;

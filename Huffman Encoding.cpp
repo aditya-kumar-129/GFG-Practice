@@ -7,25 +7,25 @@ public:
   struct Node
   {
     int data;
-    struct Node *left;
-    struct Node *right;
+    struct Node* left;
+    struct Node* right;
     Node(int val)
     {
       data = val;
-      left = NULL;
-      right = NULL;
+      left = nullptr;
+      right = nullptr;
     }
   };
 
   struct cmp
   {
-    bool operator()(Node *l, Node *r)
+    bool operator()(Node* l, Node* r)
     {
       return (l->data > r->data);
     }
   };
 
-  void preOrder(Node *root, string s, vector<string> &ans)
+  void preOrder(Node* root, string s, vector<string>& ans)
   {
     if (!root)
       return;
@@ -37,25 +37,25 @@ public:
 
   vector<string> huffmanCodes(string S, vector<int> f, int n)
   {
-    priority_queue<Node *, vector<Node *>, cmp> pq;
+    priority_queue<Node*, vector<Node*>, cmp> pq;
     for (int i = 0; i < n; i++)
     {
-      Node *temp = new Node(f[i]);
+      Node* temp = new Node(f[i]);
       pq.push(temp);
     }
     while (pq.size() != 1)
     {
 
-      Node *left = pq.top();
+      Node* left = pq.top();
       pq.pop();
-      Node *right = pq.top();
+      Node* right = pq.top();
       pq.pop();
-      Node *parent = new Node(left->data + right->data);
+      Node* parent = new Node(left->data + right->data);
       parent->left = left;
       parent->right = right;
       pq.push(parent);
     }
-    Node *root = pq.top();
+    Node* root = pq.top();
     pq.pop();
     vector<string> ans;
     preOrder(root, "", ans);

@@ -8,7 +8,7 @@ public:
   {
     int result = 0;
     int n = s.length();
-    int count[26] = {0};
+    int count[26] = { 0 };
     for (int i = 0; i < n; i++)
       count[s[i] - 'a']++;
     for (int i = 0; i < 26; i++)
@@ -20,8 +20,8 @@ public:
 int main()
 {
   ios_base::sync_with_stdio(0);
-  cin.tie(NULL);
-  cout.tie(NULL);
+  cin.tie(nullptr);
+  cout.tie(nullptr);
   int t;
   cin >> t;
   while (t--)

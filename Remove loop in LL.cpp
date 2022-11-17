@@ -3,32 +3,32 @@ using namespace std;
 struct Node
 {
   int data;
-  Node *next;
+  Node* next;
   Node(int val)
   {
     data = val;
-    next = NULL;
+    next = nullptr;
   }
 };
 
 //Loop is being created using the below function
-void loopHere(Node *head, Node *tail, int position)
+void loopHere(Node* head, Node* tail, int position)
 {
   if (position == 0)
     return;
-  Node *walk = head;
+  Node* walk = head;
   for (int i = 1; i < position; i++)
     walk = walk->next;
   tail->next = walk;
 }
 
 // Checking if any loop exist or not
-bool isLoop(Node *head)
+bool isLoop(Node* head)
 {
   if (!head)
     return false;
-  Node *fast = head->next;
-  Node *slow = head;
+  Node* fast = head->next;
+  Node* slow = head;
   while (fast != slow)
   {
     if (!fast || !fast->next)
@@ -40,7 +40,7 @@ bool isLoop(Node *head)
 }
 
 // This function is used to calculate the length of the linked list so as to compare whether loop is removed or not
-int length(Node *head)
+int length(Node* head)
 {
   int ret = 0;
   while (head)
@@ -50,17 +50,17 @@ int length(Node *head)
   }
   return ret;
 }
-  /*
-    See the below youtube video to understand the logic behind the solution of the problem
-    https://www.youtube.com/watch?v=jcZtMh_jov0
-  */
+/*
+  See the below youtube video to understand the logic behind the solution of the problem
+  https://www.youtube.com/watch?v=jcZtMh_jov0
+*/
 class Solution
 {
 public:
   Node* detectLoopNode(Node* head)
   {
     Node* slow = head, * fast = head;
-    while (fast != NULL && fast->next != NULL)
+    while (fast != nullptr && fast->next != nullptr)
     {
       slow = slow->next;
       fast = fast->next->next;
@@ -76,18 +76,18 @@ public:
         return fast;  // first looping Node;
       }
     }
-    return NULL;
+    return nullptr;
   }
 
   void removeLoop(Node* head)
   {
     Node* loopNode = detectLoopNode(head);
-    if (loopNode == NULL)       // There is no loop
+    if (loopNode == nullptr)       // There is no loop
       return;
     Node* temp = loopNode->next;
     while (temp->next != loopNode)
       temp = temp->next;
-    temp->next = NULL; 
+    temp->next = nullptr;
     return;
   }
 };
@@ -101,7 +101,7 @@ int main()
     // n represents the total number of nodes present in the linked list where as num represents the value to be stored in the node
     int n, num;
     cin >> n;
-    Node *head, *tail;
+    Node* head, * tail;
     cin >> num;
     head = tail = new Node(num);
     for (int i = 0; i < n - 1; i++)

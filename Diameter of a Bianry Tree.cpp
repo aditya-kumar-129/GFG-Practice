@@ -4,21 +4,21 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *left;
-  struct Node *right;
+  struct Node* left;
+  struct Node* right;
 };
-Node *newNode(int val)
+Node* newNode(int val)
 {
-  Node *temp = new Node;
+  Node* temp = new Node;
   temp->data = val;
-  temp->left = NULL;
-  temp->right = NULL;
+  temp->left = nullptr;
+  temp->right = nullptr;
   return temp;
 }
-Node *buildTree(string str)
+Node* buildTree(string str)
 {
   if (str.length() == 0 || str[0] == 'N')
-    return NULL;
+    return nullptr;
 
   // Creating vector of strings from input string after spliting by space
   vector<string> ip;
@@ -28,10 +28,10 @@ Node *buildTree(string str)
     ip.push_back(str);
 
   // Create the root of the tree
-  Node *root = newNode(stoi(ip[0]));
+  Node* root = newNode(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node *> queue;
+  queue<Node*> queue;
   queue.push(root);
 
   // Starting from the second element
@@ -40,7 +40,7 @@ Node *buildTree(string str)
   {
 
     // Get and remove the front of the queue
-    Node *currNode = queue.front();
+    Node* currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -78,9 +78,9 @@ class Solution
 {
 public:
   // Function to return the diameter of a Binary Tree.
-  int diameter(Node *tree)
+  int diameter(Node* tree)
   {
-    if (tree == NULL)
+    if (tree == nullptr)
       return 0;
     int lheight = height(tree->left);
     int rheight = height(tree->right);
@@ -88,9 +88,9 @@ public:
     int rdiameter = diameter(tree->right);
     return max(lheight + rheight + 1, max(ldiameter, rdiameter));
   }
-  int height(Node *node)
+  int height(Node* node)
   {
-    if (node == NULL)
+    if (node == nullptr)
       return 0;
     return 1 + max(height(node->left), height(node->right));
   }
@@ -104,7 +104,7 @@ int main()
   {
     string s;
     getline(cin, s);
-    Node *root = buildTree(s);
+    Node* root = buildTree(s);
     Solution ob;
     cout << ob.diameter(root) << endl;
   }

@@ -5,26 +5,26 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
 class Solution
 {
 public:
-  Node *merge(Node *first, Node *second)
+  Node* merge(Node* first, Node* second)
   {
-    Node *node, *temp;
+    Node* node, * temp;
     if (first->data > second->data)
       node = second, second = second->next;
     else
       node = first, first = first->next;
     temp = node;
-    while (first != NULL && second != NULL)
+    while (first != nullptr && second != nullptr)
     {
       if (first->data > second->data)
         node->next = second, second = second->next;
@@ -32,13 +32,13 @@ public:
         node->next = first, first = first->next;
       node = node->next;
     }
-    while (second != NULL)
+    while (second != nullptr)
     {
       node->next = second;
       node = node->next;
       second = second->next;
     }
-    while (first != NULL)
+    while (first != nullptr)
     {
       node->next = first;
       node = node->next;
@@ -47,39 +47,39 @@ public:
     return temp;
   }
 
-  Node *middle(Node *head)
+  Node* middle(Node* head)
   {
-    Node *slow = head, *fast = head;
-    while (fast != NULL && fast->next != NULL)
+    Node* slow = head, * fast = head;
+    while (fast != nullptr && fast->next != nullptr)
     {
       slow = slow->next;
       fast = fast->next->next;
     }
     fast = slow->next;
-    slow->next = NULL;
+    slow->next = nullptr;
     return fast;
   }
 
-  Node *mergeSort(Node *head)
+  Node* mergeSort(Node* head)
   {
     // if there is no element or only one element then in that case just return the head
-    if (head == NULL || head->next == NULL)
+    if (head == nullptr || head->next == nullptr)
       return head;
     // In case when there are only two elements present in the LL
-    if (head->next->next == NULL)
+    if (head->next->next == nullptr)
     {
-      Node *fast = head->next;
-      head->next = NULL;
+      Node* fast = head->next;
+      head->next = nullptr;
       return merge(head, fast);
     }
-    Node * head2 = middle(head);
+    Node* head2 = middle(head);
     return merge(mergeSort(head), mergeSort(head2));
   }
 };
 
-void printList(Node *node)
+void printList(Node* node)
 {
-  while (node != NULL)
+  while (node != nullptr)
   {
     printf("%d ", node->data);
     node = node->next;
@@ -87,9 +87,9 @@ void printList(Node *node)
   printf("\n");
 }
 
-void push(struct Node **head_ref, int new_data)
+void push(struct Node** head_ref, int new_data)
 {
-  Node *new_node = new Node(new_data);
+  Node* new_node = new Node(new_data);
   new_node->next = (*head_ref);
   (*head_ref) = new_node;
 }
@@ -100,7 +100,7 @@ int main()
   cin >> test;
   while (test--)
   {
-    struct Node *a = NULL;
+    struct Node* a = nullptr;
     long n, tmp;
     cin >> n;
     for (int i = 0; i < n; i++)

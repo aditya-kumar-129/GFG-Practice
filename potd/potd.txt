@@ -1,0 +1,5 @@
+https://practice.geeksforgeeks.org/problems/product-of-primes5328/1
+https://practice.geeksforgeeks.org/problems/recursively-remove-all-adjacent-duplicates0744/1
+https://practice.geeksforgeeks.org/problems/maximum-sum-rectangle2948/1
+https://practice.geeksforgeeks.org/problems/closest-palindrome4519/1
+https://practice.geeksforgeeks.org/problems/moving-on-grid1135/1#

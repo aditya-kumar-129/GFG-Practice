@@ -4,17 +4,17 @@ using namespace std;
 struct Node
 {
   int data;
-  Node *next;
+  Node* next;
   Node(int val)
   {
     data = val;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-Node *inputList(int size)
+Node* inputList(int size)
 {
-  Node *head, *tail;
+  Node* head, * tail;
   int val;
   cin >> val;
   head = tail = new Node(val);
@@ -27,7 +27,7 @@ Node *inputList(int size)
   return head;
 }
 
-void printList(Node *n)
+void printList(Node* n)
 {
   while (n)
   {
@@ -36,7 +36,7 @@ void printList(Node *n)
   }
 }
 
-Node *findIntersection(Node *head1, Node *head2);
+Node* findIntersection(Node* head1, Node* head2);
 
 int main()
 {
@@ -46,20 +46,20 @@ int main()
   {
     int n, m;
     cin >> n >> m;
-    Node *head1 = inputList(n);
-    Node *head2 = inputList(m);
-    Node *result = findIntersection(head1, head2);
+    Node* head1 = inputList(n);
+    Node* head2 = inputList(m);
+    Node* result = findIntersection(head1, head2);
     printList(result);
     cout << endl;
   }
   return 0;
 }
 
-Node *findIntersection(Node *head1, Node *head2)
+Node* findIntersection(Node* head1, Node* head2)
 {
   map<int, int> m;
-  Node *temp1 = head1;
-  Node *temp2 = head2;
+  Node* temp1 = head1;
+  Node* temp2 = head2;
   while (temp1)
   {
     m[temp1->data]++;
@@ -70,13 +70,13 @@ Node *findIntersection(Node *head1, Node *head2)
     m[temp2->data]++;
     temp2 = temp2->next;
   }
-  Node *head3 = new Node(-1);
-  Node *temp3 = head3;
+  Node* head3 = new Node(-1);
+  Node* temp3 = head3;
   for (auto it : m)
   {
     if (it.second >= 2)
     {
-      Node *n1 = new Node(it.first);
+      Node* n1 = new Node(it.first);
       temp3->next = n1;
       temp3 = n1;
     }

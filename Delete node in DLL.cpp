@@ -8,8 +8,8 @@ struct Node
   Node(int x)
   {
     data = x;
-    next = NULL;
-    prev = NULL;
+    next = nullptr;
+    prev = nullptr;
   }
 };
 
@@ -18,19 +18,19 @@ class Solution
 public:
   Node* deleteNode(Node* head, int x)
   {
-    if (head == NULL)
-      return NULL;
-    if (head->next == NULL)
+    if (head == nullptr)
+      return nullptr;
+    if (head->next == nullptr)
     {
       delete head;
-      return NULL;
+      return nullptr;
     }
     Node* curr = head;
     if (x == 1)
     {
-      curr->next->prev = NULL;
+      curr->next->prev = nullptr;
       head = curr->next;
-      curr->next = NULL;
+      curr->next = nullptr;
       delete curr;
       return head;
     }
@@ -40,7 +40,7 @@ public:
       x--;
     }
     curr->prev->next = curr->next;
-    if (curr->next != NULL)
+    if (curr->next != nullptr)
       curr->next->prev = curr->prev;
 
     delete curr;
@@ -50,7 +50,7 @@ public:
 
 void printList(struct Node* node)
 {
-  while (node != NULL)
+  while (node != nullptr)
   {
     cout << node->data;
     node = node->next;
@@ -61,16 +61,16 @@ void printList(struct Node* node)
 int main()
 {
   int t, x, n, i;
-  cin>>t;
+  cin >> t;
   while (t--)
   {
-    struct Node* temp, * head = NULL;
-    cin>>n;
-    temp = NULL;
+    struct Node* temp, * head = nullptr;
+    cin >> n;
+    temp = nullptr;
     for (i = 0; i < n; i++)
     {
-      cin>>x;
-      if (head == NULL)
+      cin >> x;
+      if (head == nullptr)
       {
         head = new Node(x);
         temp = head;
@@ -83,11 +83,11 @@ int main()
         temp = temp->next;
       }
     }
-    cin>>x;
+    cin >> x;
     Solution ob;
     head = ob.deleteNode(head, x);
     printList(head);
-    while (head->next != NULL)
+    while (head->next != nullptr)
     {
       temp = head;
       head = head->next;

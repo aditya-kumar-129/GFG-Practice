@@ -5,6 +5,9 @@
     "regex": "cpp",
     "iostream": "cpp",
     "vector": "cpp",
-    "ratio": "cpp"
+    "ratio": "cpp",
+    "typeinfo": "cpp",
+    "random": "cpp",
+    "ostream": "cpp"
   }
 }

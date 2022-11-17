@@ -4,20 +4,20 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-struct Node *buildList(int size)
+struct Node* buildList(int size)
 {
   int val;
   cin >> val;
-  Node *head = new Node(val);
-  Node *tail = head;
+  Node* head = new Node(val);
+  Node* tail = head;
   for (int i = 0; i < size - 1; i++)
   {
     cin >> val;
@@ -27,7 +27,7 @@ struct Node *buildList(int size)
   return head;
 }
 
-void printList(Node *n)
+void printList(Node* n)
 {
   while (n)
   {
@@ -37,7 +37,7 @@ void printList(Node *n)
   cout << endl;
 }
 
-struct Node *makeUnion(struct Node *head1, struct Node *head2);
+struct Node* makeUnion(struct Node* head1, struct Node* head2);
 
 int main()
 {
@@ -47,15 +47,15 @@ int main()
   {
     int n, m;
     cin >> n;
-    Node *first = buildList(n);
+    Node* first = buildList(n);
     cin >> m;
-    Node *second = buildList(m);
+    Node* second = buildList(m);
     printList(makeUnion(first, second));
   }
   return 0;
 }
 
-struct Node *makeUnion(struct Node *head1, struct Node *head2)
+struct Node* makeUnion(struct Node* head1, struct Node* head2)
 {
   set<int> s;
   while (head1)
@@ -68,12 +68,12 @@ struct Node *makeUnion(struct Node *head1, struct Node *head2)
     s.insert(head2->data);
     head2 = head2->next;
   }
-  Node *temp = NULL;
-  Node *tail = NULL;
+  Node* temp = nullptr;
+  Node* tail = nullptr;
   for (auto it : s)
   {
-    Node *newnode = new Node(it);
-    if (temp == NULL)
+    Node* newnode = new Node(it);
+    if (temp == nullptr)
     {
       temp = newnode;
       tail = temp;

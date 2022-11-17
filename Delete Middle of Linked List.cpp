@@ -3,18 +3,18 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-struct Node *deleteMid(struct Node *head);
-void printList(Node *node)
+struct Node* deleteMid(struct Node* head);
+void printList(Node* node)
 {
-  while (node != NULL)
+  while (node != nullptr)
   {
     cout << node->data << " ";
     node = node->next;
@@ -32,8 +32,8 @@ int main()
     cin >> n;
     int data;
     cin >> data;
-    struct Node *head = new Node(data);
-    struct Node *tail = head;
+    struct Node* head = new Node(data);
+    struct Node* tail = head;
     for (int i = 0; i < n - 1; ++i)
     {
       cin >> data;
@@ -46,14 +46,14 @@ int main()
   return 0;
 }
 
-Node *deleteMid(Node *head)
+Node* deleteMid(Node* head)
 {
-  if (head == NULL || head->next == NULL)
-    return NULL;
-  Node *slow = head;
-  Node *fast = head;
-  Node *temp = NULL;
-  while (fast != NULL && fast->next != NULL)
+  if (head == nullptr || head->next == nullptr)
+    return nullptr;
+  Node* slow = head;
+  Node* fast = head;
+  Node* temp = nullptr;
+  while (fast != nullptr && fast->next != nullptr)
   {
     temp = slow;
     slow = slow->next;

@@ -4,34 +4,34 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *left;
-  struct Node *right;
+  struct Node* left;
+  struct Node* right;
 };
 
-Node *newNode(int val)
+Node* newNode(int val)
 {
-  Node *temp = new Node;
+  Node* temp = new Node;
   temp->data = val;
-  temp->left = NULL;
-  temp->right = NULL;
+  temp->left = nullptr;
+  temp->right = nullptr;
   return temp;
 }
 
-Node *buildTree(string str)
+Node* buildTree(string str)
 {
   if (str.length() == 0 || str[0] == 'N')
-    return NULL;
+    return nullptr;
   vector<string> ip;
   istringstream iss(str);
   for (string str; iss >> str;)
     ip.push_back(str);
-  Node *root = newNode(stoi(ip[0]));
-  queue<Node *> queue;
+  Node* root = newNode(stoi(ip[0]));
+  queue<Node*> queue;
   queue.push(root);
   int i = 1;
   while (!queue.empty() && i < ip.size())
   {
-    Node *currNode = queue.front();
+    Node* currNode = queue.front();
     queue.pop();
     string currVal = ip[i];
     if (currVal != "N")
@@ -56,19 +56,19 @@ Node *buildTree(string str)
 class Solution
 {
 public:
-  int returnSum(Node *root)
+  int returnSum(Node* root)
   {
-    if (root == NULL)
+    if (root == nullptr)
       return 0;
     return (root->data + returnSum(root->left) + returnSum(root->right));
   }
 
-  bool isSumTree(Node *root)
+  bool isSumTree(Node* root)
   {
-    if (root == NULL)
+    if (root == nullptr)
       return true;
 
-    if (root->left == NULL && root->right == NULL)
+    if (root->left == nullptr && root->right == nullptr)
       return true;
 
     if ((returnSum(root->left) + returnSum(root->right) == root->data) && isSumTree(root->left) && isSumTree(root->right))
@@ -87,7 +87,7 @@ int main()
   {
     string s;
     getline(cin, s);
-    Node *root = buildTree(s);
+    Node* root = buildTree(s);
     Solution ob;
     cout << ob.isSumTree(root) << endl;
   }

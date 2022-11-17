@@ -6,20 +6,20 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-struct Node *buildList(int size)
+struct Node* buildList(int size)
 {
   int val;
   cin >> val;
-  Node *head = new Node(val);
-  Node *tail = head;
+  Node* head = new Node(val);
+  Node* tail = head;
   for (int i = 0; i < size - 1; i++)
   {
     cin >> val;
@@ -29,7 +29,7 @@ struct Node *buildList(int size)
   return head;
 }
 
-void printList(Node *n)
+void printList(Node* n)
 {
   while (n)
   {
@@ -39,7 +39,7 @@ void printList(Node *n)
   cout << endl;
 }
 
-Node *subLinkedList(Node *l1, Node *l2);
+Node* subLinkedList(Node* l1, Node* l2);
 
 int main()
 {
@@ -49,26 +49,26 @@ int main()
   {
     int n, m;
     cin >> n;
-    Node *first = buildList(n);
+    Node* first = buildList(n);
     cin >> m;
-    Node *second = buildList(m);
-    Node *res = subLinkedList(first, second);
+    Node* second = buildList(m);
+    Node* res = subLinkedList(first, second);
     printList(res);
   }
   return 0;
 }
 
 // This function reverses the LL and hence get the length of the LL
-Node *reverseList(Node *head, int &count)
+Node* reverseList(Node* head, int& count)
 {
-  if (head == NULL || head->next == NULL)
+  if (head == nullptr || head->next == nullptr)
     return head;
-  Node *prev = NULL;
-  Node *curr = head;
-  while (curr != NULL)
+  Node* prev = nullptr;
+  Node* curr = head;
+  while (curr != nullptr)
   {
     count++;
-    Node *next = curr->next;
+    Node* next = curr->next;
     curr->next = prev;
     prev = curr;
     curr = next;
@@ -77,26 +77,26 @@ Node *reverseList(Node *head, int &count)
 }
 
 // Removing the prefix zeros from LL
-Node *removeZeros(Node *subReverse)
+Node* removeZeros(Node* subReverse)
 {
-  while (subReverse->next != NULL && subReverse->data == 0)
+  while (subReverse->next != nullptr && subReverse->data == 0)
   {
-    Node *next = subReverse->next;
+    Node* next = subReverse->next;
     free(subReverse);
     subReverse = next;
   }
   return subReverse;
 }
 
-Node *subLinkedList(Node *l1, Node *l2)
+Node* subLinkedList(Node* l1, Node* l2)
 {
   int firstCount = 0, secondCount = 0;
 
   l1 = removeZeros(l1); // Removing the prefix zeros from LL
   l2 = removeZeros(l2);
 
-  Node *firstReverse = reverseList(l1, firstCount);   // Reverse of the first LL and get the length of the LL
-  Node *secondReverse = reverseList(l2, secondCount); // Reverse of the second LL and get the length of the LL
+  Node* firstReverse = reverseList(l1, firstCount);   // Reverse of the first LL and get the length of the LL
+  Node* secondReverse = reverseList(l2, secondCount); // Reverse of the second LL and get the length of the LL
 
   if (secondCount > firstCount) // Adjusting so that the diff should be greater - smaller
     swap(firstReverse, secondReverse);
@@ -107,15 +107,15 @@ Node *subLinkedList(Node *l1, Node *l2)
       swap(firstReverse, secondReverse);
   }
 
-  Node *substract = NULL;     // Substract Linkedlist trail
-  Node *substractHead = NULL; // Head of the substracted LL.
+  Node* substract = nullptr;     // Substract Linkedlist trail
+  Node* substractHead = nullptr; // Head of the substracted LL.
   int carry = 0;
-  while (firstReverse != NULL)
+  while (firstReverse != nullptr)
   {
     firstReverse->data += carry;
     carry = 0;
     int diff = 0;
-    if (secondReverse != NULL)
+    if (secondReverse != nullptr)
     {
       if (firstReverse->data < secondReverse->data)
       {
@@ -137,8 +137,8 @@ Node *subLinkedList(Node *l1, Node *l2)
       }
     }
     firstReverse = firstReverse->next;
-    Node *diffNode = new Node(diff);
-    if (substract == NULL)
+    Node* diffNode = new Node(diff);
+    if (substract == nullptr)
     {
       substract = diffNode;
       substractHead = diffNode;
@@ -150,7 +150,7 @@ Node *subLinkedList(Node *l1, Node *l2)
     }
   }
   int dum = 0;
-  Node *subReverse = reverseList(substractHead, dum);
+  Node* subReverse = reverseList(substractHead, dum);
   subReverse = removeZeros(subReverse); // Removing the prefix zeros from the starting of LL
   return subReverse;
 }

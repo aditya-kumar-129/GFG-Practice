@@ -4,18 +4,18 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-void print(Node *root)
+void print(Node* root)
 {
-  Node *temp = root;
-  while (temp != NULL)
+  Node* temp = root;
+  while (temp != nullptr)
   {
     cout << temp->data << " ";
     temp = temp->next;
@@ -25,11 +25,11 @@ void print(Node *root)
 class Solution
 {
 public:
-  Node *removeDuplicates(Node *head)
+  Node* removeDuplicates(Node* head)
   {
     unordered_set<int> st;
-    Node *curr = head;
-    Node *prev = head;
+    Node* curr = head;
+    Node* prev = head;
     while (curr)
     {
       if (st.find(curr->data) != st.end())
@@ -56,13 +56,13 @@ int main()
   {
     int K;
     cin >> K;
-    struct Node *head = NULL;
-    struct Node *temp = head;
+    struct Node* head = nullptr;
+    struct Node* temp = head;
     for (int i = 0; i < K; i++)
     {
       int data;
       cin >> data;
-      if (head == NULL)
+      if (head == nullptr)
         head = temp = new Node(data);
       else
       {
@@ -71,7 +71,7 @@ int main()
       }
     }
     Solution ob;
-    Node *result = ob.removeDuplicates(head);
+    Node* result = ob.removeDuplicates(head);
     print(result);
     cout << endl;
   }

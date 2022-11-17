@@ -31,8 +31,8 @@ public:
 int main()
 {
   ios_base::sync_with_stdio(0);
-  cin.tie(NULL);
-  cout.tie(NULL);
+  cin.tie(nullptr);
+  cout.tie(nullptr);
   int t;
   cin >> t;
   while (t--)
@@ -75,7 +75,7 @@ int countWays(int arr[], int n)
   for (int i = 0; i < n; i++)
     freq[arr[i]]++;
 
-  int ans = 0; 
+  int ans = 0;
 
   // Case 1: 0, 0, 0
   ans += freq[0] * (freq[0] - 1) * (freq[0] - 2) / 6;

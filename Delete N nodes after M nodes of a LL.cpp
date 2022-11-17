@@ -10,14 +10,14 @@ struct Node
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-struct Node* start = NULL;
+struct Node* start = nullptr;
 void printList(struct Node* node)
 {
-  while (node != NULL)
+  while (node != nullptr)
   {
     printf("%d ", node->data);
     node = node->next;
@@ -56,12 +56,12 @@ public:
     int count;
     while (curr)
     {
-      for (count = 1; count < M && curr != NULL; count++)
+      for (count = 1; count < M && curr != nullptr; count++)
         curr = curr->next;
-      if (curr == NULL)
+      if (curr == nullptr)
         return;
       t = curr->next;
-      for (count = 1; count <= N && t != NULL; count++)
+      for (count = 1; count <= N && t != nullptr; count++)
       {
         Node* temp = t;
         t = t->next;

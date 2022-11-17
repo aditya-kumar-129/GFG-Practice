@@ -4,25 +4,25 @@ using namespace std;
 struct Node
 {
   int data;
-  Node *next;
+  Node* next;
   Node(int val)
   {
     data = val;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-void loopHere(Node *head, Node *tail, int position)
+void loopHere(Node* head, Node* tail, int position)
 {
   if (position == 0)
     return;
-  Node *walk = head;
+  Node* walk = head;
   for (int i = 1; i < position; i++)
     walk = walk->next;
   tail->next = walk;
 }
 
-int countNodesinLoop(Node *head);
+int countNodesinLoop(Node* head);
 int main()
 {
   int t;
@@ -31,7 +31,7 @@ int main()
   {
     int n, num;
     cin >> n;
-    Node *head, *tail;
+    Node* head, * tail;
     cin >> num;
     head = tail = new Node(num);
     for (int i = 0; i < n - 1; i++)
@@ -48,11 +48,11 @@ int main()
   return 0;
 }
 
-int countNodesinLoop(struct Node *head)
+int countNodesinLoop(struct Node* head)
 {
   int flag = 0;
-  Node *fast = head;
-  Node *slow = head;
+  Node* fast = head;
+  Node* slow = head;
   while (fast && slow && fast->next)
   {
     slow = slow->next;
@@ -65,7 +65,7 @@ int countNodesinLoop(struct Node *head)
   }
   if (flag) // in case when there is loop return the length of the loop
   {
-    Node *temp = slow;
+    Node* temp = slow;
     int count = 1;
     while (temp->next != slow)
     {

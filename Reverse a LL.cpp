@@ -4,22 +4,22 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
 class Solution
 {
 public:
-  struct Node *reverseList(struct Node *head)
+  struct Node* reverseList(struct Node* head)
   {
-    Node *current = head;
-    Node *prev = NULL, *next = NULL;
-    while (current != NULL)
+    Node* current = head;
+    Node* prev = nullptr, * next = nullptr;
+    while (current != nullptr)
     {
       next = current->next;
       current->next = prev;
@@ -31,12 +31,12 @@ public:
   }
 };
 
-void printList(struct Node *head)
+void printList(struct Node* head)
 {
-  struct Node *temp = head;
-  while (temp != NULL)
+  struct Node* temp = head;
+  while (temp != nullptr)
   {
-    cout << temp->data<<" ";
+    cout << temp->data << " ";
     temp = temp->next;
   }
 }
@@ -47,7 +47,7 @@ int main()
   cin >> T;
   while (T--)
   {
-    struct Node *head = NULL, *tail = NULL;
+    struct Node* head = nullptr, * tail = nullptr;
     cin >> n;
     cin >> firstdata;
     head = new Node(firstdata);

@@ -4,17 +4,17 @@ using namespace std;
 struct node
 {
   int data;
-  struct node *next;
+  struct node* next;
   node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-void printList(struct node *node)
+void printList(struct node* node)
 {
-  while (node != NULL)
+  while (node != nullptr)
   {
     printf("%d ", node->data);
     node = node->next;
@@ -25,15 +25,15 @@ void printList(struct node *node)
 class Solution
 {
 public:
-  struct node *reverse(struct node *head, int k)
+  struct node* reverse(struct node* head, int k)
   {
     if (!head)
-      return NULL;
-    node *current = head;
-    node *next = NULL;
-    node *prev = NULL;
+      return nullptr;
+    node* current = head;
+    node* next = nullptr;
+    node* prev = nullptr;
     int count = 0;
-    while (current != NULL && count < k)
+    while (current != nullptr && count < k)
     {
       next = current->next;
       current->next = prev;
@@ -41,7 +41,7 @@ public:
       current = next;
       count++;
     }
-    if (next != NULL)
+    if (next != nullptr)
       head->next = reverse(next, k);
     return prev;
   }
@@ -53,8 +53,8 @@ int main(void)
   cin >> t;
   while (t--)
   {
-    struct node *head = NULL;
-    struct node *temp = NULL;
+    struct node* head = nullptr;
+    struct node* temp = nullptr;
     int n;
     cin >> n;
     for (int i = 0; i < n; i++)

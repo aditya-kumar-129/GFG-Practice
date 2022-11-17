@@ -4,12 +4,12 @@ using namespace std;
 class Solution
 {
 public:
+
+  // Backward approach
   vector<long long> nextLargerElement(vector<long long> arr, int n)
   {
-    // Your code here
     stack<long long> s;
     vector<long long> vec;
-    //vec.push_back(-1);
     for (int i = n - 1; i >= 0; i--)
     {
       if (s.empty())
@@ -50,4 +50,31 @@ int main()
     cout << endl;
   }
   return 0;
+}
+
+// Forward approach
+vector<long long> nextLargerElement(vector<long long> arr, int n)
+{
+  stack<long long> s;
+  vector<long long> ans(n);
+  for (int i = 0;i < arr.size();i++)
+  {
+    if (s.empty())
+      s.push(i);
+    else
+    {
+      while (!s.empty() && arr[s.top()] < arr[i])
+      {
+        ans[s.top()] = arr[i];
+        s.pop();
+      }
+      s.push(i);
+    }
+  }
+  while (!s.empty())
+  {
+    ans[s.top()] = -1;
+    s.pop();
+  }
+  return ans;
 }

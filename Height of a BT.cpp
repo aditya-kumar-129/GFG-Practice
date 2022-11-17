@@ -6,17 +6,17 @@ struct Node
 	int data;
 	struct Node* left;
 	struct Node* right;
-	Node(int val) 
+	Node(int val)
 	{
 		data = val;
-		left = right = NULL;
+		left = right = nullptr;
 	}
 };
 
 Node* buildTree(string str)
 {
 	if (str.length() == 0 || str[0] == 'N')
-		return NULL;
+		return nullptr;
 	vector<string> ip;
 	istringstream iss(str);
 	for (string str; iss >> str; )
@@ -49,7 +49,7 @@ Node* buildTree(string str)
 class Solution {
 public:
 	// Using level order traversal
-	int height(struct Node* node) 
+	int height(struct Node* node)
 	{
 		queue<Node*>q;
 		int count = 0;
@@ -62,9 +62,9 @@ public:
 			{
 				Node* curr = q.front();
 				q.pop();
-				if (curr->left != NULL)
+				if (curr->left != nullptr)
 					q.push(curr->left);
-				if (curr->right != NULL)
+				if (curr->right != nullptr)
 					q.push(curr->right);
 			}
 		}
@@ -85,13 +85,13 @@ int main()
 		cout << ob.height(root) << endl;
 	}
 	return 0;
-}  
+}
 
 // Method 2:- Uisng recursive solution:-
 
-int height(struct Node* node) 
+int height(struct Node* node)
 {
-	if (node == NULL) 
+	if (node == nullptr)
 		return 0;
 	int x = height(node->left);
 	int y = height(node->right);

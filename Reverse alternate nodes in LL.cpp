@@ -6,20 +6,20 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
 
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-struct Node *start = NULL;
+struct Node* start = nullptr;
 
-void printList(struct Node *node)
+void printList(struct Node* node)
 {
-  while (node != NULL)
+  while (node != nullptr)
   {
     printf("%d ", node->data);
     node = node->next;
@@ -31,7 +31,7 @@ void insert()
 {
   int n, value;
   cin >> n;
-  struct Node *temp;
+  struct Node* temp;
   for (int i = 0; i < n; i++)
   {
     cin >> value;
@@ -52,10 +52,10 @@ void insert()
 class Solution
 {
 public:
-  Node *reverse(Node *head)
+  Node* reverse(Node* head)
   {
-    Node *cur = head, *prev = NULL, *next;
-    while (cur != NULL)
+    Node* cur = head, * prev = nullptr, * next;
+    while (cur != nullptr)
     {
       next = cur->next;
       cur->next = prev;
@@ -64,20 +64,20 @@ public:
     }
     return prev;
   }
-  void rearrange(struct Node *head)
+  void rearrange(struct Node* head)
   {
-    Node *odd = head;
-    Node *odd_start = odd;
-    Node *even = head->next;
-    Node *evenstart = even;
-    while (odd->next != NULL && even->next != NULL)
+    Node* odd = head;
+    Node* odd_start = odd;
+    Node* even = head->next;
+    Node* evenstart = even;
+    while (odd->next != nullptr && even->next != nullptr)
     {
       odd->next = even->next;
       odd = odd->next;
       even->next = odd->next;
       even = even->next;
     }
-    Node *reverse_temp = reverse(evenstart);
+    Node* reverse_temp = reverse(evenstart);
     odd->next = reverse_temp;
     head = odd_start;
   }

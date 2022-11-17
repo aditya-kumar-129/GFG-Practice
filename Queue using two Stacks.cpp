@@ -66,3 +66,12 @@ int StackQueue ::pop()
   s2.pop();
   return x;
 }
+
+
+// Do you know when we should use two stacks to implement a queue ?
+// I was asked in the internship interview of a company two years ago.
+// The application for this implementation is to separate read & write of a queue in multi - processing.
+// One of the stack is for read, and another is for write.They only interfere each other when the former one is full or latter is empty.
+// This is not only a trick. :)
+
+// When there's only one thread doing the read/write operation to the stack, there will always one stack empty. However, in a multi-thread application, if we have only one queue, for thread-safety, either read or write will lock the whole queue. In the two stack implementation, as long as the second stack is not empty, push operation will not lock the stack for pop.

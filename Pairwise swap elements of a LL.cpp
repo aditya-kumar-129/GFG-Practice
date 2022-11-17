@@ -4,29 +4,29 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
 class Solution
 {
 public:
-  Node *pairWiseSwap(struct Node *head)
+  Node* pairWiseSwap(struct Node* head)
   {
-    if (head == NULL || head->next == NULL)
+    if (head == nullptr || head->next == nullptr)
       return head;
-    Node *prev = head;
-    Node *curr = head->next;
+    Node* prev = head;
+    Node* curr = head->next;
     head = curr;
     while (true)
     {
-      Node *temp = curr->next;
+      Node* temp = curr->next;
       curr->next = prev;
-      if (temp == NULL || temp->next == NULL)
+      if (temp == nullptr || temp->next == nullptr)
       {
         prev->next = temp;
         break;
@@ -39,9 +39,9 @@ public:
   }
 };
 
-void printList(Node *Node)
+void printList(Node* Node)
 {
-  while (Node != NULL)
+  while (Node != nullptr)
   {
     cout << Node->data << " ";
     Node = Node->next;
@@ -59,9 +59,9 @@ int main()
     cin >> n;
     int data;
     cin >> data;
-    struct Node *head = new Node(data);
-    struct Node *tail = head;
-    map<Node *, int> mp;
+    struct Node* head = new Node(data);
+    struct Node* tail = head;
+    map<Node*, int> mp;
     mp[head] = head->data;
     for (int i = 0; i < n - 1; ++i)
     {
@@ -70,11 +70,11 @@ int main()
       tail = tail->next;
       mp[tail] = tail->data;
     }
-    struct Node *failure = new Node(-1);
+    struct Node* failure = new Node(-1);
     Solution ob;
     head = ob.pairWiseSwap(head);
     int flag = 0;
-    struct Node *temp = head;
+    struct Node* temp = head;
     while (temp)
     {
       if (mp[temp] != temp->data)

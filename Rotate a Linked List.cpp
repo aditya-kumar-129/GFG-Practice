@@ -4,11 +4,11 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
@@ -16,32 +16,32 @@ class Solution
 {
 public:
   //Function to rotate a linked list
-  Node *rotate(Node *head, int k)
+  Node* rotate(Node* head, int k)
   {
     if (k == 0)
-      return NULL;
-    Node *current = head;
+      return nullptr;
+    Node* current = head;
     int count = 1;
-    while (count < k && current != NULL)
+    while (count < k && current != nullptr)
     {
       current = current->next;
       count++;
     }
-    if (current == NULL)
-      return NULL;
-    Node *kthNode = current;
-    while (current->next != NULL)
+    if (current == nullptr)
+      return nullptr;
+    Node* kthNode = current;
+    while (current->next != nullptr)
       current = current->next;
     current->next = head;
     head = kthNode->next;
-    kthNode->next = NULL;
+    kthNode->next = nullptr;
     return head;
   }
 };
 
-void printList(Node *n)
+void printList(Node* n)
 {
-  while (n != NULL)
+  while (n != nullptr)
   {
     cout << n->data << " ";
     n = n->next;
@@ -58,8 +58,8 @@ int main()
     int n, val, k;
     cin >> n;
     cin >> val;
-    Node *head = new Node(val);
-    Node *tail = head;
+    Node* head = new Node(val);
+    Node* tail = head;
     for (int i = 0; i < n - 1; i++)
     {
       cin >> val;

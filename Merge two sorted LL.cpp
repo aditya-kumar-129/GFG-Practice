@@ -3,18 +3,18 @@ using namespace std;
 struct Node
 {
   int data;
-  struct Node *next;
+  struct Node* next;
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
-Node *sortedMerge(struct Node *a, struct Node *b);
-void printList(struct Node *n)
+Node* sortedMerge(struct Node* a, struct Node* b);
+void printList(struct Node* n)
 {
-  while (n != NULL)
+  while (n != nullptr)
   {
     cout << n->data << " ";
     n = n->next;
@@ -32,8 +32,8 @@ int main()
 
     int data;
     cin >> data;
-    struct Node *head1 = new Node(data);
-    struct Node *tail1 = head1;
+    struct Node* head1 = new Node(data);
+    struct Node* tail1 = head1;
     for (int i = 1; i < n; ++i)
     {
       cin >> data;
@@ -41,8 +41,8 @@ int main()
       tail1 = tail1->next;
     }
     cin >> data;
-    struct Node *head2 = new Node(data);
-    struct Node *tail2 = head2;
+    struct Node* head2 = new Node(data);
+    struct Node* tail2 = head2;
     for (int i = 1; i < m; i++)
     {
       cin >> data;
@@ -50,20 +50,20 @@ int main()
       tail2 = tail2->next;
     }
 
-    Node *head = sortedMerge(head1, head2);
+    Node* head = sortedMerge(head1, head2);
     printList(head);
   }
   return 0;
 }
 
-Node *sortedMerge(Node *head1, Node *head2)
+Node* sortedMerge(Node* head1, Node* head2)
 {
-  if (head1 == NULL)
+  if (head1 == nullptr)
     return head2;
-  else if (head2 == NULL)
+  else if (head2 == nullptr)
     return head1;
 
-  Node *mergedHead = NULL;
+  Node* mergedHead = nullptr;
   if (head1->data <= head2->data)
   {
     mergedHead = head1;
@@ -74,10 +74,10 @@ Node *sortedMerge(Node *head1, Node *head2)
     mergedHead = head2;
     head2 = head2->next;
   }
-  Node *mergedTail = mergedHead;
+  Node* mergedTail = mergedHead;
   while (head1 != nullptr && head2 != nullptr)
   {
-    Node *temp = NULL;
+    Node* temp = nullptr;
     if (head1->data <= head2->data)
     {
       temp = head1;

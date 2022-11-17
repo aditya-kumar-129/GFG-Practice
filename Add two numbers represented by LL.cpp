@@ -11,7 +11,7 @@ struct Node
   Node(int x)
   {
     data = x;
-    next = NULL;
+    next = nullptr;
   }
 };
 
@@ -45,10 +45,10 @@ class Solution
 public:
   Node *reverse(Node *head)
   {
-    Node *prev = NULL;
+    Node *prev = nullptr;
     Node *current = head;
     Node *next;
-    while (current != NULL)
+    while (current != nullptr)
     {
       next = current->next;
       current->next = prev;
@@ -62,9 +62,9 @@ public:
   {
     first = reverse(first);
     second = reverse(second);
-    Node *res = NULL, *temp;
+    Node *res = nullptr, *temp;
     int carry = 0, newval;
-    while (first != NULL || second != NULL || carry != 0)
+    while (first != nullptr || second != nullptr || carry != 0)
     {
       newval = carry;
       if (first)

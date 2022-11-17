@@ -3,24 +3,24 @@ using namespace std;
 
 struct Node
 {
-  Node *next;
+  Node* next;
   int data;
 };
 
-void push(Node **head, int data)
+void push(Node** head, int data)
 {
-  Node *newNode = new Node;
+  Node* newNode = new Node;
   newNode->next = (*head);
   newNode->data = data;
   (*head) = newNode;
 }
 
-void printList(Node *head)
+void printList(Node* head)
 {
-  while (head != NULL)
+  while (head != nullptr)
   {
     cout << head->data;
-    if (head->next != NULL)
+    if (head->next != nullptr)
       cout << " ";
     head = head->next;
   }
@@ -30,11 +30,11 @@ void printList(Node *head)
 class Solution
 {
 public:
-  void sortList(Node **head)
+  void sortList(Node** head)
   {
-    Node *prev = (*head);
-    Node *curr = (*head)->next;
-    while (curr != NULL)
+    Node* prev = (*head);
+    Node* curr = (*head)->next;
+    while (curr != nullptr)
     {
       if (curr->data < prev->data)
       {
@@ -57,7 +57,7 @@ int main()
   cin >> t;
   while (t--)
   {
-    Node *head = NULL;
+    Node* head = nullptr;
     cin >> n;
     int arr[n];
     for (int i = 0; i < n; i++)

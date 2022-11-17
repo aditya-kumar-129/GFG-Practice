@@ -4,20 +4,20 @@ using namespace std;
 struct Node
 {
   int data;
-  Node *left;
-  Node *right;
+  Node* left;
+  Node* right;
   Node(int val)
   {
     data = val;
-    left = right = NULL;
+    left = right = nullptr;
   }
 };
 
 class Solution
 {
-  void INORDER(Node *root, vector<int> &x)
+  void INORDER(Node* root, vector<int>& x)
   {
-    if (root != NULL)
+    if (root != nullptr)
     {
       INORDER(root->left, x);
       x.push_back(root->data);
@@ -26,7 +26,7 @@ class Solution
   }
 
 public:
-  vector<int> inOrder(Node *root)
+  vector<int> inOrder(Node* root)
   {
     vector<int> v;
     INORDER(root, v);
@@ -34,11 +34,11 @@ public:
   }
 };
 
-Node *buildTree(string str)
+Node* buildTree(string str)
 {
   // Corner Case
   if (str.length() == 0 || str[0] == 'N')
-    return NULL;
+    return nullptr;
 
   // Creating vector of strings from input string after spliting by space
   vector<string> ip;
@@ -48,10 +48,10 @@ Node *buildTree(string str)
     ip.push_back(str);
 
   // Create the root of the tree
-  Node *root = new Node(stoi(ip[0]));
+  Node* root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node *> queue;
+  queue<Node*> queue;
   queue.push(root);
 
   // Starting from the second element
@@ -60,7 +60,7 @@ Node *buildTree(string str)
   {
 
     // Get and remove the front of the queue
-    Node *currNode = queue.front();
+    Node* currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -104,7 +104,7 @@ int main()
   {
     string s;
     getline(cin, s);
-    Node *root = buildTree(s);
+    Node* root = buildTree(s);
 
     Solution ob;
     vector<int> res = ob.inOrder(root);
