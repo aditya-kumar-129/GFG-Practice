@@ -11,16 +11,3 @@ public:
     return ans;
   }
 };
-
-int main() {
-  int t;
-  cin >> t;
-  while (t--) {
-    int k, m;
-    cin >> k >> m;
-    Solution ob;
-    cout << ob.karyTree(k, m) << endl;
-  }
-  return 0;
-}  
-

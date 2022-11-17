@@ -79,35 +79,3 @@ void printList(struct Node* node) {
   }
   printf("\n");
 }
-
-int main(void) {
-  int t;
-  cin >> t;
-
-  while (t--) {
-    struct Node* head = nullptr;
-    struct Node* temp = nullptr;
-    int n;
-    cin >> n;
-
-    for (int i = 0; i < n; i++) {
-      int value;
-      cin >> value;
-      if (i == 0) {
-        head = new Node(value);
-        temp = head;
-      }
-      else {
-        temp->next = new Node(value);
-        temp = temp->next;
-      }
-    }
-    int k;
-    cin >> k;
-    head = partition(head, k);
-    printList(head);
-  }
-
-  return (0);
-}
-

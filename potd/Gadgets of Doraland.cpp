@@ -24,27 +24,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, k;
-    cin >> n;
-    vector<int>array(n);
-    for (int i = 0; i < n; i++)
-      cin >> array[i];
-    cin >> k;
-    Solution obj;
-    vector<int> result = obj.TopK(array, k);
-    for (int i = 0; i < result.size();i++)
-      cout << result[i] << " ";
-    cout << "\n";
-  }
-  return 0;
-}  
-
 // Method 2 :- Using Priority queue
 class Solution {
 public:

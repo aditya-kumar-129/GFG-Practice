@@ -21,21 +21,3 @@ public:
     return ans;
   }
 };
-
-int main()
-{
-
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    string arr[n];
-    for (int i = 0;i < n;i++)
-      cin >> arr[i];
-    Solution ob;
-    cout << ob.LCP(arr, n) << endl;
-  }
-  return 0;
-}

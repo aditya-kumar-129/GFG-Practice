@@ -36,15 +36,3 @@ public:
     return res;
   }
 };
-
-int main()
-{
-  int t; cin >> t;
-  while (t--)
-  {
-    string A, B;
-    cin >> A >> B;
-    Solution obj;
-    cout << obj.transfigure(A, B) << endl;
-  }
-}

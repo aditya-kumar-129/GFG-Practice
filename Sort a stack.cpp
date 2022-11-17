@@ -102,25 +102,6 @@ void printStack(stack<int> s)
   printf("\n");
 }
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    SortedStack *ss = new SortedStack();
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
-      int k;
-      cin >> k;
-      ss->s.push(k);
-    }
-    ss->sort();
-    printStack(ss->s);
-  }
-}
 void SortedStack ::sort()
 {
   // We have used here vector because we don't know thw number of element present in the stack so we have taken the dynamic array in c++ ie. vector

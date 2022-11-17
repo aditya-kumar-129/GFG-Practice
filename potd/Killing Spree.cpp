@@ -18,17 +18,3 @@ public:
     return count;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    long long int n; cin >> n;
-    Solution obj;
-    long long int ans = obj.killinSpree(n);
-    cout << ans << "\n";
-  }
-  return 0;
-}

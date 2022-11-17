@@ -49,17 +49,3 @@ public:
     return 1;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string s;
-    cin >> s;
-    Solution ob;
-    cout << ob.isValid(s) << endl;
-  }
-  return 0;
-}

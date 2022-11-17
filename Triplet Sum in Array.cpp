@@ -29,19 +29,3 @@ public:
     return false;
   }
 };
-
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--)
-  {
-    int n, X;
-    cin >> n >> X;
-    int i, A[n];
-    for (i = 0; i < n; i++)
-      cin >> A[i];
-    Solution ob;
-    cout << ob.find3Numbers(A, n, X) << endl;
-  }
-}

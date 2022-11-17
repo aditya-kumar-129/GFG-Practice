@@ -34,20 +34,3 @@ public:
     return dp[n][s];
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, m;
-    cin >> n >> m;
-    int arr[m];
-    for (int i = 0; i < m; i++)
-      cin >> arr[i];
-    Solution ob;
-    cout << ob.count(arr, m, n) << endl;
-  }
-  return 0;
-}

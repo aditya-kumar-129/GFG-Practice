@@ -16,20 +16,3 @@ public:
     return count;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    string list[n];
-    for (int i = 0; i < n; i++)
-      cin >> list[i];
-    Solution ob;
-    cout << ob.countWords(list, n) << endl;
-  }
-  return 0;
-}

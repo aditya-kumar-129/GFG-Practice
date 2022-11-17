@@ -19,20 +19,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, m;
-    cin >> m >> n;
-    Solution ob;
-    cout << ob.numberOfPaths(m, n) << endl;
-  }
-  return 0;
-}
-
 // Method:- 2
 long long int numberOfPaths(int m, int n)
 {

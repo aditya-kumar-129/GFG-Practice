@@ -41,23 +41,6 @@ void printList(Node* n)
 
 Node* subLinkedList(Node* l1, Node* l2);
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, m;
-    cin >> n;
-    Node* first = buildList(n);
-    cin >> m;
-    Node* second = buildList(m);
-    Node* res = subLinkedList(first, second);
-    printList(res);
-  }
-  return 0;
-}
-
 // This function reverses the LL and hence get the length of the LL
 Node* reverseList(Node* head, int& count)
 {

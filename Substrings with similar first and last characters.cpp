@@ -17,23 +17,6 @@ public:
   }
 };
 
-int main()
-{
-  ios_base::sync_with_stdio(0);
-  cin.tie(nullptr);
-  cout.tie(nullptr);
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string str;
-    cin >> str;
-    Solution ob;
-    cout << ob.countSubstringWithEqualEnds(str) << "\n";
-  }
-  return 0;
-}
-
 // Method 2:-  Using map
 
 int countSubstringWithEqualEnds(string s)

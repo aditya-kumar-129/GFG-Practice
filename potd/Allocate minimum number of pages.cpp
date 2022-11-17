@@ -43,24 +43,6 @@ public:
   }
 };
 
-int main() {
-  int t;
-  cin >> t;
-  while (t--) 
-  {
-    int noOfBooksToBeAllocated;
-    cin >> noOfBooksToBeAllocated;
-    int A[noOfBooksToBeAllocated];
-    for (int i = 0;i < noOfBooksToBeAllocated;i++) 
-      cin >> A[i];
-    int noOfStudentsAvailable;
-    cin >> noOfStudentsAvailable;
-    Solution ob;
-    cout << ob.findPages(A, noOfBooksToBeAllocated, noOfStudentsAvailable) << endl;
-  }
-  return 0;
-}
-
 // Similar questions :- 
 // 1482 Minimum Number of Days to Make m Bouquets(Leetcode)
 // 1231 Divide Chocolate(Leetcode)

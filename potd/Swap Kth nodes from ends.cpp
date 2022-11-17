@@ -30,34 +30,6 @@ bool check(Node** before, Node** after, int num, int K)
   return (before[K - 1] == after[num - K]) && (before[num - K] == after[K - 1]);
 }
 
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--) {
-    int num, K, firstdata;
-    cin >> num >> K;
-    int temp;
-    cin >> firstdata;
-    Node* head = new Node(firstdata);
-    Node* tail = head;
-    for (int i = 0; i < num - 1; i++) {
-      cin >> temp;
-      tail->next = new Node(temp);
-      tail = tail->next;
-    }
-    Node* before[num];
-    addressstore(before, head);
-    head = swapkthnode(head, num, K);
-    Node* after[num];
-    addressstore(after, head);
-    if (check(before, after, num, K))
-      cout << 1 << endl;
-    else
-      cout << 0 << endl;
-  }
-}
-
 //Function to swap Kth node from beginning and end in a linked list.
 Node* swapkthnode(Node* head, int num, int K)
 {

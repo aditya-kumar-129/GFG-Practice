@@ -24,20 +24,3 @@ public:
       return 0;
   }
 };
-
-int main() {
-  int t;
-  cin >> t;
-  while (t--) {
-    int N;
-    cin >> N;
-    vector<vector<int>> graph(N, vector<int>(N, -1));
-    for (int i = 0;i < N;i++)
-      for (int j = 0;j < N;j++)
-        cin >> graph[i][j];
-
-    Solution ob;
-    cout << ob.eulerPath(N, graph) << "\n";
-  }
-  return 0;
-}

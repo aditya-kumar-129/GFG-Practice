@@ -14,24 +14,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, i;
-    cin >> n;
-    int arr[n];
-    for (i = 0; i < n; i++)
-      cin >> arr[i];
-    Solution ob;
-    auto ans = ob.getSingle(arr, n);
-    cout << ans << "\n";
-  }
-  return 0;
-}
-
 // in case when their is no space complexity then in that case below code will work:-
 
 // int getSingle(int a[], int n)

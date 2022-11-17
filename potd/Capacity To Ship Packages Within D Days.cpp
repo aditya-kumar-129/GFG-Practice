@@ -40,19 +40,3 @@ public:
     return curr_min;
   }
 };
-
-int main() {
-  int t;
-  cin >> t;
-  while (t--) {
-    int N, D;
-    cin >> N;
-    int arr[N];
-    for (int i = 0; i < N; i++)
-      cin >> arr[i];
-    cin >> D;
-    Solution ob;
-    cout << ob.leastWeightCapacity(arr, N, D) << endl;
-  }
-  return 0;
-}

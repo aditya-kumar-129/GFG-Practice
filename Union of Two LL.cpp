@@ -37,24 +37,6 @@ void printList(Node* n)
   cout << endl;
 }
 
-struct Node* makeUnion(struct Node* head1, struct Node* head2);
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, m;
-    cin >> n;
-    Node* first = buildList(n);
-    cin >> m;
-    Node* second = buildList(m);
-    printList(makeUnion(first, second));
-  }
-  return 0;
-}
-
 struct Node* makeUnion(struct Node* head1, struct Node* head2)
 {
   set<int> s;

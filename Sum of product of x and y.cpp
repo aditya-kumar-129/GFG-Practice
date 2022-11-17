@@ -16,17 +16,3 @@ public:
     return res;
   }
 };
-int main()
-{
-  int tc;
-  cin >> tc;
-  while (tc--)
-  {
-    int n;
-    cin >> n;
-    Solution ob;
-    long long int ans = ob.sumofproduct(n);
-    cout << ans << "\n";
-  }
-  return 0;
-}

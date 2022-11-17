@@ -34,24 +34,3 @@ public:
     return v;
   }
 };
-
-int main()
-{
-  long long t;
-  cin >> t;
-  while (t--)
-  {
-    long long n, k;
-    cin >> n >> k;
-    int a[n];
-    for (long long i = 0; i < n; i++)
-      cin >> a[i];
-    Solution ob;
-    vector<int> ans;
-    ans = ob.kTop(a, n, k);
-    for (int i = 0; i < ans.size(); i++)
-      cout << ans[i] << " ";
-    cout << '\n';
-  }
-  return 0;
-}

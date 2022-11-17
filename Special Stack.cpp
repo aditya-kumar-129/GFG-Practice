@@ -7,27 +7,6 @@ bool isEmpty(stack<int> &s);
 int pop(stack<int> &s);
 int getMin(stack<int> &s);
 stack<int> s;
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, a;
-    cin >> n;
-    while (!isEmpty(s))
-    {
-      pop(s);
-    }
-    while (!isFull(s, n))
-    {
-      cin >> a;
-      push(s, a);
-    }
-    cout << getMin(s) << endl;
-  }
-}
-
 int minelem;
 void push(stack<int> &s, int a)
 {

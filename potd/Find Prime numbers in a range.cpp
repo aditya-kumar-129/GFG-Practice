@@ -18,16 +18,3 @@ public:
     return ans;
   }
 };
-
-int main() {
-  int t;
-  cin >> t;
-  while (t--) {
-    int N, M, K;
-    cin >> M >> N;
-    Solution ob;
-    vector<int> ans = ob.primeRange(M, N);
-    for (auto u : ans) cout << u << " ";
-    cout << "\n";
-  }
-}

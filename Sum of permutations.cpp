@@ -16,22 +16,6 @@ long long getSum(int arr[], int n)
   return res;
 }
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++)
-      cin >> a[i];
-    cout << getSum(a, n) << endl;
-  }
-  return 0;
-}
-
 // Method 2:- Converting the given array to Number and then using next permutation
 
 long long getSum(int A[], int n)

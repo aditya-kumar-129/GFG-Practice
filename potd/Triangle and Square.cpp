@@ -14,17 +14,3 @@ public:
       return ((b * b) - (2 * b)) / 8;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int B, count;
-    cin >> B;
-    Solution ob;
-    count = ob.countSquare(B);
-    cout << count << endl;
-  }
-}

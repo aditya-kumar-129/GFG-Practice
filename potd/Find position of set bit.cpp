@@ -13,18 +13,6 @@ public:
   }
 };
 
-int main() {
-  int t;
-  cin >> t;
-  while (t--) {
-    int N;
-    cin >> N;
-    Solution ob;
-    cout << ob.findPosition(N) << endl;
-  }
-  return 0;
-}  
-
 // Method 2 :- using builtin ffs()
 
 class Solution {

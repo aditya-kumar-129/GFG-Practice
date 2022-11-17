@@ -9,26 +9,6 @@ public:
   }
 };
 
-// { Driver Code Starts.
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int N;
-    cin >> N;
-    vector<int>Arr(N);
-    for (int i = 0;i < N;i++)
-      cin >> Arr[i];
-    int k;
-    cin >> k;
-    Solution obj;
-    cout << obj.searchInsertK(Arr, N, k) << endl;
-  }
-  return 0;
-} 
-
 // Method 2 :- 
 
 class Solution {

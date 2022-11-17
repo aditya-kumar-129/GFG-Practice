@@ -13,17 +13,3 @@ public:
     return dp[n];
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int N;
-    cin >> N;
-    Solution ob;
-    cout << ob.count(N) << endl;
-  }
-  return 0;
-}

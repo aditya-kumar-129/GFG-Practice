@@ -59,20 +59,3 @@ public:
     return res;
   }
 };
-
-int main()
-{
-  long long t;
-  cin >> t;
-  while (t--)
-  {
-    long long n;
-    cin >> n;
-    long long a[n + 5];
-    for (long long i = 0; i < n; i++)
-      cin >> a[i];
-    Solution ob;
-    cout << ob.subarraySum(a, n) << endl;
-  }
-  return 0;
-}

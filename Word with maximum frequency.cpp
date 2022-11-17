@@ -38,18 +38,3 @@ string maximumFrequency(string s)
   }
   return ans;
 }
-
-int main()
-{
-  int t;
-  cin >> t;
-  cin.ignore();
-  for (int i = 0; i < t; i++)
-  {
-    string s;
-    getline(cin, s);
-    cout << maximumFrequency(s) << endl;
-  }
-  return 0;
-}
-

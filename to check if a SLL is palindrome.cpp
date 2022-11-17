@@ -33,28 +33,3 @@ bool isPalin(Node* head)
   }
   return true;
 }
-
-int main()
-{
-  Node one = Node(1);
-  Node two = Node(2);
-  Node three = Node(3);
-  Node four = Node(2);
-  Node five = Node(1);
-
-  five.ptr = nullptr;
-  one.ptr = &two;
-  two.ptr = &three;
-  three.ptr = &four;
-  four.ptr = &five;
-  Node* temp = &one;
-
-  // Call function to check palindrome or not
-  int result = isPalin(&one);
-  if (result == 1)
-    cout << "isPalindrome is true\n";
-  else
-    cout << "isPalindrome is true\n";
-
-  return 0;
-}

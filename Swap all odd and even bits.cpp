@@ -13,17 +13,3 @@ class Solution
       return (even_bits | odd_bits);
     }
 };
-
-int main()
-{
-	int t;
-	cin>>t;
-	while(t--)
-	{
-		unsigned int n;
-		cin>>n;
-		Solution ob;
-		cout << ob.swapBits(n) << endl;
-	}
-	return 0;
-}

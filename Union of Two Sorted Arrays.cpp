@@ -17,26 +17,3 @@ public:
     return v;
   }
 };
-
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--)
-  {
-    int N, M;
-    cin >> N >> M;
-    int arr1[N];
-    int arr2[M];
-    for (int i = 0; i < N; i++)
-      cin >> arr1[i];
-    for (int i = 0; i < M; i++)
-      cin >> arr2[i];
-    Solution ob;
-    vector<int> ans = ob.findUnion(arr1, arr2, N, M);
-    for (int i : ans)
-      cout << i << ' ';
-    cout << endl;
-  }
-  return 0;
-}

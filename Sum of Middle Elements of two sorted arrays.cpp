@@ -18,26 +18,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, i;
-    cin >> n;
-    int ar1[n], ar2[n];
-    for (i = 0; i < n; i++)
-      cin >> ar1[i];
-    for (i = 0; i < n; i++)
-      cin >> ar2[i];
-    Solution ob;
-    auto ans = ob.findMidSum(ar1, ar2, n);
-    cout << ans << "\n";
-  }
-  return 0;
-}
-
 // Method 2 :- Using Inbuilt function to merge to array
 /*
 Have a llok on the below article about the merge() present in STL of c++
