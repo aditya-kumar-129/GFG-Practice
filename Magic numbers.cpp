@@ -26,20 +26,3 @@ public:
     return x % MAX;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int N;
-    cin >> N;
-    int A[N];
-    for (int i = 0; i < N; i++)
-      cin >> A[i];
-    Solution ob;
-    cout << ob.getVal(N, A) << endl;
-  }
-  return 0;
-}

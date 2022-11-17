@@ -36,25 +36,6 @@ void printList(Node* n)
   }
 }
 
-Node* findIntersection(Node* head1, Node* head2);
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, m;
-    cin >> n >> m;
-    Node* head1 = inputList(n);
-    Node* head2 = inputList(m);
-    Node* result = findIntersection(head1, head2);
-    printList(result);
-    cout << endl;
-  }
-  return 0;
-}
-
 Node* findIntersection(Node* head1, Node* head2)
 {
   map<int, int> m;

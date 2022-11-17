@@ -17,23 +17,3 @@ public:
       arr[i] = arr[i] / n;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    long long A[n];
-    for (int i = 0; i < n; i++)
-      cin >> A[i];
-    Solution ob;
-    ob.arrange(A, n);
-    for (int i = 0; i < n; i++)
-      cout << A[i] << " ";
-    cout << endl;
-  }
-  return 0;
-}

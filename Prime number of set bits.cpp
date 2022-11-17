@@ -39,20 +39,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int L, R;
-    cin >> L >> R;
-    Solution ob;
-    cout << ob.primeSetBits(L, R) << endl;
-  }
-  return 0;
-}
-
 // Short code to solve the above problem is :-
 /*
 Read the below article in order to understand the approach to solve the problem

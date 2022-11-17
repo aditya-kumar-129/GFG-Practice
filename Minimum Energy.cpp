@@ -22,20 +22,3 @@ public:
     return (flag == 0) ? 1 : initMinEnergy;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int i, a[n];
-    for (i = 0; i < n; i++)
-      cin >> a[i];
-    Solution ob;
-    cout << ob.minEnergy(a, n) << endl;
-  }
-  return 0;
-}

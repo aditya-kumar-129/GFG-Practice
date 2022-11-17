@@ -62,24 +62,3 @@ public:
     return ans;
   }
 };
-
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--)
-  {
-    string S;
-    cin >> S;
-    int N = S.length();
-    vector<int> f(N);
-    for (int i = 0; i < N; i++)
-      cin >> f[i];
-    Solution ob;
-    vector<string> ans = ob.huffmanCodes(S, f, N);
-    for (auto i : ans)
-      cout << i << " ";
-    cout << "\n";
-  }
-  return 0;
-}

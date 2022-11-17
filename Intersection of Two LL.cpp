@@ -71,22 +71,3 @@ public:
     return head;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, m;
-    cin >> n;
-    Node* head1 = inputList(n);
-    cin >> m;
-    Node* head2 = inputList(m);
-    Solution obj;
-    Node* result = obj.findIntersection(head1, head2);
-    printList(result);
-    cout << endl;
-  }
-  return 0;
-}

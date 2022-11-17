@@ -47,33 +47,3 @@ public:
     return head;
   }
 };
-
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--)
-  {
-    int K;
-    cin >> K;
-    struct Node* head = nullptr;
-    struct Node* temp = head;
-    for (int i = 0; i < K; i++)
-    {
-      int data;
-      cin >> data;
-      if (head == nullptr)
-        head = temp = new Node(data);
-      else
-      {
-        temp->next = new Node(data);
-        temp = temp->next;
-      }
-    }
-    Solution ob;
-    Node* result = ob.removeDuplicates(head);
-    print(result);
-    cout << endl;
-  }
-  return 0;
-}

@@ -30,25 +30,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int A[n];
-    for (int i = 0; i < n; i++)
-      cin >> A[i];
-    int key;
-    cin >> key;
-    Solution ob;
-    cout << ob.search(A, 0, n - 1, key) << endl;
-  }
-  return 0;
-}
-
 // Iterative appproach:-
 int search(int A[], int l, int h, int key)
 {

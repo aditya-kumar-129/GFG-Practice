@@ -22,21 +22,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int N;
-    cin >> N;
-    Solution ob;
-    int cnt = ob.setBits(N);
-    cout << cnt << endl;
-  }
-  return 0;
-}
-
 // Method 1 :- time complexity :- O(logn)
 
 unsigned int countSetBits(unsigned int n)

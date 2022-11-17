@@ -91,34 +91,3 @@ public:
     return;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    // n represents the total number of nodes present in the linked list where as num represents the value to be stored in the node
-    int n, num;
-    cin >> n;
-    Node* head, * tail;
-    cin >> num;
-    head = tail = new Node(num);
-    for (int i = 0; i < n - 1; i++)
-    {
-      cin >> num;
-      tail->next = new Node(num);
-      tail = tail->next;
-    }
-    int pos;
-    cin >> pos;
-    loopHere(head, tail, pos);
-    Solution ob;
-    ob.removeLoop(head);
-    if (isLoop(head) || length(head) != n)
-      cout << "0\n";
-    else
-      cout << "1\n";
-  }
-  return 0;
-}

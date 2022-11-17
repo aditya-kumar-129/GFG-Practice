@@ -97,39 +97,3 @@ public:
     return dummy->next;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    struct Node* poly1 = nullptr, * poly2 = nullptr, * poly = nullptr;
-    struct Node* tail1 = nullptr, * tail2 = nullptr;
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
-      int x, y;
-      cin >> x >> y;
-      append(&poly1, &tail1, x, y);
-    }
-    int m;
-    cin >> m;
-    for (int i = 0; i < m; i++)
-    {
-      int x, y;
-      cin >> x >> y;
-      append(&poly2, &tail2, x, y);
-    }
-    Solution obj;
-    Node* sum = obj.addPolynomial(poly1, poly2);
-    for (Node* ptr = sum; ptr; ptr = ptr->next)
-    {
-      cout << ptr->coeff << "x^" << ptr->pow;
-      if (ptr->next)
-        cout << " + ";
-    }
-    cout << endl;
-  }
-}

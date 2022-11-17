@@ -23,19 +23,6 @@ long long int numberOf2sinRange(long long int number)
   count2sinRangeAtDigit(0, number);
 }
 
-int main()
-{
-  long long int n;
-  long long int t;
-  cin >> t;
-  while (t--)
-  {
-    cin >> n;
-    cout << numberOf2sinRange(n) << endl;
-  }
-  return 0;
-}
-
 // Method 2 :- Convert the given number to string and then check if any character present is 2 or not
 
 long long int numberOf2sinRange(long long int number)

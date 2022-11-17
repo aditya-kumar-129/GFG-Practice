@@ -22,11 +22,3 @@ int shortestDistance(string s, int n)
   sort(v.begin(), v.end());
   return v[0] - 1;
 }
-
-int main()
-{
-  string s;
-  s = "geeksforgeeks";
-  int n = 13;
-  cout << (shortestDistance(s, n));
-}

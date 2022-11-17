@@ -16,19 +16,6 @@ public:
     return __builtin_popcount(temp);
   }
 };
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int a, b;
-    cin >> a >> b;
-    Solution ob;
-    cout << ob.countBitsFlip(a, b) << endl;
-  }
-  return 0;
-}
 
 // Method 2:-
 int countBitsFlip(int a, int b)

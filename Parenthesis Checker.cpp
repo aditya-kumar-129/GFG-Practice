@@ -27,19 +27,3 @@ public:
     return s.empty();
   }
 };
-
-int main()
-{
-  int t;
-  string a;
-  cin >> t;
-  while (t--)
-  {
-    cin >> a;
-    Solution obj;
-    if (obj.ispar(a))
-      cout << "balanced" << endl;
-    else
-      cout << "not balanced" << endl;
-  }
-}

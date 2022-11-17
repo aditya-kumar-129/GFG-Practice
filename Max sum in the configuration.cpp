@@ -5,22 +5,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int max_sum(int A[], int N);
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--)
-  {
-    int N;
-    cin >> N;
-    int A[N];
-    for (int i = 0; i < N; i++)
-      cin >> A[i];
-    cout << max_sum(A, N) << endl;
-  }
-}
-
 int max_sum(int arr[], int n)
 {
   int sum = 0;

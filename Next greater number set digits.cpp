@@ -32,21 +32,3 @@ public:
     return res;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    Solution ob;
-    int res = ob.findNext(n);
-    if (res == -1)
-      cout << "not possible";
-    else
-      cout << res;
-    cout << endl;
-  }
-}

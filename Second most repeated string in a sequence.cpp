@@ -35,19 +35,3 @@ public:
         return it.first;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    string arr[n];
-    for (int i = 0; i < n; ++i)
-      cin >> arr[i];
-    Solution ob;
-    cout << ob.secFrequent(arr, n) << endl;
-  }
-}

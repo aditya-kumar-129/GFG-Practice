@@ -26,24 +26,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, i;
-    cin >> n;
-    int a[n];
-    for (i = 0; i < n; i++)
-      cin >> a[i];
-    Solution ob;
-    auto ans = ob.findKRotation(a, n);
-    cout << ans << "\n";
-  }
-  return 0;
-}
-
 // Method 2 :- 
 // BRUTE FORCE APPROACH
 // here min_element return a pointer to the index where the minimum elemen is present 

@@ -51,21 +51,3 @@ void postOrderIterative(Node* root)
     cout << node->data << " ";
   }
 }
-
-// Driver code
-int main()
-{
-  // Let us construct the tree shown in above figure
-  Node* root = nullptr;
-  root = newNode(1);
-  root->left = newNode(2);
-  root->right = newNode(3);
-  root->left->left = newNode(4);
-  root->left->right = newNode(5);
-  root->right->left = newNode(6);
-  root->right->right = newNode(7);
-
-  postOrderIterative(root);
-
-  return 0;
-}

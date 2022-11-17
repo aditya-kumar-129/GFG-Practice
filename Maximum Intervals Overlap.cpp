@@ -34,23 +34,3 @@ public:
     return res;
   }
 };
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, i;
-    cin >> n;
-    int entry[n], exit1[n];
-    for (i = 0; i < n; i++)
-      cin >> entry[i];
-    for (i = 0; i < n; i++)
-      cin >> exit1[i];
-    Solution obj;
-    vector<int> p = obj.findMaxGuests(entry, exit1, n);
-    cout << p[0] << ' ' << p[1];
-    cout << "\n";
-  }
-  return 0;
-}

@@ -32,20 +32,3 @@ public:
     return step;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int N;
-    cin >> N;
-    int arr[N];
-    for (int i = 0; i < N; i++)
-      cin >> arr[i];
-    Solution ob;
-    cout << ob.makeProductOne(arr, N) << endl;
-  }
-  return 0;
-}

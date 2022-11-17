@@ -45,20 +45,3 @@ public:
     merge(arr, l, m, h);
   }
 };
-
-int main()
-{
-  int n, T, i;
-  scanf("%d", &T);
-  while (T--)
-  {
-    scanf("%d", &n);
-    int arr[n + 1];
-    for (i = 0; i < n; i++)
-      scanf("%d", &arr[i]);
-    Solution ob;
-    ob.mergeSort(arr, 0, n - 1);
-    printArray(arr, n);
-  }
-  return 0;
-}

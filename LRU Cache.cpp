@@ -52,38 +52,3 @@ public:
     mp[key] = l.begin();
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int capacity;
-    cin >> capacity;
-    LRUCache *cache = new LRUCache(capacity);
-    int queries;
-    cin >> queries;
-    while (queries--)
-    {
-      string q;
-      cin >> q;
-      if (q == "SET")
-      {
-        int key;
-        cin >> key;
-        int value;
-        cin >> value;
-        cache->set(key, value);
-      }
-      else
-      {
-        int key;
-        cin >> key;
-        cout << cache->get(key) << " ";
-      }
-    }
-    cout << endl;
-  }
-  return 0;
-}

@@ -93,24 +93,3 @@ void push(struct Node** head_ref, int new_data)
   new_node->next = (*head_ref);
   (*head_ref) = new_node;
 }
-
-int main()
-{
-  long test;
-  cin >> test;
-  while (test--)
-  {
-    struct Node* a = nullptr;
-    long n, tmp;
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
-      cin >> tmp;
-      push(&a, tmp);
-    }
-    Solution obj;
-    a = obj.mergeSort(a);
-    printList(a);
-  }
-  return 0;
-}

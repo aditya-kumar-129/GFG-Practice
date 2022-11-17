@@ -42,23 +42,6 @@ void preorderIterative(Node* root)
   }
 }
 
-// Driver Code
-int main()
-{
-  Node* root = new Node(10);
-  root->left = new Node(20);
-  root->right = new Node(30);
-  root->left->left = new Node(40);
-  root->left->left->left = new Node(70);
-  root->left->right = new Node(50);
-  root->right->left = new Node(60);
-  root->left->left->right = new Node(80);
-
-  preorderIterative(root);
-
-  return 0;
-}
-
 // Method 2 :- 
 
 // C++ program to implement iterative preorder traversal
@@ -112,17 +95,4 @@ void iterativePreorder(node* root)
     if (node->left)
       nodeStack.push(node->left);
   }
-}
-
-// Driver program to test above functions
-int main()
-{
-  struct node* root = newNode(10);
-  root->left = newNode(8);
-  root->right = newNode(2);
-  root->left->left = newNode(3);
-  root->left->right = newNode(5);
-  root->right->left = newNode(2);
-  iterativePreorder(root);
-  return 0;
 }

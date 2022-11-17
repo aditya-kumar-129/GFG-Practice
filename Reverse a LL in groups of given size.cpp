@@ -46,37 +46,3 @@ public:
     return prev;
   }
 };
-
-int main(void)
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    struct node* head = nullptr;
-    struct node* temp = nullptr;
-    int n;
-    cin >> n;
-    for (int i = 0; i < n; i++)
-    {
-      int value;
-      cin >> value;
-      if (i == 0)
-      {
-        head = new node(value);
-        temp = head;
-      }
-      else
-      {
-        temp->next = new node(value);
-        temp = temp->next;
-      }
-    }
-    int k;
-    cin >> k;
-    Solution ob;
-    head = ob.reverse(head, k);
-    printList(head);
-  }
-  return (0);
-}

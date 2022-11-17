@@ -77,18 +77,3 @@ public:
     return ans;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    long n;
-    cin >> n;
-    Solution ob;
-    auto ans = ob.convertToWords(n);
-    cout << ans << "\n";
-  }
-  return 0;
-}

@@ -82,17 +82,3 @@ public:
     head = odd_start;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    insert();
-    Solution ob;
-    ob.rearrange(start);
-    printList(start);
-  }
-  return 0;
-}

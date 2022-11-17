@@ -44,29 +44,6 @@ void freeList(struct Node* head)
   }
 }
 
-int main(void)
-{
-  int t, n, m, i, x;
-  cin >> t;
-  while (t--)
-  {
-    struct Node* temp, * head;
-    cin >> n >> x;
-    head = new Node(x);
-    temp = head;
-    for (i = 0; i < n - 1; i++)
-    {
-      cin >> x;
-      temp->next = new Node(x);
-      temp = temp->next;
-    }
-    reorderList(head);
-    printList(head);
-    freeList(head);
-  }
-  return 0;
-}
-
 Node* reverse(Node* head)
 {
   Node* curr = head;

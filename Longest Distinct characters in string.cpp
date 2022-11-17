@@ -24,16 +24,4 @@ int longestSubstrDistinctChars(string str)
   return res;
 }
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string S;
-    cin >> S;
-    cout << longestSubstrDistinctChars(S) << endl;
-  }
-}
-
 // How to solve the above problem in O(n) time complexity I don't get

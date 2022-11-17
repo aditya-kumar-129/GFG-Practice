@@ -33,17 +33,3 @@ public:
     return str;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    Solution obj;
-    cout << obj.lookandsay(n) << endl;
-  }
-  return 0;
-}

@@ -80,17 +80,3 @@ public:
       return s;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string a;
-    string b;
-    cin >> a >> b;
-    Solution obj;
-    cout << obj.multiplyStrings(a, b) << endl;
-  }
-}

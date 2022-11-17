@@ -24,23 +24,3 @@ public:
     return index;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, k;
-    cin >> k >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++)
-      cin >> arr[i];
-    Solution ob;
-    auto ans = ob.findMaxAverage(arr, n, k);
-    for (int i = ans; i < ans + k; i++)
-      cout << arr[i] << " ";
-    cout << "\n";
-  }
-  return 0;
-}

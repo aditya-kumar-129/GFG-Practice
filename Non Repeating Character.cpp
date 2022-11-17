@@ -29,25 +29,6 @@ public:
   }
 };
 
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--)
-  {
-    string S;
-    cin >> S;
-    Solution obj;
-    char ans = obj.nonrepeatingCharacter(S);
-    if (ans != '$')
-      cout << ans;
-    else
-      cout << "-1";
-    cout << endl;
-  }
-  return 0;
-}
-
 // OPTIMSED SOLUTION
 // In this case we don't have to traverse the same string twice.
 char nonrepeatingCharacter(string S)

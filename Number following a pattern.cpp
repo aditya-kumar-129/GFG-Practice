@@ -43,17 +43,3 @@ public:
       cout << v[i];
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string S;
-    cin >> S;
-    Solution ob;
-    cout << ob.printMinNumberForPattern(S) << endl;
-  }
-  return 0;
-}

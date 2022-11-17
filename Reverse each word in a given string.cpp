@@ -25,17 +25,3 @@ public:
     return ans;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string s;
-    cin >> s;
-    Solution ob;
-    cout << ob.reverseWords(s) << endl;
-  }
-  return 0;
-}

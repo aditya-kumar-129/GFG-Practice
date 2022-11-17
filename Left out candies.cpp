@@ -15,17 +15,3 @@ long long leftCandies(long long n, long long m)
   }
   return m;
 }
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    long long n, m;
-    cin >> n >> m;
-    auto ans = leftCandies(n, m);
-    cout << ans << "\n";
-  }
-  return 0;
-}
-

@@ -30,29 +30,6 @@ public:
     return ans;
   }
 };
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++)
-      cin >> a[i];
-    Solution obj;
-    vector<int> v = obj.PosNegPair(a, n);
-
-    if (v.size() == 0)
-      cout << "0";
-
-    for (auto it : v)
-      cout << it << " ";
-    cout << endl;
-  }
-  return 0;
-}
 
 // Other way of solving the problem is :-
 /*

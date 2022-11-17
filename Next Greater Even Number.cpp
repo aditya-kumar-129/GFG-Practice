@@ -25,20 +25,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string x;
-    cin >> x;
-    Solution ob;
-    cout << ob.getNextEven(x) << endl;
-  }
-  return 0;
-}
-
 // if you don't want to use the inbuilt function then here is the implementation of next permutation (method applied in the code is same as the one that has been explained in the youtube video link that has been shared above!!)
 
 #include <bits/stdc++.h>

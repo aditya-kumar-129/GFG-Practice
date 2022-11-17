@@ -33,16 +33,3 @@ public:
     methodToStoreDifferentWords(S, ".");
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string s;
-    cin >> s;
-    Solution obj;
-    cout << obj.reverseWords(s) << endl;
-  }
-}

@@ -48,30 +48,3 @@ public:
     return head;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int data;
-    cin >> data;
-    struct Node* head = new Node(data);
-    struct Node* tail = head;
-    for (int i = 0; i < n - 1; ++i)
-    {
-      cin >> data;
-      tail->next = new Node(data);
-      tail = tail->next;
-    }
-    int k;
-    cin >> k;
-    Solution obj;
-    head = obj.sortedInsert(head, k);
-    printList(head);
-  }
-  return 0;
-}

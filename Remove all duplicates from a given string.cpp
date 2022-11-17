@@ -19,18 +19,3 @@ public:
     return ans;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string str;
-    cin >> str;
-    Solution ob;
-    auto ans = ob.removeDuplicates(str);
-    cout << ans << "\n";
-  }
-  return 0;
-}

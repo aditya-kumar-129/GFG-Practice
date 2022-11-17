@@ -24,25 +24,3 @@ public:
     return ans;
   }
 };
-
-int main()
-{
-  ios_base::sync_with_stdio(false);
-  cin.tie(0);
-  cout.tie(0);
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    long long n, i;
-    cin >> n;
-    long long A[n + 1], B[n + 1];
-    for (i = 0; i < n; i++)
-      cin >> A[i];
-
-    for (i = 0; i < n; i++)
-      cin >> B[i];
-    Solution ob;
-    cout << ob.getMin(A, B, n) << endl;
-  }
-}

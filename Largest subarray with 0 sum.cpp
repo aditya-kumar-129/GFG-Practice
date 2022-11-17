@@ -29,20 +29,3 @@ public:
     return maxLen;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int m;
-    cin >> m;
-    vector<int> array1(m);
-    for (int i = 0; i < m; ++i)
-      cin >> array1[i];
-    Solution ob;
-    cout << ob.maxLen(array1, m) << endl;
-  }
-  return 0;
-}

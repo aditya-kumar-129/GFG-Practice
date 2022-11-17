@@ -31,16 +31,3 @@ void printArray(int arr[], int n)
     cout << arr[i] << " ";
   cout << endl;
 }
-
-int main()
-{
-  int arr[] = {2, 3, -4, -1, 6, -9};
-  int n = sizeof(arr) / sizeof(arr[0]);
-  cout << "Given array is \n";
-  printArray(arr, n);
-  rearrange(arr, n);
-  cout << "Rearranged array is \n";
-  printArray(arr, n);
-  return 0;
-}
-

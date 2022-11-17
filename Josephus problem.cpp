@@ -26,20 +26,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, k;
-    cin >> n >> k;
-    Solution ob;
-    cout << ob.josephus(n, k) << endl;
-  }
-  return 0;
-}
-
 // Method 2 :- Using recursion
 // Have a look on the below yooutube video for knowing how we gwt at the return statement
 // https://www.youtube.com/watch?v=dzYq5VEMZIg

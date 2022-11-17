@@ -40,23 +40,3 @@ public:
     return res;
   }
 };
-
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--)
-  {
-    int N;
-    cin >> N;
-    int a[N];
-    for (int i = 0; i < N; i++)
-      cin >> a[i]; 
-    Solution obj;
-    vector<string> res = obj.possibleWords(a, N);
-    for (string i : res)
-      cout << i << " ";
-    cout << endl;
-  }
-  return 0;
-} 

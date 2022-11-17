@@ -42,17 +42,3 @@ public:
     return k;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string S;
-    cin >> S;
-
-    Solution ob;
-    cout << ob.longestPalin(S) << endl;
-  }
-}

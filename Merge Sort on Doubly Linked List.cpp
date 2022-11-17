@@ -100,26 +100,6 @@ void swap(int* A, int* B)
   *B = temp;
 }
 
-int main(void)
-{
-  long test;
-  cin >> test;
-  while (test--)
-  {
-    int n, tmp;
-    struct Node* head = nullptr;
-    cin >> n;
-    while (n--)
-    {
-      cin >> tmp;
-      insert(&head, tmp);
-    }
-    head = sortDoubly(head);
-    print(head);
-  }
-  return 0;
-}
-
 // method 2:-  ITERATIVE METHOD
 Node* merge(Node* head1, Node* head2)
 {

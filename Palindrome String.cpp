@@ -14,20 +14,3 @@ public:
     return 1;
   }
 };
-
-int main()
-{
-  ios_base::sync_with_stdio(0);
-  cin.tie(nullptr);
-  cout.tie(nullptr);
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string s;
-    cin >> s;
-    Solution ob;
-    cout << ob.isPalindrome(s) << "\n";
-  }
-  return 0;
-}

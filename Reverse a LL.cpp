@@ -40,28 +40,3 @@ void printList(struct Node* head)
     temp = temp->next;
   }
 }
-
-int main()
-{
-  int T, n, l, firstdata;
-  cin >> T;
-  while (T--)
-  {
-    struct Node* head = nullptr, * tail = nullptr;
-    cin >> n;
-    cin >> firstdata;
-    head = new Node(firstdata);
-    tail = head;
-    for (int i = 1; i < n; i++)
-    {
-      cin >> l;
-      tail->next = new Node(l);
-      tail = tail->next;
-    }
-    Solution ob;
-    head = ob.reverseList(head);
-    printList(head);
-    cout << endl;
-  }
-  return 0;
-}

@@ -35,35 +35,3 @@ public:
       even->next = nullptr;
   }
 };
-
-int main()
-{
-  int T, i, n, l;
-  cin >> T;
-  while (T--)
-  {
-    struct Node* head = nullptr;
-    struct Node* temp = head;
-    cin >> n;
-    for (i = 1; i <= n; i++)
-    {
-      cin >> l;
-      if (head == nullptr)
-        head = temp = new Node(l);
-      else
-      {
-        temp->next = new Node(l);
-        temp = temp->next;
-      }
-    }
-    Solution ob;
-    ob.rearrangeEvenOdd(head);
-    while (head != nullptr)
-    {
-      printf("%d ", head->data);
-      head = head->next;
-    }
-    printf("\n");
-  }
-  return 0;
-}

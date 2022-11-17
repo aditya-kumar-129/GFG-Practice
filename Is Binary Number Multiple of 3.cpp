@@ -23,21 +23,6 @@ public:
   }
 };
 
-int main()
-{
-
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string s;
-    cin >> s;
-    Solution ob;
-    cout << ob.isDivisible(s) << endl;
-  }
-  return 0;
-}
-
 // Method 2:- So we know that 1 in a bianry number represent 2 power that index 
 // We are using the same concept here and each time we are just finding the mod operaton as the input number can be very large and hence we can't store the final number if don't use the mod operation at each step.
 int isDivisible(string s)

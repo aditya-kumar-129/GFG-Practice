@@ -25,23 +25,3 @@ public:
     return v;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int k;
-    cin >> k;
-    vector<vector<int>> arr(N, vector<int>(N, 0));
-    for (int i = 0; i < k; i++)
-      for (int j = 0; j < k; j++)
-        cin >> arr[i][j];
-    Solution obj;
-    vector<int> output = obj.mergeKArrays(arr, k);
-    printArray(output, k * k);
-    cout << endl;
-  }
-  return 0;
-}
