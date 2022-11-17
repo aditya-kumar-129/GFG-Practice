@@ -47,34 +47,3 @@ public:
     return false;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    // n represents the total number of nodes present in the linked list where as num represents the value to be stored in the node
-    int n, num;
-    cin >> n;
-    Node* head, * tail;
-    cin >> num;
-    head = tail = new Node(num);
-    for (int i = 0; i < n - 1; i++)
-    {
-      cin >> num;
-      //Adding the new nodes at the end of the linked list
-      tail->next = new Node(num);
-      tail = tail->next;
-    }
-    int pos;
-    cin >> pos;
-    loopHere(head, tail, pos);
-    Solution ob;
-    if (ob.detectLoop(head))
-      cout << "True\n";
-    else
-      cout << "False\n";
-  }
-  return 0;
-}

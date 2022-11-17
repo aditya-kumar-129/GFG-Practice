@@ -55,24 +55,6 @@ int check(int arr[], int n)
   return flag;
 }
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int N;
-    cin >> N;
-    int arr[N];
-    for (int i = 0; i < N; i++)
-      cin >> arr[i];
-    Solution ob;
-    ob.reArrange(arr, N);
-    cout << check(arr, N) << endl;
-  }
-  return 0;
-}
-
 // Method :- 2
 // Space Com[lexity :- O(n)
 void reArrange(int arr[], int N) 

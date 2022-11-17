@@ -31,21 +31,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string s;
-    int k;
-    cin >> s >> k;
-    Solution ob;
-    cout << ob.minValue(s, k) << "\n";
-  }
-  return 0;
-}
-
 // Method 2 :- Without using inbuilt priority queue
 
 int minValue(string s, int k) 

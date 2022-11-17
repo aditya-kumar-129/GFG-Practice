@@ -31,22 +31,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string s;
-    string b;
-    cin >> s >> b;
-    Solution obj;
-    cout << obj.isRotated(s, b) << endl;
-  }
-  return 0;
-}
-
-
 // Have a look at the below article :- 
 // https://www.geeksforgeeks.org/substring-in-cpp/
 bool isRotated(string str1, string str2)

@@ -22,21 +22,3 @@ public:
     return "NO";
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, i;
-    cin >> n;
-    int a[n];
-    for (i = 0; i < n; i++)
-      cin >> a[i];
-    Solution ob;
-    auto ans = ob.equilibrium(a, n);
-    cout << ans << "\n";
-  }
-  return 0;
-}

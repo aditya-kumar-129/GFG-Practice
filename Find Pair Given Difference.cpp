@@ -12,26 +12,6 @@ bool findPair(int arr[], int size, int n)
   return false;
 }
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int l, n;
-    cin >> l >> n;
-    int arr[l];
-    for (int i = 0; i < l; i++)
-      cin >> arr[i];
-    if (findPair(arr, l, n))
-      cout << 1 << endl;
-    else
-      cout << "-1" << endl;
-  }
-
-  return 0;
-}
-
 // Method 2:-  It's space complexity will be O(1).
 
 bool findPair(int arr[], int size, int n)

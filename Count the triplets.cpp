@@ -28,26 +28,6 @@ public:
   }
 };
 
-int main()
-{
-  ios_base::sync_with_stdio(0);
-  cin.tie(nullptr);
-  cout.tie(nullptr);
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++)
-      cin >> arr[i];
-    Solution ob;
-    cout << ob.countTriplet(arr, n) << "\n";
-  }
-  return 0;
-}
-
 // Method 2 :- When you want to use the space Space Complexity :- O(n)
 int countTriplet(int A[], int n)
 {
@@ -95,12 +75,4 @@ int countWays(int arr[], int n)
       ans += freq[i] * freq[j] * freq[i + j];
 
   return ans;
-}
-
-int main()
-{
-  int arr[] = { 1, 1, 1, 2, 2 };
-  int n = sizeof(arr) / sizeof(int);
-  cout << (countWays(arr, n));
-  return 0;
 }

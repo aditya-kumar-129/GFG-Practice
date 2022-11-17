@@ -44,35 +44,6 @@ public:
   }
 };
 
-int main()
-{
-  long long t;
-  cin >> t;
-  while (t--)
-  {
-    int q;
-    cin >> q;
-    Solution ob;
-    while (q--) 
-    {
-      int qt;
-      cin >> qt;
-      if (qt == 1)
-      {
-        int att;
-        cin >> att;
-        ob.push(att);
-      }
-      else if (qt == 2)
-        cout << ob.pop() << " ";
-      else if (qt == 3)
-        cout << ob.getMin() << " ";
-    }
-    cout << endl;
-  }
-  return 0;
-}
-
 /*
 Method 2 :- OPTIMISED PART
 Refer the below article for more details:-

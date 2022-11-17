@@ -23,18 +23,3 @@ public:
     return a;
   }
 };
-
-int main()
-{
-  int tc;
-  cin >> tc;
-  while (tc--)
-  {
-    string A;
-    cin >> A;
-    Solution obj;
-    string ans = obj.FirstNonRepeating(A);
-    cout << ans << "\n";
-  }
-  return 0;
-}

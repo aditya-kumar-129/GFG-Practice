@@ -24,18 +24,3 @@ public:
     return s[k - 1];
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string str;
-    cin >> str;
-    int k;
-    cin >> k;
-    Solution ob;
-    cout << ob.decodeIt(str, k) << endl;
-  }
-}

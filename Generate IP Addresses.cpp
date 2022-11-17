@@ -37,19 +37,3 @@ public:
     return ans;
   }
 };
-
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--)
-  {
-    string s;
-    cin >> s;
-    Solution obj;
-    vector<string> str = obj.genIp(s);
-    sort(str.begin(), str.end());
-    for (auto &u : str)
-      cout << u << "\n";
-  }
-}

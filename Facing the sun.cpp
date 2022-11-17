@@ -14,23 +14,3 @@ public:
     return count;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int h[n];
-    for (int i = 0; i < n; i++)
-    {
-      cin >> h[i];
-    }
-    Solution ob;
-    auto ans = ob.countBuildings(h, n);
-    cout << ans << "\n";
-  }
-  return 0;
-}

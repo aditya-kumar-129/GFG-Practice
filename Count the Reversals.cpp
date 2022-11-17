@@ -25,15 +25,3 @@ int countRev(string expr)
   ans = ceil(left_brace / 2.0) + ceil(right_brace / 2.0);
   return ans;
 }
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string s;
-    cin >> s;
-    cout << countRev(s) << '\n';
-  }
-}

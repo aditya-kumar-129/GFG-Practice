@@ -29,24 +29,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int a[n];
-    for (int i = 0; i < n; i++)
-      cin >> a[i];
-    Solution ob;
-    auto ans = ob.findTwoElement(a, n);
-    cout << ans[0] << " " << ans[1] << "\n";
-  }
-  return 0;
-}
-
 // Method 2:- OPTIMISED SOLUTION
 // Time complexity:- O(n)
 // Space Complexity :- O(1)

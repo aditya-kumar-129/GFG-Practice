@@ -15,16 +15,3 @@ public:
     return result;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string s;
-    cin >> s;
-    Solution ob;
-    cout << ob.ExcelColumnNumber(s) << endl;
-  }
-}

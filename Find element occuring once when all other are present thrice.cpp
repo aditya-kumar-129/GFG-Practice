@@ -23,24 +23,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int N;
-    cin >> N;
-    int arr[N];
-    for (int i = 0; i < N; i++)
-      cin >> arr[i];
-    Solution ob;
-    cout << ob.singleElement(arr, N);
-    cout << "\n";
-  }
-  return 0;
-}
-
 // Method 2:- Don't know
 int singleElement(int arr[], int N)
 {

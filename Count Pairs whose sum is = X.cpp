@@ -59,30 +59,3 @@ public:
     return count;
   }
 };
-
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--)
-  {
-    struct Node* head1, * head2, * tail2, * tail1 = nullptr;
-    int n1, n2, tmp, x;
-    cin >> n1;
-    while (n1--)
-    {
-      cin >> tmp;
-      append(&head1, &tail1, tmp);
-    }
-    cin >> n2;
-    while (n2--)
-    {
-      cin >> tmp;
-      append(&head2, &tail2, tmp);
-    }
-    cin >> x;
-    Solution obj;
-    cout << obj.countPairs(head1, head2, x) << '\n';
-  }
-  return 0;
-}

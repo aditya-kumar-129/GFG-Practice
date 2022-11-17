@@ -49,24 +49,3 @@ public:
     }
   }
 };
-
-int main()
-{
-  int t = 0;
-  int n = 0;
-  cin >> t;
-  while (t--)
-  {
-    Node* head = nullptr;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; i++)
-      cin >> arr[i];
-    for (int i = n - 1; i >= 0; i--)
-      push(&head, arr[i]);
-    Solution ob;
-    ob.sortList(&head);
-    printList(head);
-  }
-  return 0;
-}

@@ -39,14 +39,3 @@ public:
 		}
 	}
 };
-
-int main() {
-	class Node* head = nullptr;
-	class NodeOperation* temp = new NodeOperation();
-	for (int i = 5; i > 0; i--) {
-		temp->pushNode(&head, i);
-		temp->printNode(head);
-		temp->printMiddle(head);
-	}
-	return 0;
-}

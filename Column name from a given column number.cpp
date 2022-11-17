@@ -22,16 +22,3 @@ public:
     return result;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    long long int n;
-    cin >> n;
-    Solution ob;
-    cout << ob.colName(n) << '\n';
-  }
-}

@@ -17,29 +17,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, m;
-    cin >> n >> m;
-    long long a[n], b[m];
-    for (int i = 0; i < n; i++)
-      cin >> a[i];
-    for (int i = 0; i < m; i++)
-      cin >> b[i];
-    vector<long long> ans;
-    Solution ob;
-    ans = ob.findMissing(a, b, n, m);
-    for (int i = 0; i < ans.size(); i++)
-      cout << ans[i] << " ";
-    cout << "\n";
-  }
-  return 0;
-}
-
 // Method 2:- Using Set
 vector<long long> findMissing(long long A[], long long B[],int N, int M)
 {

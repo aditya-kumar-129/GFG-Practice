@@ -17,22 +17,6 @@ int findElement(int a[], int n)
   return -1;
 }
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, i;
-    cin >> n;
-    int a[n];
-    for (i = 0; i < n; i++)
-      cin >> a[i];
-    cout << findElement(a, n) << endl;
-  }
-  return 0;
-}
-
 /*optimisation method so as to reduce the space complexity of the problem below is the article to get about it (NOT ABLE TO GET THE OPTIMISATION PART)
 https://www.geeksforgeeks.org/find-the-element-before-which-all-the-elements-are-smaller-than-it-and-after-which-all-are-greater-than-it/
 */

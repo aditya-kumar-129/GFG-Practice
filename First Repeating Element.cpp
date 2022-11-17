@@ -16,24 +16,6 @@ public:
   }
 };
 
-int main()
-{
-
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int arr[n];
-    for (int i = 0; i < n; ++i)
-      cin >> arr[i];
-    Solution ob;
-    cout << ob.firstRepeated(arr, n) << "\n";
-  }
-  return 0;
-}
-
 // Method 2:-  USing Set STL
 
 int firstRepeated(int arr[], int n)

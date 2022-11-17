@@ -31,23 +31,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    Solution obj;
-    vector<string> res = obj.generateCode(n);
-    for (string i : res)
-      cout << i << " ";
-    cout << endl;
-  }
-  return 0;
-}
-
 // Method 2 :-  Iterative Approach
 
 vector <string> generateCode(int N)

@@ -37,23 +37,3 @@ public:
     return ans;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    string s;
-    cin >> s;
-    Solution ob;
-    auto ans = ob.findRange(s, n);
-    if (ans.size() == 1)
-      cout << ans[0] << "\n";
-    else
-      cout << ans[0] << " " << ans[1] << "\n";
-  }
-  return 0;
-}

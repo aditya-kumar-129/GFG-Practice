@@ -47,19 +47,3 @@ void printArray(int arr[], int size)
     printf("%d ", arr[i]);
   printf("\n");
 }
-
-int main()
-{
-  int arr[1000000], n, T, i;
-  scanf("%d", &T);
-  while (T--)
-  {
-    scanf("%d", &n);
-    for (i = 0; i < n; i++)
-      scanf("%d", &arr[i]);
-    Solution ob;
-    ob.heapSort(arr, n);
-    printArray(arr, n);
-  }
-  return 0;
-}

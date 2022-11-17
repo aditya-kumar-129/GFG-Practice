@@ -19,19 +19,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string s;
-    cin >> s;
-    Solution ob;
-    cout << ob.countSubstr(s) << '\n';
-  }
-}
-
 // Method 2:-
 int countSubstr(string s)
 {

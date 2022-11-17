@@ -39,19 +39,6 @@ string isCircular(string s)
     return "Not Circular";
 }
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string path;
-    cin >> path;
-    cout << isCircular(path) << endl;
-  }
-  return 0;
-}
-
 // Method 2:- 
 
 #define N 0

@@ -21,25 +21,3 @@ public:
     return min_dist;
   }
 };
-
-int main()
-{
-  ios_base::sync_with_stdio(0);
-  cin.tie(nullptr);
-  cout.tie(nullptr);
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    vector<string> s(n);
-    for (int i = 0; i < n; i++)
-      cin >> s[i];
-    string word1, word2;
-    cin >> word1 >> word2;
-    Solution ob;
-    cout << ob.shortestDistance(s, word1, word2) << "\n";
-  }
-  return 0;
-}

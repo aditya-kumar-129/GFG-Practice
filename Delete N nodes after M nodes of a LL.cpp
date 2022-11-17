@@ -72,20 +72,3 @@ public:
     }
   }
 };
-
-int main()
-{
-  int t, n1;
-  cin >> t;
-  while (t--)
-  {
-    cin >> n1;
-    int m, n;
-    cin >> m >> n;
-    insert(n1);
-    Solution ob;
-    ob.linkdelete(start, m, n);
-    printList(start);
-  }
-  return 0;
-}

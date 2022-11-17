@@ -15,27 +15,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, A, B;
-    cin >> n >> A >> B;
-    int a[n];
-    for (int i = 0; i < n; ++i)
-      cin >> a[i];
-    Solution ob;
-    if (ob.check_elements(a, n, A, B))
-      cout << "Yes";
-    else
-      cout << "No";
-    cout << "\n";
-  }
-  return 0;
-}
-
 // Method 2:-
 // Space Complexity :- O(n)
 // Time Complexity :- O(n)

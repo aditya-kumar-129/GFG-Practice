@@ -23,23 +23,3 @@ int getChocolateCost(vector<int> v, int chocolateMRP)
   }
   return chocolate_bought * chocolateMRP;
 }
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n, tmp;
-    cin >> n;
-    vector<int> arr;
-    while (n--)
-    {
-      cin >> tmp;
-      arr.push_back(tmp);
-    }
-    cin >> tmp;
-    cout << getChocolateCost(arr, tmp) << "\n";
-  }
-  return 0;
-}

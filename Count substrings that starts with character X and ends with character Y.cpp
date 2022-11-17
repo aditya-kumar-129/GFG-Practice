@@ -16,12 +16,3 @@ int countSubstr(string str, int n, char x, char y)
   }
   return tot_count;
 }
-
-int main()
-{
-  string str = "abbcaceghcak";
-  int n = str.size();
-  char x = 'a', y = 'c';
-  cout << "Count = " << countSubstr(str, n, x, y);
-  return 0;
-}

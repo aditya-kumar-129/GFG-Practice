@@ -83,23 +83,6 @@ void insert(int n1)
   }
 }
 
-int main()
-{
-  int n;
-  int t;
-  scanf("%d", &t);
-  while (t--)
-  {
-    scanf("%d", &n);
-    insert(n);
-    Solution ob;
-    struct Node* newHead = ob.segregate(start);
-    printList(newHead);
-  }
-  return 0;
-}
-
-
 // Method 2:
 // OPTIMISED SOLUTION
 // TIME COMPLEXITY:- O(n)

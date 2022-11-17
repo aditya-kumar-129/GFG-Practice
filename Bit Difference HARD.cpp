@@ -25,24 +25,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int N;
-    cin >> N;
-    long long int A[N];
-    for (int i = 0; i < N; i++)
-      cin >> A[i];
-
-    Solution ob;
-    cout << ob.countBits(N, A) << "\n";
-  }
-  return 0;
-}
-
 // Method 2:-
 
 int countBits(int N, long long int arr[])

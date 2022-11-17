@@ -21,20 +21,3 @@ public:
     return count;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int i, arr[n + 5];
-    for (i = 0; i < n; i++)
-      cin >> arr[i];
-    Solution ob;
-    cout << ob.longest(arr, n) << endl;
-  }
-  return 0;
-}

@@ -29,22 +29,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    petrolPump p[n];
-    for (int i = 0; i < n; i++)
-      cin >> p[i].petrol >> p[i].distance;
-    Solution obj;
-    cout << obj.tour(p, n) << endl;
-  }
-}
-
 // Method 2:- In this method we use the same concept as in the above method but we have traverse each index twice here as we are not storing the value prev values
 
 int tour(petrolPump arr[], int n)

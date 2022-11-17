@@ -1,20 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int countWords(string s);
-int main()
-{
-  int t;
-  cin >> t;
-  cin.ignore();
-  while (t--)
-  {
-    string s;
-    getline(cin, s);
-    cout << countWords(s) << endl;
-  }
-}
-
 int countWords(string s)
 {
   int count = 0, flag = 0;

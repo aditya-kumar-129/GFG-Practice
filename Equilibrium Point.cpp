@@ -22,20 +22,3 @@ public:
     return -1;
   }
 };
-
-int main()
-{
-  long long t;
-  cin >> t;
-  while (t--)
-  {
-    long long n;
-    cin >> n;
-    long long a[n];
-    for (long long i = 0; i < n; i++)
-      cin >> a[i];
-    Solution ob;
-    cout << ob.equilibriumPoint(a, n) << endl;
-  }
-  return 0;
-}

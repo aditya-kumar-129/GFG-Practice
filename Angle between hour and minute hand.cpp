@@ -27,17 +27,3 @@ public:
     return min(360 - angle, angle);
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int H, M;
-    cin >> H >> M;
-    Solution ob;
-    cout << ob.getAngle(H, M) << endl;
-  }
-  return 0;
-} 

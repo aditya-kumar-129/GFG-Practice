@@ -57,20 +57,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    string A, B;
-    cin >> A >> B;
-    Solution ob;
-    cout << ob.addBinary(A, B);
-    cout << "\n";
-  }
-}
-
 // Method 2:-
 
 string addBinary(string A, string B)

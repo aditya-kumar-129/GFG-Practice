@@ -21,19 +21,3 @@ long long maxArea(long long A[], int len)
   }
   return area;
 }
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    long long arr[n];
-    for (int i = 0; i < n; i++)
-      cin >> arr[i];
-    cout << maxArea(arr, n) << endl;
-  }
-  return 0;
-}

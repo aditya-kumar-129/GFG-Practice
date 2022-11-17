@@ -83,27 +83,6 @@ struct Node* arrange(Node* head)
   return start;
 }
 
-int main()
-{
-  int T;
-  cin >> T;
-  while (T--)
-  {
-    int n;
-    char tmp;
-    struct Node* head = nullptr;
-    cin >> n;
-    while (n--)
-    {
-      cin >> tmp;
-      append(&head, tmp);
-    }
-    head = arrange(head);
-    printlist(head);
-  }
-  return 0;
-}
-
 // Method 2 :- BRUTE FORCE APPROACH
 struct Node* arrange(Node* head)
 {

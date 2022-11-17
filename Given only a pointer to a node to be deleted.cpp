@@ -73,25 +73,6 @@ public:
   }
 };
 
-int main(void)
-{
-  int t, k, n, value;
-  scanf("%d", &t);
-  while (t--)
-  {
-    insert();
-    scanf("%d", &k);
-    Node* del = findNode(head, k);
-    Solution ob;
-    if (del != nullptr && del->next != nullptr)
-    {
-      ob.deleteNode(del);
-    }
-    printList(head);
-  }
-  return (0);
-}
-
 // Same method:- 
 
 void deleteNode(Node* del)

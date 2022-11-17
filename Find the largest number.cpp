@@ -23,17 +23,3 @@ public:
     }
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int N;
-    cin >> N;
-    Solution ob;
-    cout << ob.find(N) << endl;
-  }
-  return 0;
-}

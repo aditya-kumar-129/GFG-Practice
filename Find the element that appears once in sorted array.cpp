@@ -50,24 +50,6 @@ public:
   }
 };
 
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    int n;
-    cin >> n;
-    int A[n];
-    for (int i = 0; i < n; i++)
-      cin >> A[i];
-    Solution ob;
-    int res = ob.findOnce(A, n);
-    cout << res << endl;
-  }
-  return 0;
-}
-
 // OPTIMISED SOLUTION
 // 1) Find the middle index, say ‘mid’.
 // 2) If ‘mid’ is even, then compare arr[mid] and arr[mid +1]. If both are the same, then the required element after ‘mid’ and else before mid.

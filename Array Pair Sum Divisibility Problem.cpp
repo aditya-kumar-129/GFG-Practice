@@ -33,27 +33,6 @@ public:
   }
 };
 
-int main()
-{
-  int tc;
-  cin >> tc;
-  while (tc--)
-  {
-    int n, k;
-    cin >> n >> k;
-    vector<int> nums(n);
-    for (int i = 0; i < nums.size(); i++)
-      cin >> nums[i];
-    Solution ob;
-    bool ans = ob.canPair(nums, k);
-    if (ans)
-      cout << "True\n";
-    else
-      cout << "False\n";
-  }
-  return 0;
-}
-
 // Method 2:-
 bool canPair(vector<int> v, int k)
 {

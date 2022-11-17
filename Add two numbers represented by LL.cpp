@@ -87,22 +87,3 @@ public:
     return res;
   }
 };
-
-int main()
-{
-  int t;
-  cin >> t;
-  while (t--)
-  {
-    // n and m are number of digits present in the two numbers.
-    int n, m;
-    cin >> n;
-    Node *first = buildList(n);
-    cin >> m;
-    Node *second = buildList(m);
-    Solution ob;
-    Node *res = ob.addTwoLists(first, second);
-    printList(res);
-  }
-  return 0;
-}
