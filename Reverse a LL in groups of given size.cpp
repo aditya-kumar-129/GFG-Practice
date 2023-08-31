@@ -1,48 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct node
-{
+struct Node {
   int data;
-  struct node* next;
-  node(int x)
-  {
-    data = x;
-    next = nullptr;
-  }
+  struct Node* next;
 };
 
-void printList(struct node* node)
-{
-  while (node != nullptr)
-  {
-    printf("%d ", node->data);
-    node = node->next;
-  }
-  printf("\n");
-}
-
-class Solution
-{
+class Solution {
 public:
-  struct node* reverse(struct node* head, int k)
-  {
-    if (!head)
-      return nullptr;
-    node* current = head;
-    node* next = nullptr;
-    node* prev = nullptr;
+  struct Node* reverse(struct Node* head, int k) {
+    if (!head) return nullptr;
+    Node* current = head, * next = nullptr, * prev = nullptr;
     int count = 0;
-    while (current != nullptr && count < k)
-    {
+    while (current != nullptr && count < k) {
       next = current->next;
       current->next = prev;
       prev = current;
       current = next;
       count++;
     }
-    if (next != nullptr)
-      head->next = reverse(next, k);
+    if (next) head->next = reverse(next, k);
     return prev;
   }
 };

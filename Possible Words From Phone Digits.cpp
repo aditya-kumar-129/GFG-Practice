@@ -1,14 +1,10 @@
 #include <bits/stdc++.h>
-#include <string>
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-  string getNumString(int n)
-  {
-    switch (n)
-    {
+  string getNumString(int n) {
+    switch (n) {
     case 2: return "abc";
     case 3: return "def";
     case 4: return "ghi";
@@ -20,21 +16,17 @@ public:
     }
   }
 
-  void getWords(int i, int n, int a[], string curr, vector<string> &res)
-  {
-    if (i == n)
-    {
+  void getWords(int i, int n, int a[], string curr, vector<string>& res) {
+    if (i == n) {
       res.push_back(curr);
       return;
     }
     string s = getNumString(a[i]);
-    for (int j = 0; j < s.size(); j++)
-      getWords(i + 1, n, a, curr + s[j], res);
+    for (int j = 0; j < s.size(); j++) getWords(i + 1, n, a, curr + s[j], res);
   }
 
   //Function to find list of all words possible by pressing given numbers.
-  vector<string> possibleWords(int a[], int N)
-  {
+  vector<string> possibleWords(int a[], int N) {
     vector<string> res;
     getWords(0, N, a, "", res);
     return res;

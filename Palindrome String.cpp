@@ -1,16 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-  int isPalindrome(string str)
-  {
-    int l = 0;
-    int h = str.length() - 1;
-    while (h > l)
-      if (str[l++] != str[h--])
-        return 0;
+  int isPalindrome(string str) {
+    int low = 0, high = str.length() - 1;
+    while (high > low) {
+      if (str[low++] != str[high--]) return 0;
+    }
     return 1;
   }
 };

@@ -1,33 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node
-{
+struct Node {
   int data;
   struct Node* next;
-  Node(int x)
-  {
-    data = x;
-    next = nullptr;
-  }
 };
 
-class Solution
-{
+class Solution {
 public:
-  Node* pairWiseSwap(struct Node* head)
-  {
-    if (head == nullptr || head->next == nullptr)
-      return head;
-    Node* prev = head;
-    Node* curr = head->next;
+  Node* pairWiseSwap(struct Node* head) {
+    if (!head || !head->next) return head;
+    Node* prev = head, * curr = head->next;
     head = curr;
-    while (true)
-    {
+    while (true) {
       Node* temp = curr->next;
       curr->next = prev;
-      if (temp == nullptr || temp->next == nullptr)
-      {
+      if (!temp || !temp->next) {
         prev->next = temp;
         break;
       }
@@ -38,13 +26,3 @@ public:
     return head;
   }
 };
-
-void printList(Node* Node)
-{
-  while (Node != nullptr)
-  {
-    cout << Node->data << " ";
-    Node = Node->next;
-  }
-  cout << "\n";
-}

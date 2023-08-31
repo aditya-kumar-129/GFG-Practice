@@ -1,37 +1,28 @@
-/*
-  You can refer the below video explanation for more clearance:-
-  https://youtu.be/BJE3VEQWtIs
-*/
+// Youtube Video Link :- https://youtu.be/BJE3VEQWtIs
+
 #include <bits/stdc++.h>
 using namespace std;
 
-class StackQueue
-{
+class StackQueue {
 private:
   stack<int> s1;
   stack<int> s2;
-
 public:
   void push(int B);
   int pop();
 };
 
 //Function to push an element in queue by using 2 stacks.
-void StackQueue ::push(int x)
-{
+void StackQueue::push(int x) {
   s1.push(x);
 }
 
 //Function to pop an element from queue by using 2 stacks.
-int StackQueue ::pop()
-{
-  if (s1.empty() && s2.empty())
-    return -1;
+int StackQueue::pop() {
+  if (s1.empty() && s2.empty()) return -1;
 
-  if (s2.empty())
-  {
-    while (!s1.empty())
-    {
+  if (s2.empty()) {
+    while (!s1.empty()) {
       s2.push(s1.top());
       s1.pop();
     }

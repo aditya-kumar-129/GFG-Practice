@@ -1,55 +1,28 @@
 #include <iostream>
 using namespace std;
-/* Linked list Node */
-struct Node
-{
+
+struct Node {
   int data;
   struct Node* next;
-  Node(int x)
-  {
+  Node(int x) {
     data = x;
     next = nullptr;
   }
 };
 
-void reorderList(struct Node* head);
-
-struct Node* newNode(int data)
-{
-  struct Node* new_Node = new Node(data);
-  new_Node->data = data;
-  new_Node->next = nullptr;
-  return new_Node;
-}
-
-void printList(struct Node* Node)
-{
-  while (Node != nullptr)
-  {
-    printf("%d ", Node->data);
-    Node = Node->next;
-  }
-  printf("\n");
-}
-
-void freeList(struct Node* head)
-{
+void freeList(struct Node* head) {
   struct Node* temp;
-  while (head != nullptr)
-  {
-
+  while (head) {
     temp = head;
     head = head->next;
     free(temp);
   }
 }
 
-Node* reverse(Node* head)
-{
+Node* reverse(Node* head) {
   Node* curr = head;
   Node* prev = nullptr, * next;
-  while (curr != nullptr)
-  {
+  while (curr) {
     next = curr->next;
     curr->next = prev;
     prev = curr;
@@ -58,12 +31,10 @@ Node* reverse(Node* head)
   return prev;
 }
 
-void reorderList(Node* root)
-{
+void reorderList(Node* root) {
   Node* slow = root, * fast = root, * head1 = root;
   Node* head2;
-  while ((fast != nullptr) && (fast->next != nullptr))
-  {
+  while (fast && fast->next) {
     slow = slow->next;
     fast = fast->next->next;
   }
@@ -73,8 +44,7 @@ void reorderList(Node* root)
 
   Node* tmp = head1;
   head1 = head1->next;
-  while (head2 != nullptr)
-  {
+  while (head2) {
     tmp->next = head2;
     head2 = head2->next;
     tmp = tmp->next;

@@ -1,26 +1,17 @@
 #include <iostream>
 using namespace std;
 
-struct Node
-{
+struct Node {
   int data;
   struct Node* next;
-  Node(int x)
-  {
-    data = x;
-    next = nullptr;
-  }
 };
 
-class Solution
-{
+class Solution {
 public:
-  struct Node* reverseList(struct Node* head)
-  {
+  struct Node* reverseList(struct Node* head) {
     Node* current = head;
     Node* prev = nullptr, * next = nullptr;
-    while (current != nullptr)
-    {
+    while (current) {
       next = current->next;
       current->next = prev;
       prev = current;
@@ -30,13 +21,3 @@ public:
     return head;
   }
 };
-
-void printList(struct Node* head)
-{
-  struct Node* temp = head;
-  while (temp != nullptr)
-  {
-    cout << temp->data << " ";
-    temp = temp->next;
-  }
-}

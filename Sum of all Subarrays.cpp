@@ -48,14 +48,13 @@ then below is how for loop is being executed:-
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-  long long subarraySum(long long a[], long long n)
-  {
+  long long subarraySum(long long a[], long long n) {
     long long res = 0;
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++) {
       res = (res + a[i] * (i + 1) * (n - i)) % 1000000007;
+    }
     return res;
   }
 };

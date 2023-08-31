@@ -2,14 +2,12 @@
 // https://www.geeksforgeeks.org/sum-product-x-y-floornx-y/
 #include <bits/stdc++.h>
 using namespace std;
-class Solution
-{
+
+class Solution {
 public:
-  long long int sumofproduct(int n)
-  {
+  long long int sumofproduct(int n) {
     int res = 0;
-    for (int x = 1; x <= n; x++)
-    {
+    for (int x = 1; x <= n; x++) {
       int y = n / x;
       res += (y * x);
     }

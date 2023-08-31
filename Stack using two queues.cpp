@@ -10,8 +10,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class QueueStack
-{
+class QueueStack {
 private:
   queue<int> q1;
   queue<int> q2;
@@ -22,11 +21,9 @@ public:
 };
 
 //Function to push an element into stack using two queues.
-void QueueStack ::push(int x)
-{
+void QueueStack::push(int x) {
   q2.push(x);
-  while (!q1.empty())
-  {
+  while (!q1.empty()) {
     q2.push(q1.front());
     q1.pop();
   }
@@ -34,11 +31,9 @@ void QueueStack ::push(int x)
 }
 
 //Function to pop an element from stack using two queues.
-int QueueStack ::pop()
-{
+int QueueStack::pop() {
   // Your Code
-  if (q1.empty())
-    return -1;
+  if (q1.empty()) return -1;
   int popped_number = q1.front();
   q1.pop();
   return popped_number;

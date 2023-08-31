@@ -1,44 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node
-{
+struct Node {
   int data;
   struct Node* next;
-  Node(int x)
-  {
-    data = x;
-    next = nullptr;
-  }
 };
 
-void print(Node* root)
-{
-  Node* temp = root;
-  while (temp != nullptr)
-  {
-    cout << temp->data << " ";
-    temp = temp->next;
-  }
-}
-
-class Solution
-{
+class Solution {
 public:
-  Node* removeDuplicates(Node* head)
-  {
+  Node* removeDuplicates(Node* head) {
     unordered_set<int> st;
     Node* curr = head;
     Node* prev = head;
-    while (curr)
-    {
-      if (st.find(curr->data) != st.end())
-      {
+    while (curr) {
+      if (st.find(curr->data) != st.end()) {
         prev->next = curr->next;
         delete (curr);
       }
-      else
-      {
+      else {
         st.insert(curr->data);
         prev = curr;
       }
