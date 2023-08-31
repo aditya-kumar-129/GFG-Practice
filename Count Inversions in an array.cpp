@@ -6,42 +6,29 @@ https://youtu.be/uojx--MK_n0
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-  void merge(int start, int mid, int end, long long arr[], long long int& count)
-  {
-    int n1 = mid - start + 1;
-    int n2 = end - mid;
-    vector<long long int> left(n1);
-    vector<long long int> right(n2);
+  void merge(int start, int mid, int end, long long arr[], long long int& count) {
+    int n1 = mid - start + 1, n2 = end - mid;
+    vector<long long int> left(n1), right(n2);
     int i, j, k;
-    for (i = 0; i < n1; i++)
-      left[i] = arr[start + i];
-    for (i = 0; i < n2; i++)
-      right[i] = arr[mid + i + 1];
+    for (i = 0; i < n1; i++) left[i] = arr[start + i];
+    for (i = 0; i < n2; i++) right[i] = arr[mid + i + 1];
     i = 0, j = 0, k = start;
-    while (i < n1 && j < n2)
-    {
-      if (left[i] > right[j])
-      {
+    while (i < n1 && j < n2) {
+      if (left[i] > right[j]) {
         // the only extra line in the code and the other whole codes are of merge sort
         count += (n1 - i);
         arr[k++] = right[j++];
       }
-      else
-        arr[k++] = left[i++];
+      else arr[k++] = left[i++];
     }
-    while (i < n1)
-      arr[k++] = left[i++];
-    while (j < n2)
-      arr[k++] = right[j++];
+    while (i < n1) arr[k++] = left[i++];
+    while (j < n2) arr[k++] = right[j++];
   }
 
-  void mergesort(int start, int end, long long arr[], long long int& count)
-  {
-    if (start < end)
-    {
+  void mergesort(int start, int end, long long arr[], long long int& count) {
+    if (start < end) {
       int mid = (start + end) / 2;
       mergesort(start, mid, arr, count);
       mergesort(mid + 1, end, arr, count);
@@ -49,8 +36,7 @@ public:
     }
   }
 
-  long long int inversionCount(long long arr[], long long N)
-  {
+  long long int inversionCount(long long arr[], long long N) {
     long long int count = 0;
     mergesort(0, N - 1, arr, count);
     return count;
