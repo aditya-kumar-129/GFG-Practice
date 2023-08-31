@@ -10,37 +10,27 @@ https://www.techiedelight.com/design-stack-which-returns-minimum-element-constan
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution 
-{
+class Solution {
   stack<int> aux;
   stack<int> s;
 public:
 
-  int getMin() 
-  {
-    if (aux.empty())
-      return -1;
-    else
-      return aux.top();
+  int getMin() {
+    if (aux.empty()) return -1;
+    else return aux.top();
   }
-  int pop() 
-  {
-    if (s.empty()) 
-      return -1;
-    else 
-    {
+  int pop() {
+    if (s.empty()) return -1;
+    else {
       int pop_val = s.top();
-      if (s.top() == aux.top()) 
-        aux.pop();
+      if (s.top() == aux.top()) aux.pop();
       s.pop();
       return pop_val;
     }
   }
-  void push(int x) 
-  {
+  void push(int x) {
     s.push(x);
-    if (aux.empty() || aux.top() >= x) 
-      aux.push(x);
+    if (aux.empty() || aux.top() >= x) aux.push(x);
   }
 };
 
@@ -57,40 +47,29 @@ https://youtu.be/QTrNy-0Og7E
 // Space Complexity :- O(1)
 
 
-class Solution 
-{
+class Solution {
   int minEle;
   stack<int> s;
 public:
-  int getMin()
-  {
-    if (s.size() == 0)
-      return -1;
+  int getMin() {
+    if (s.size() == 0) return -1;
     return minEle;
   }
-  int pop()
-  {
-    if (s.empty())
-      return -1;
+  int pop() {
+    if (s.empty()) return -1;
     int t = s.top();
     s.pop();
     int res;
-    if (t <= minEle)
-    {
+    if (t <= minEle) {
       res = minEle;
       minEle = 2 * minEle - t;
       return res;
     }
-    else
-      return t;
+    else return t;
   }
-  void push(int x) 
-  {
-    if (s.empty())
-      minEle = x,s.push(x);
-    else if (x <= minEle)
-      s.push(2 * x - minEle),minEle = x;
-    else
-      s.push(x);
+  void push(int x) {
+    if (s.empty()) minEle = x, s.push(x);
+    else if (x <= minEle) s.push(2 * x - minEle), minEle = x;
+    else s.push(x);
   }
 };

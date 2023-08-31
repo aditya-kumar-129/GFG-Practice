@@ -3,42 +3,26 @@
 using namespace std;
 #define nullptr nullptr
 
-struct Node
-{
+struct Node {
   int data;
-  struct Node* left;
-  struct Node* right;
-  Node(int data)
-  {
-    this->data = data;
-    left = right = nullptr;
-  }
+  struct Node* left, * right;
 };
 
-/* Iterative function for inorder tree traversal */
-void inOrder(struct Node* root)
-{
+void inOrder(struct Node* root) {
   stack<Node*> s;
   Node* curr = root;
-
-  while (curr != nullptr || s.empty() == false)
-  {
+  while (curr != nullptr || s.empty() == false) {
     /* Reach the left most Node of the curr Node */
-    while (curr != nullptr)
-    {
+    while (curr) {
       /* place pointer to a tree node on the stack before traversing the node's left subtree */
       s.push(curr);
       curr = curr->left;
     }
-
     /* Current must be nullptr at this point */
     curr = s.top();
     s.pop();
-
     cout << curr->data << " ";
-
     /* we have visited the node and its left subtree. Now, it's right subtree's turn */
     curr = curr->right;
-
-  } /* end of while */
+  }
 }

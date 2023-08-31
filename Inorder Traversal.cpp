@@ -1,35 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node
-{
+struct Node {
   int data;
-  Node* left;
-  Node* right;
-  Node(int val)
-  {
-    data = val;
-    left = right = nullptr;
-  }
+  Node* left, * right;
 };
 
-class Solution
-{
-  void INORDER(Node* root, vector<int>& x)
-  {
-    if (root != nullptr)
-    {
-      INORDER(root->left, x);
+class Solution {
+  void dfs(Node* root, vector<int>& x) {
+    if (root) {
+      dfs(root->left, x);
       x.push_back(root->data);
-      INORDER(root->right, x);
+      dfs(root->right, x);
     }
   }
 
 public:
-  vector<int> inOrder(Node* root)
-  {
+  vector<int> inOrder(Node* root) {
     vector<int> v;
-    INORDER(root, v);
+    dfs(root, v);
     return v;
   }
 };

@@ -1,59 +1,44 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
-{
+// Recursive Approach 
+class Solution {
 public:
-  // Recursive Approach 
-  vector <string> generateCode(int n)
-  {
-    vector<string> v;
-    if (n == 1)
-    {
-      v.push_back("0");
-      v.push_back("1");
-      return v;
-    }
+  vector <string> generateCode(int n) {
+    vector<string> ans;
+    if (n == 1) return { "0", "1" };
     vector<string> res = generateCode(n - 1);
-    for (int i = 0;i < res.size();i++)
-    {
+    for (int i = 0;i < res.size();i++) {
       string str = "0";
       str += res[i];
-      v.push_back(str);
+      ans.push_back(str);
     }
-    for (int i = res.size() - 1;i >= 0;i--)
-    {
+    for (int i = res.size() - 1;i >= 0;i--) {
       string str = "1";
       str += res[i];
-      v.push_back(str);
+      ans.push_back(str);
     }
-    return v;
+    return ans;
   }
 };
 
 // Method 2 :-  Iterative Approach
 
-vector <string> generateCode(int N)
-{
+vector <string> generateCode(int N) {
   vector<string> ans{ "0", "1" };
-  for (int i = 2; i <= N; i++) 
-  {
+  for (int i = 2; i <= N; i++) {
     int len = ans.size();
-    for (int i = 0; i < len; i++) 
-      ans[i] = "0" + ans[i];
-    for (int i = len-1; i >=0; i--) 
-      ans.push_back("1" + ans[i]);
+    for (int i = 0; i < len; i++) ans[i] = "0" + ans[i];
+    for (int i = len - 1; i >= 0; i--) ans.push_back("1" + ans[i]);
   }
   return ans;
 }
 
 // Method 3 :- Using bitset Don't know the logic
 
-vector <string> generateCode(int N)
-{
+vector <string> generateCode(int N) {
   vector<string> ans;
-  for (int i = 0; i < (1 << N); i++)
-  {
+  for (int i = 0; i < (1 << N); i++) {
     bitset<16> curr((i ^ (i >> 1)));
     string s = curr.to_string();
     ans.emplace_back(s.substr(16 - N));
@@ -61,8 +46,7 @@ vector <string> generateCode(int N)
   return ans;
 }
 
-vector <string> generateCode(int N)
-{
+vector <string> generateCode(int N) {
   vector <string> res;
   int num = pow(2, N);
   for (int i = 0; i < num; i++) {

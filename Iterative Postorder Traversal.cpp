@@ -1,35 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
-#define nullptr nullptr
 
-// A tree node
 struct Node {
-
   int data;
   Node* left, * right;
 };
 
-// Function to create a new node with the given data
-Node* newNode(int data)
-{
-  Node* node = new Node;
-  node->data = data;
-  node->left = node->right = nullptr;
-  return node;
-}
 // An iterative function to do post order traversal of a given binary tree
-void postOrderIterative(Node* root)
-{
-  if (root == nullptr)
-    return;
-
+void postOrderIterative(Node* root) {
+  if (!root) return;
   // Create two stacks
   stack<Node*> s1, s2;
-
   // push root to first stack
   s1.push(root);
   Node* node;
-
   // Run while first stack is not empty
   while (!s1.empty()) {
     // Pop an item from s1 and push it to s2
@@ -38,10 +22,8 @@ void postOrderIterative(Node* root)
     s2.push(node);
 
     // Push left and right children of removed item to s1
-    if (node->left)
-      s1.push(node->left);
-    if (node->right)
-      s1.push(node->right);
+    if (node->left) s1.push(node->left);
+    if (node->right) s1.push(node->right);
   }
 
   // Print all elements of second stack

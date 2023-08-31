@@ -1,12 +1,10 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-struct Node
-{
+struct Node {
   int data;
   struct Node* next;
-  Node(int x)
-  {
+  Node(int x) {
     data = x;
     next = nullptr;
   }
@@ -14,8 +12,7 @@ struct Node
 
 struct Node* start = nullptr;
 
-class Solution
-{
+class Solution {
 public:
   // This is what I have done to solve this problem 
   /*
@@ -24,23 +21,18 @@ public:
   */
 
   //  Brute force approach
-  Node* segregate(Node* head)
-  {
+  Node* segregate(Node* head) {
     int count[3] = { 0, 0, 0 };
     Node* temp = head;
-    while (temp != nullptr)
-    {
+    while (temp != nullptr) {
       count[temp->data] += 1;
       temp = temp->next;
     }
     int i = 0;
     temp = head;
-    while (temp != nullptr)
-    {
-      if (count[i] == 0)
-        ++i;
-      else
-      {
+    while (temp) {
+      if (count[i] == 0) ++i;
+      else {
         temp->data = i;
         --count[i];
         temp = temp->next;
@@ -50,32 +42,18 @@ public:
   }
 };
 
-void printList(struct Node* Node)
-{
-  while (Node != nullptr)
-  {
-    printf("%d ", Node->data);
-    Node = Node->next;
-  }
-  printf("\n");
-}
-
-void insert(int n1)
-{
+void insert(int n1) {
   int n, value, i;
   n = n1;
   struct Node* temp;
-  for (i = 0; i < n; i++)
-  {
+  for (i = 0; i < n; i++) {
     scanf("%d", &value);
-    if (i == 0)
-    {
+    if (i == 0) {
       start = new Node(value);
       temp = start;
       continue;
     }
-    else
-    {
+    else {
       temp->next = new Node(value);
       temp = temp->next;
       temp->next = nullptr;
@@ -88,13 +66,10 @@ void insert(int n1)
 // TIME COMPLEXITY:- O(n)
 // SPACE COMPLEXITY:- O(1)
 
-class Solution
-{
+class Solution {
 public:
-  Node* segregate(Node* head)
-  {
-    if (!head || !(head->next))
-      return head;
+  Node* segregate(Node* head) {
+    if (!head || !(head->next)) return head;
 
     // Create three dummy nodes to point to beginning of three linked lists. These dummy nodes are created to avoid many null checks.
     Node* zeroD = new Node(0);
@@ -106,22 +81,18 @@ public:
 
     // Traverse list
     Node* curr = head;
-    while (curr)
-    {
-      if (curr->data == 0)
-      {
+    while (curr) {
+      if (curr->data == 0) {
         zero->next = curr;
         zero = zero->next;
         curr = curr->next;
       }
-      else if (curr->data == 1)
-      {
+      else if (curr->data == 1) {
         one->next = curr;
         one = one->next;
         curr = curr->next;
       }
-      else
-      {
+      else {
         two->next = curr;
         two = two->next;
         curr = curr->next;
@@ -138,7 +109,6 @@ public:
     delete zeroD;
     delete oneD;
     delete twoD;
-
     return head;
   }
 };

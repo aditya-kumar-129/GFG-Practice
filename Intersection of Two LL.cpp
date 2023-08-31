@@ -1,67 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node
-{
+struct Node {
   int data;
   Node* next;
-  Node(int val)
-  {
+  Node(int val) {
     data = val;
     next = nullptr;
   }
 };
 
-Node* inputList(int size)
-{
-  Node* head, * tail;
-  int val;
-  cin >> val;
-  head = tail = new Node(val);
-  while (--size)
-  {
-    cin >> val;
-    tail->next = new Node(val);
-    tail = tail->next;
-  }
-  return head;
-}
-
-void printList(Node* n)
-{
-  while (n)
-  {
-    cout << n->data << " ";
-    n = n->next;
-  }
-}
-
-class Solution
-{
+class Solution {
 public:
-  Node* findIntersection(Node* head1, Node* head2)
-  {
-    Node* head = nullptr, * tail = nullptr;
-    Node* temp = head2;
+  Node* findIntersection(Node* head1, Node* head2) {
+    Node* head = nullptr, * tail = nullptr, * temp = head2;
     unordered_map<int, int> mp;
-    while (temp != nullptr)
-    {
+    while (temp != nullptr) {
       mp[temp->data]++;
       temp = temp->next;
     }
     temp = head1;
-    while (temp != nullptr)
-    {
-      if (mp.find(temp->data) != mp.end())
-      {
+    while (temp) {
+      if (mp.find(temp->data) != mp.end()) {
         Node* n = new Node(temp->data);
-        if (head == nullptr)
-        {
+        if (!head) {
           head = n;
           tail = n;
         }
-        else
-        {
+        else {
           tail->next = n;
           tail = tail->next;
         }
