@@ -1,8 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int findElement(int a[], int n)
-{
+int findElement(int a[], int n) {
   int mini[n], maxi[n];
   mini[0] = a[0];
   maxi[n - 1] = a[n - 1];
