@@ -1,14 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-  int maxVal(int a[], int n)
-  {
-    for (int i = 0; i < n; i++)
-      a[i] = a[i] - i;
-    sort(a, a + n);
-    return a[n - 1] - a[0];
+  int maxVal(int nums[], int n) {
+    for (int i = 0; i < n; i++) nums[i] = nums[i] - i;
+    sort(nums, nums + n);
+    return nums[n - 1] - nums[0];
   }
 };

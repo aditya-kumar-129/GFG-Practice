@@ -1,26 +1,19 @@
 #include <iostream>
 using namespace std;
-struct Node
-{
+
+struct Node {
   int data;
   struct Node* next;
-  Node(int x)
-  {
-    data = x;
-    next = nullptr;
-  }
 };
-int getNthFromLast(Node* head, int n)
-{
+
+int getNthFromLast(Node* head, int n) {
   int len = 0, i;
   struct Node* temp = head;
-  while (temp != nullptr)
-  {
+  while (temp) {
     temp = temp->next;
     len++;
   }
-  if (len < n)
-    return -1;
+  if (len < n) return -1;
   temp = head;
   for (i = 1; i < len - n + 1; i++)
     temp = temp->next;

@@ -1,23 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-  int lenOfLongSubarr(int A[], int N, int K)
-  {
-    int ln = 0, sum = 0;
-    map<int, int> m;
-    for (int i = 0; i < N; i++)
-    {
+  int lenOfLongSubarr(int A[], int N, int K) {
+    int len = 0, sum = 0;
+    map<int, int> mp;
+    for (int i = 0; i < N; i++) {
       sum += A[i];
-      if (sum == K)
-        ln = max(i + 1, ln);
-      if (m.find(sum) == m.end())
-        m[sum] = i;
-      if (m.find(sum - K) != m.end())
-        ln = max(ln, i - m[sum - K]);
+      if (sum == K) len = max(i + 1, len);
+      if (mp.find(sum) == mp.end()) mp[sum] = i;
+      if (mp.find(sum - K) != mp.end()) len = max(len, i - mp[sum - K]);
     }
-    return ln;
+    return len;
   }
 };

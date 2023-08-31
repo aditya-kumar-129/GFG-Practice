@@ -1,36 +1,27 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
-{
+class Solution {
 public:
-  vector<int> findMaxGuests(int arrl[], int exit[], int n)
-  {
+  vector<int> findMaxGuests(int arrl[], int exit[], int n) {
     sort(arrl, arrl + n);
     sort(exit, exit + n);
     int guests_in = 1, max_guests = 1, time = arrl[0];
     int i = 1, j = 0;
-    while (i < n && j < n)
-    {
-      if (arrl[i] <= exit[j])
-      {
+    while (i < n && j < n) {
+      if (arrl[i] <= exit[j]) {
         guests_in++;
-        if (guests_in > max_guests)
-        {
+        if (guests_in > max_guests) {
           max_guests = guests_in;
           time = arrl[i];
         }
         i++;
       }
-      else
-      {
+      else {
         guests_in--;
         j++;
       }
     }
-    vector<int> res;
-    res.push_back(max_guests);
-    res.push_back(time);
-    return res;
+    return { max_guests, time };
   }
 };

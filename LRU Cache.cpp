@@ -6,8 +6,7 @@ https://www.youtube.com/watch?v=akFRa58Svug
 #include <bits/stdc++.h>
 using namespace std;
 
-class LRUCache
-{
+class LRUCache {
 private:
 public:
   //Constructor for initializing the cache capacity with the given value.
@@ -15,16 +14,13 @@ public:
   list<pair<int, int>> l;
   int size;
 
-  LRUCache(int cap)
-  {
+  LRUCache(int cap) {
     size = cap;
   }
 
   //Function to return value corresponding to the key.
-  int get(int key)
-  {
-    if (mp.find(key) != mp.end())
-    {
+  int get(int key) {
+    if (mp.find(key) != mp.end()) {
       auto it = mp[key];
       pair<int, int> p = *it;
       l.erase(mp[key]);
@@ -36,19 +32,15 @@ public:
   }
 
   //Function for storing key-value pair.
-  void set(int key, int value)
-  {
-    if (mp.find(key) != mp.end())
-      l.erase(mp[key]);
-    else
-    {
-      if (l.size() == size)
-      {
+  void set(int key, int value) {
+    if (mp.find(key) != mp.end()) l.erase(mp[key]);
+    else {
+      if (l.size() == size) {
         mp.erase(l.back().first);
         l.pop_back();
       }
     }
-    l.push_front({key, value});
+    l.push_front({ key, value });
     mp[key] = l.begin();
   }
 };
