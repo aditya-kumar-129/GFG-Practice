@@ -1,81 +1,51 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node* partition(struct Node* head, int x) {
-  struct Node* smallerHead = nullptr, * smallerLast = nullptr;
-  struct Node* greaterLast = nullptr, * greaterHead = nullptr;
-  struct Node* equalHead = nullptr, * equalLast = nullptr;
+struct Node {
+  int data;
+  struct Node* next;
+};
 
-  while (head != nullptr)
-  {
-    if (head->data == x)
-    {
-      if (equalHead == nullptr)
-        equalHead = equalLast = head;
-      else
-      {
+Node* partition(Node* head, int x) {
+  Node* smallerHead = nullptr, * smallerLast = nullptr;
+  Node* greaterLast = nullptr, * greaterHead = nullptr;
+  Node* equalHead = nullptr, * equalLast = nullptr;
+
+  while (head) {
+    if (head->data == x) {
+      if (!equalHead) equalHead = equalLast = head;
+      else {
         equalLast->next = head;
         equalLast = equalLast->next;
       }
     }
-    else if (head->data < x)
-    {
-      if (smallerHead == nullptr)
-        smallerLast = smallerHead = head;
-      else
-      {
+    else if (head->data < x) {
+      if (!smallerHead) smallerLast = smallerHead = head;
+      else {
         smallerLast->next = head;
         smallerLast = head;
       }
     }
-    else
-    {
-      if (greaterHead == nullptr)
-        greaterLast = greaterHead = head;
-      else
-      {
+    else {
+      if (!greaterHead) greaterLast = greaterHead = head;
+      else {
         greaterLast->next = head;
         greaterLast = head;
       }
     }
     head = head->next;
   }
-  if (greaterLast != nullptr)
-    greaterLast->next = nullptr;
-
-  if (smallerHead == nullptr)
-  {
-    if (equalHead == nullptr)
-      return greaterHead;
+  if (greaterLast) greaterLast->next = nullptr;
+  if (!smallerHead) {
+    if (!equalHead) return greaterHead;
     equalLast->next = greaterHead;
     return equalHead;
   }
-
-  if (equalHead == nullptr)
-  {
+  if (!equalHead) {
     smallerLast->next = greaterHead;
     return smallerHead;
   }
-
   smallerLast->next = equalHead;
   equalLast->next = greaterHead;
   return smallerHead;
-}
-
-struct Node {
-  int data;
-  struct Node* next;
-
-  Node(int x) {
-    data = x;
-    next = nullptr;
-  }
-};
-
-void printList(struct Node* node) {
-  while (node != nullptr) {
-    printf("%d ", node->data);
-    node = node->next;
-  }
-  printf("\n");
 }

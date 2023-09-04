@@ -3,13 +3,10 @@ using namespace std;
 
 class Solution {
 public:
-  int findPosition(int n)
-  {
+  int findPosition(int n) {
     int totalSetBits = __builtin_popcount(n);
-    if (totalSetBits > 1 || totalSetBits == 0)
-      return -1;
-    else
-      return log2(n) + 1;
+    if (totalSetBits > 1 || totalSetBits == 0) return -1;
+    else return log2(n) + 1;
   }
 };
 
@@ -17,12 +14,9 @@ public:
 
 class Solution {
 public:
-  int findPosition(int n)
-  {
+  int findPosition(int n) {
     int totalSetBits = __builtin_popcount(n);
-    if (totalSetBits > 1 || totalSetBits == 0)
-      return -1;
-    else
-      return ffs(n);
+    if (totalSetBits > 1 || totalSetBits == 0) return -1;
+    else return ffs(n);
   }
 };

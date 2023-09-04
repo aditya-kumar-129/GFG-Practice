@@ -4,8 +4,7 @@ using namespace std;
 
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node* left, * right;
 
   Node(int val) {
     data = val;
@@ -13,15 +12,8 @@ struct Node {
   }
 };
 
-void inOrder(Node* root) {
-  if (!root) return;
-  inOrder(root->left);
-  cout << root->data << " ";
-  inOrder(root->right);
-}
-
 Node* preorder(Node* root, Node*& prev) {
-  if (!root)return nullptr;
+  if (!root) return nullptr;
   if (!root->right and !root->left) {
     prev->right = root;
     root->left = prev;
@@ -32,7 +24,6 @@ Node* preorder(Node* root, Node*& prev) {
   root->right = preorder(root->right, prev);
 }
 Node* convertToDLL(Node* root) {
-  // add code here.
   Node* head = new Node(0), * prev = head;
   preorder(root, prev);
   head->right->left = nullptr;
