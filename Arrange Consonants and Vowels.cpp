@@ -1,3 +1,5 @@
+// Question Link :- https://practice.geeksforgeeks.org/problems/arrange-consonants-and-vowels/1
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -12,29 +14,19 @@ struct Node {
 
 // Method 1:-  In this case we are forming two LL, One for vowel and one for Consonant.
 // As soon as the traversal gets finished just point the vowel next to consonant head;
-struct Node* arrange(Node* head) {
+// Space Complexity :- O(n) for creating a entire new LL.
+Node* arrange(Node* head) {
   Node* vowel = nullptr, * consonant = nullptr, * start = nullptr, * end = nullptr;
-  while (head != nullptr) {
+  while (head) {
     char x = head->data;
+    Node* newNode = new Node(x);
     if (x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u') {
-      if (!vowel) {
-        vowel = new Node(x);
-        start = vowel;
-      }
-      else {
-        vowel->next = new Node(x);
-        vowel = vowel->next;
-      }
+      if (!vowel) vowel = newNode, start = vowel;
+      else vowel->next = newNode, vowel = vowel->next;
     }
     else {
-      if (!consonant) {
-        consonant = new Node(x);
-        end = consonant;
-      }
-      else {
-        consonant->next = new Node(x);
-        consonant = consonant->next;
-      }
+      if (!consonant) consonant = newNode, end = consonant;
+      else consonant->next = newNode, consonant = consonant->next;
     }
     head = head->next;
   }
@@ -46,17 +38,17 @@ struct Node* arrange(Node* head) {
 }
 
 // Method 2 :- BRUTE FORCE APPROACH
-struct Node* arrange(Node* head) {
-  vector<char> vowel, cons;
+Node* arrange(Node* head) {
+  vector<char> vowel, consonant;
   Node* temp = head;
-  while (temp != nullptr) {
+  while (temp) {
     if (temp->data == 'a' || temp->data == 'e' || temp->data == 'i' || temp->data == 'o' || temp->data == 'u') {
       vowel.push_back(temp->data);
     }
-    else cons.push_back(temp->data);
+    else consonant.push_back(temp->data);
     temp = temp->next;
   }
-  for (auto e : cons) vowel.push_back(e);
+  for (auto e : consonant) vowel.push_back(e);
   int len = vowel.size(), count = 1;
   Node* newNode = new Node(vowel[0]);
   Node* head1 = newNode;
@@ -75,12 +67,8 @@ bool isVowel(char x) {
   return (x == 'a' || x == 'e' || x == 'i' || x == 'o' || x == 'u');
 }
 
-struct Node* arrange(struct Node* head) {
-  struct Node* newHead = head;
-  // for keep track of vowel
-  struct Node* latestVowel;
-  struct Node* curr = head;
-  // list is empty
+Node* arrange(Node* head) {
+  Node* newHead = head, * latestVowel, * curr = head;
   if (!head) return nullptr;
   // We need to discover the first vowel in the list. It is going to be the returned head, and also the initial latestVowel.
   if (isVowel(head->data))
@@ -89,10 +77,10 @@ struct Node* arrange(struct Node* head) {
   else {
     // First element is not a vowel. Iterate through the list until we find a vowel.
     // Note that curr points to the element *before* the element with the vowel.
-    while (curr->next != nullptr && !isVowel(curr->next->data)) curr = curr->next;
+    while (curr->next && !isVowel(curr->next->data)) curr = curr->next;
 
     // This is an edge case where there are only consonants in the list.
-    if (curr->next == nullptr) return head;
+    if (!curr->next) return head;
 
     // Set the initial latestVowel and the new head to the vowel item that we found.
     // Relink the chain of consonants after that vowel item:
@@ -104,7 +92,7 @@ struct Node* arrange(struct Node* head) {
   }
 
   // Now traverse the list. Curr is always the item *before* the one we are checking, so that we can use it to re-link.
-  while (curr != nullptr && curr->next != nullptr) {
+  while (curr && curr->next) {
     if (isVowel(curr->next->data)) {
       // The next discovered item is a vowel
       if (curr == latestVowel) {
@@ -116,7 +104,7 @@ struct Node* arrange(struct Node* head) {
         // But if it comes after an intervening chain of consonants, we need to chain the newly discovered vowel right after the old vowel.
         // Curr is not changed as after the re-linking it will have a new next, that has not been checked yet,
         // and we always keep curr at one before the next to check.
-        struct Node* temp = latestVowel->next;
+        Node* temp = latestVowel->next;
         // Chain in new vowel
         latestVowel->next = curr->next;
         // Advance latestVowel

@@ -1,4 +1,7 @@
-// Question Link :- https://practice.geeksforgeeks.org/problems/array-of-alternate-ve-and-ve-nos1401/0
+// Question Link :- https://practice.geeksforgeeks.org/problems/array-of-alternate-ve-and-ve-nos1401/1
+
+// Similar Question 
+// Question Link :- https://practice.geeksforgeeks.org/problems/positive-and-negative-elements4613/1
 
 #include <bits/stdc++.h>
 using namespace std;

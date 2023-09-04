@@ -1,3 +1,5 @@
+// Question Link :- https://practice.geeksforgeeks.org/problems/check-for-bst/1
+
 #include <bits/stdc++.h>
 using namespace std;
 #define MAX_HEIGHT 100000
@@ -17,5 +19,4 @@ public:
   bool isBST(Node* root) {
     isBSTUtil(root, INT_MIN, INT_MAX);
   }
-
 };

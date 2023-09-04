@@ -10,18 +10,18 @@ struct Node {
 
 class Solution {
 public:
-  void sortList(Node** head) {
-    Node* prev = (*head);
-    Node* curr = (*head)->next;
-    while (curr != nullptr) {
+  Node* sortList(Node* head) {
+    Node* prev = head, * curr = head->next;
+    while (curr) {
       if (curr->data < prev->data) {
         prev->next = curr->next;
-        curr->next = (*head);
-        (*head) = curr;
+        curr->next = head;
+        head = curr;
         curr = prev;
       }
       else prev = curr;
       curr = curr->next;
     }
+    return head;
   }
 };

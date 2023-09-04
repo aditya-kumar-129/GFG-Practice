@@ -8,6 +8,7 @@
     "ratio": "cpp",
     "typeinfo": "cpp",
     "random": "cpp",
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "sstream": "cpp"
   }
 }
